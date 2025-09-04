@@ -1,5 +1,13 @@
 ---
 title: Projects
+listing:
+    id: projects
+    template: templates/projects.ejs
+    contents: projects.yml
 ---
 
 Meridian Research Labs contributes to open-source tools that advance the public understanding of AI systems, working in partnership with leading organizations.
+
+:::{#projects}
+
+:::

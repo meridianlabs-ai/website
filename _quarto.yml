@@ -6,21 +6,21 @@ website:
   navbar:
     title: "<img src='images/meridian-logo-white.svg' width='120'>"
     left:
-      - href: index.qmd
-        text: Home
       - projects.qmd
       - mission.qmd
       - team.qmd
+      - href: contact.qmd
+        text: Contact
   page-footer: 
     left: ""
-    center: "© 2025 Meridian Research Labs\nMeridian Research Labs is a 501(c)(3) nonprofit based in Boston, MA\n[info@meridianlabs.ai](mailto:info@meridianlabs.ai)"
+    center: "© 2025 Meridian Research Labs"
     right: ""
 
 format:
   html:
     theme:
-      - lux
-      - brand
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
 

@@ -1,0 +1,26 @@
+---
+title: Meridian Research Labs
+image: images/meridian-icon-black.svg
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: github
+      href: https://www.github.com/meridianlabs-ai
+    - icon: envelope
+      text: info
+      href: mailto:info@meridianlabs.ai
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/company/meridian-research-labs/
+---
+
+Meridian Research Labs is a 501(c)(3) nonprofit based in Boston, MA
+
+Address:<br/>
+Meridian Research Labs<br/>
+501 Boylston St<br/>
+10th Floor<br/>
+Boston, MA<br/>
+02116<br/>
+

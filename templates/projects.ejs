@@ -1,0 +1,19 @@
+```{=html}
+<div>
+<% for (const item of items) { %>
+  <div class="project">
+    <div class="project-title">
+      <%= item.title %>
+    </div>
+    <div class="project-desc"><%= item.description %></div>
+    <div class="project-links">
+        <% for (const link of item.links) { %>
+            <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-<%= link.icon %>"></i> <span class="link-text"><%= link.text %></span>
+            </a>
+        <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```
