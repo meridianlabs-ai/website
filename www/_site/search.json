@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Meridian Labs",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "team.html",
+    "href": "team.html",
+    "title": "Team",
+    "section": "",
+    "text": "Meet the dedicated experts behind Meridian Research Labs.\n\nAlexandra Abbas (Technical Program Manager)\n\n\nEric Patey (Principal Researcher)\nEric co-founded Meridian Research Labs in 2025, bringing extensive expertise in software architecture and engineering leadership. Most recently, he served as Distinguished Engineer at Sonos after leading their entry into B2B as Senior Director for Sonos for Business.\nPreviously, Eric co-founded Talko Inc. as VP of Development, was Partner Software Engineering Manager at Microsoft across Xbox and Office platforms, and was a co-founder/VP of Development at Groove Networks (acquired by Microsoft), was a founding engineer at SilverStream Software and led development at Iris Associates (Lotus Notes)\n\n\nCharles Teague (President)\nCharles co-founded Meridian Research Labs in 2025 to advance the public understanding of AI systems. Prior to founding Meridian, Charles was a TASP Fellow at the RAND Corporation, where he focused on frameworks and methdologies for evaluating large language models, helping build the Inspect AI platform.\nPrior to his work in open source software, Charles built products used by millions of people and founded companies with successful exits to Microsoft, Macromedia, and EverydayHealth."
+  },
+  {
+    "objectID": "mission.html",
+    "href": "mission.html",
+    "title": "Mission",
+    "section": "",
+    "text": "AI research and development is accelerating, with new capabilities emerging rapidly and significant uncertainty about their implications. These systems offer unprecedented opportunities for scientific breakthroughs, educational transformation, and technological advancement. However, as AI systems become more powerful, their dual-use nature becomes more apparent - the same capabilities that could advance medicine or cybersecurity could also lower barriers to developing harmful biological or chemical agents or conducting cyberattacks. This underscores the importance of understanding these systems thoroughly, as they can both create and help defend against potential threats.\nOrganizations worldwide are grappling with these opportunities and risks as they make critical decisions about AI development and governance. To navigate these challenges, organizations are developing systematic approaches to evaluate AI models, with evaluation software and tools serving as essential enablers of this work. Government agencies, including those in the US and UK, have begun conducting joint evaluations of frontier AI models prior to their release , demonstrating the growing importance of robust evaluation frameworks.\nLeading AI developers now routinely conduct extensive pre-release evaluations to measure capabilities and assess risks, as evidenced by detailed system cards from organizations like OpenAI and Anthropic . This practice has extended beyond industry, with civil society organizations and nonprofits increasingly engaging in independent evaluations - from RAND’s work on evaluation methodologies and benchmarking to pre-deployment testing by organizations like METR and Apollo Research.\nEven as the investment in model evaluations grows, it remains difficult and time consuming to produce reliable, actionable insights. Without substantial platform investment or large technical overhead, results suffer from inconsistent metrics, limited reproducibility, difficulty sharing evaluations work, and gaps between theoretical measures and practical implications.\nMeridian Labs addresses these challenges by developing rigorous, empirically grounded evaluation frameworks and tools. We combine technical expertise with practical implementation guidance to help organizations conduct meaningful evaluations that directly inform their AI development and governance decisions."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Meridian Research Labs contributes to open-source tools that advance the public understanding of AI systems, working in partnership with leading organizations."
+  }
+]

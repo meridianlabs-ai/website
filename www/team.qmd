@@ -1,0 +1,24 @@
+---
+title: Team
+toc-title: Team Members
+
+---
+
+Meet the dedicated experts behind Meridian Research Labs.
+
+### Alexandra Abbas (Technical Program Manager)
+
+### Eric Patey (Principal Researcher)
+
+Eric co-founded Meridian Research Labs in 2025, bringing extensive expertise in software architecture and engineering leadership. Most recently, he served as Distinguished Engineer at Sonos after leading their entry into B2B as Senior Director for Sonos for Business.
+
+Previously, Eric co-founded Talko Inc. as VP of Development, was Partner Software Engineering Manager at Microsoft across Xbox and Office platforms, and was a co-founder/VP of Development at Groove Networks (acquired by Microsoft), was a founding engineer at SilverStream Software and led development at Iris Associates (Lotus Notes)
+
+### Charles Teague (President)
+
+Charles co-founded Meridian Research Labs in 2025 to advance the public understanding of AI systems. Prior to founding Meridian, Charles was a TASP Fellow at the RAND Corporation, where he focused on frameworks and methdologies for evaluating large language models, helping build the Inspect AI platform.
+
+Prior to his work in open source software, Charles built products used by millions of people and founded companies with successful exits to Microsoft, Macromedia, and EverydayHealth.
+
+
+
