@@ -1,11 +1,38 @@
 /* css styles */
 
 .splash {
-    background-color: #666;
-    color: white;
-    height: 800px;
-    font-size: 3rem;
-    padding: 8rem 5rem;
+    height: 100vh;
+    font-size: 2.5rem;    
+}
+
+.splash-text {
+    line-height: 1.3;
+    padding-top: 3em;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .splash-image {
+    display: none;
+  }
+
+  .splash {
+    font-size: 1.6rem; 
+  }
+
+  .splash-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.splash-image {
+    width: 180px;
+    height: auto;
 }
 
 .team-member {
@@ -15,10 +42,10 @@
 .team-member .team-title {
     display:grid;
     grid-template-columns: max-content max-content 1fr;
+    grid-template-rows: auto auto;
     column-gap: 0.3em;
     align-items: baseline;
 }
-
 
 .team-member .team-name {
     font-weight: bold;
@@ -26,10 +53,9 @@
 }
 
 .team-member .team-role {
-    font-style: italic;
     color: #666;
     font-size: 0.8em;
-    margin-left: 0.3em;
+    grid-column: -1/1;
 }
 
 .team-member .team-links {

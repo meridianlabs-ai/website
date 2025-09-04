@@ -5,7 +5,17 @@ page-layout: custom
 
 :::{.splash}
 
-Meridian Labs is a non-profit organization dedicated to frontier AI research and testing tools.
 
+:::{.splash-text}
+
+:::{.splash-image}
+![](images/meridian-icon-black.svg)
+:::
+
+:::{.splash-content}
+Meridian Labs is a non-profit organization dedicated to frontier AI research and testing tools.
+:::
+
+:::
 
 :::
