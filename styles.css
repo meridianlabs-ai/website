@@ -1,5 +1,12 @@
 /* css styles */
 
+.splash {
+    background-color: #666;
+    color: white;
+    height: 800px;
+    font-size: 3rem;
+    padding: 8rem 5rem;
+}
 
 .team-member {
     margin-bottom: 2em;
