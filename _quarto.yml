@@ -6,14 +6,13 @@ website:
   navbar:
     title: "<img src='images/meridian-logo-black.svg' width='120'>"
     left:
-      - projects.qmd
       - mission.qmd
       - team.qmd
       - href: contact.qmd
         text: Contact
   page-footer: 
     left: ""
-    center: "© 2025 Meridian Research Labs"
+    center: "© 2025 Meridian Labs"
     right: ""
 
 format:

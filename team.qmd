@@ -7,7 +7,7 @@ listing:
     template: templates/team.ejs
 ---
 
-Meet the dedicated experts behind Meridian Research Labs.
+Meet the dedicated experts behind Meridian Labs.
 
 :::{#listing}
 

@@ -1,6 +1,6 @@
 - title: Inspect AI
   description: |
-    Inspect AI is an open-source framework developed by the UK AI Safety Institute (AISI) with Meridian Research Labs as contributors. This framework enables systematic evaluation of large language models (LLMs), providing researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors. The platform enables standardized testing protocols to track model progress, identify potential risks, and ensure that AI systems are reliable and aligned with human values before deployment.
+    Inspect AI is an open-source framework developed by the UK AI Safety Institute (AISI) with Meridian Labs as contributors. This framework enables systematic evaluation of large language models (LLMs), providing researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors. The platform enables standardized testing protocols to track model progress, identify potential risks, and ensure that AI systems are reliable and aligned with human values before deployment.
   links:
     - text: Documentation
       icon: book

@@ -1,5 +1,5 @@
 ---
-title: Meridian Research Labs
+title: Meridian Labs
 image: images/meridian-icon-black.svg
 about:
   template: jolla
@@ -23,4 +23,4 @@ Boston, MA<br/>
 02116<br/>
 
 
-Meridian Research Labs is a 501(c)(3) nonprofit.
+Meridian Labs is a 501(c)(3) nonprofit.

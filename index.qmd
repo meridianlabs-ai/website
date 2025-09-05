@@ -1,21 +1,30 @@
 ---
-page-layout: custom
+listing:
+    id: projects
+    template: templates/projects.ejs
+    contents: projects.yml
 ---
 
-
-:::{.splash}
-
-
-:::{.splash-text}
-
-:::{.splash-image}
+:::::: {.splash .column-screen-inset}
+::::: splash-text 
+::: splash-image
 ![](images/meridian-icon-black.svg)
 :::
 
-:::{.splash-content}
-Meridian Labs is a non-profit organization dedicated to frontier AI research and testing tools.
-:::
+::: splash-content
+# Meridian Labs
 
+Open source tools for frontier AI research and testing.
 :::
+:::::
+::::::
+
+
+Fronter AI research and development is accelerating, with new capabilities emerging at a breakneck pace. To better understand the opportunities and risks of frontier models, organizations are using evaluations to make emperically grounded assessments. Meridian Labs helps enable this work by developing open source evaluation frameworks and tools.
+
+
+## Projects
+
+:::{#projects}
 
 :::
