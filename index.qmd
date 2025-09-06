@@ -12,16 +12,17 @@ toc: false
 
 # Meridian Labs
 
-::: splash-content
+::: splash-secondary
 
 Open source tools for frontier AI research and testing.
 :::
 
-::::::
+
 
 
 Fronter AI research and development is accelerating, with new capabilities emerging at a breakneck pace. To better understand the opportunities and risks of frontier models, organizations are using evaluations to make emperically grounded assessments. Meridian Labs helps enable this work by developing open source evaluation frameworks and tools.
 
+::::::
 
 ## Projects {.project-separator}
 
