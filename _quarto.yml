@@ -4,6 +4,7 @@ project:
 
 website:
   navbar:
+    background: white
     title: "<img src='images/meridian-logo-black.svg' width='120'>"
     left:
       - mission.qmd
@@ -18,11 +19,13 @@ website:
 format:
   html:
     theme:
-      light: litera
+      light: spacelab
     css: 
       - styles.css
       - fonts/fonts.css
     toc: true
+    grid:
+      sidebar-width: 350px    
 
 
 
