@@ -19,6 +19,7 @@
 
 .quarto-about-jolla h1 {
     font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
 }
 
 .splash-text {
