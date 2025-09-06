@@ -1,14 +1,10 @@
 [
   {
-    "listing": "/team.html",
-    "items": []
-  },
-  {
-    "listing": "/projects.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
+    "items": []
+  },
+  {
+    "listing": "/team.html",
     "items": []
   }
 ]

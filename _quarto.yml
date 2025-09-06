@@ -19,7 +19,7 @@ website:
 format:
   html:
     theme:
-      light: spacelab
+      light: lux
     css: 
       - styles.css
       - fonts/fonts.css
