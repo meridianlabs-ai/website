@@ -1,11 +1,11 @@
 ---
+pagetitle: Meridian Labs
 listing:
     id: projects
     template: templates/projects.ejs
     contents: projects.yml
 toc: false
 anchor-sections: false
-
 ---
 
 
