@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>Team</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -71,20 +72,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-projects .list');
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-href','listing-secondary-links',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-name','listing-role','listing-links','listing-bio',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-description","listing-href","listing-secondary-links"],
+      searchColumns: ["listing-name","listing-role","listing-links","listing-bio"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-projects'] = new List('listing-projects', options);
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -132,7 +133,7 @@ window.Quarto = {
 <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -154,7 +155,7 @@ window.Quarto = {
 <span class="menu-text">Mission</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
+    <a class="nav-link active" href="./team.html" aria-current="page"> 
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
@@ -172,103 +173,102 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<section id="meridian-labs" class="level1 splash">
-<h1>Meridian Labs</h1>
-<div class="splash-secondary">
-<p>Open source tools for frontier AI research and evaluation.</p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Team</h1>
 </div>
-<div class="splash-tertiary">
-<p>AI research and development is accelerating, with new capabilities emerging at a breakneck pace. To better understand the opportunities and risks of frontier models, organizations are using evaluations to make empirically grounded assessments. Meridian Labs helps enable this work by developing open source tools for AI research and evaluation.</p>
-</div>
-</section>
-<section id="projects" class="level2 project-separator">
-<h2 class="project-separator" data-anchor-id="projects">Projects</h2>
-<div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Meet the dedicated experts behind Meridian Labs.</p>
+<div id="listing-listing" class="quarto-listing quarto-listing-container-custom">
 <div>
 
-  <div class="project">
-    <div class="project-title">
-        <a href="https://inspect.aisi.org.uk" title="Documentation">Inspect AI</a>
-        <div class="project-links"> 
-        
-            <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" title="Source Code">
-            <i class="bi bi-github"></i>
-            </a>
-        
-            <a href="https://pypi.org/project/inspect-ai/" target="_blank" rel="noopener noreferrer" title="Package">
-            <i class="bi bi-boxes"></i>
-            </a>
-        
+  <div class="team-member">
+    <div class="team-title">
+      <div class="team-name">Charles Teague </div>
+      <div class="team-links">
+      
+        <a href="https://www.linkedin.com/in/cteague" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      
+        <a href="https://www.github.com/dragonstyle" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-github"></i>
+        </a>
+      
+      </div>
+      <div class="team-role">(CEO)</div>
     </div>
+    
+    <div class="team-bio">Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems. Prior to founding Meridian, Charles was a TASP Fellow at the RAND Corporation, where he focused on frameworks and methdologies for evaluating large language models, helping build the Inspect AI platform.<br><br>
 
-    </div>
-    <div class="project-desc">Inspect AI is an open-source framework developed by the UK AI Safety Institute (AISI) with Meridian Labs as contributors. This framework enables systematic evaluation of large language models (LLMs), providing researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors. The platform enables standardized testing protocols to track model progress, identify potential risks, and ensure that AI systems are reliable and aligned with human values before deployment.
+Prior to his work in open source software, Charles built products used by millions of people and founded companies with successful exits to Microsoft, Macromedia, and EverydayHealth.
 </div>
   </div>
 
-  <div class="project">
-    <div class="project-title">
-        <a href="https://inspect.aisi.org.uk/vscode.html" title="Documentation">Inspect VSCode</a>
-        <div class="project-links"> 
-        
-            <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" title="Source Code">
-            <i class="bi bi-github"></i>
-            </a>
-        
-            <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" title="Marketplace">
-            <i class="bi bi-boxes"></i>
-            </a>
-        
+  <div class="team-member">
+    <div class="team-title">
+      <div class="team-name">Eric Patey </div>
+      <div class="team-links">
+      
+        <a href="https://www.linkedin.com/in/epatey" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      
+        <a href="https://www.github.com/epatey" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-github"></i>
+        </a>
+      
+      </div>
+      <div class="team-role">(Principal Researcher)</div>
     </div>
+    
+    <div class="team-bio">Eric co-founded Meridian Labs in 2025, bringing extensive expertise in software architecture and engineering leadership. Most recently, he served as Distinguished Engineer at Sonos after leading their entry into B2B as Senior Director for Sonos for Business.<br><br>
 
-    </div>
-    <div class="project-desc">The Inspect AI Visual Studio Code extension makes it simple and productive to use Inspect AI directly in the VSCode IDE. Includes features like an integrated log viewer, task browser, panels for configuring .env files and CLI options, as well as command for running and debugging tasks.
+Previously, Eric co-founded Talko Inc. as VP of Development, was Partner Software Engineering Manager at Microsoft across Xbox and Office platforms, and was a co-founder/VP of Development at Groove Networks (acquired by Microsoft), was a founding engineer at SilverStream Software and led development at Iris Associates (Lotus Notes)
 </div>
   </div>
 
-  <div class="project">
-    <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_viz/" title="Documentation">Inspect Viz</a>
-        <div class="project-links"> 
-        
-            <a href="https://github.com/meridianlabs-ai/inspect_viz" target="_blank" rel="noopener noreferrer" title="Source Code">
-            <i class="bi bi-github"></i>
-            </a>
-        
-            <a href="https://pypi.org/project/inspect-viz/" target="_blank" rel="noopener noreferrer" title="Package">
-            <i class="bi bi-boxes"></i>
-            </a>
-        
+  <div class="team-member">
+    <div class="team-title">
+      <div class="team-name">Alexandra Abbas </div>
+      <div class="team-links">
+      
+        <a href="https://www.linkedin.com/in/alexandraabbas" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      
+        <a href="https://github.com/alexandraabbas" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-github"></i>
+        </a>
+      
+      </div>
+      <div class="team-role">(Technical Program Manager)</div>
     </div>
+    
+    <div class="team-bio">Alexandra is Technical Program Manager at Meridian Labs, directing projects that advance AI evaluations through scalable systems. Prior to joining Meridian, Alexandra co-founded the AI Safety Engineering Taskforce in 2024. She is lead the development of Inspect Evals, an open-source repository of 70+ AI evaluations, and has collaborated with the UK AI Security Institute, Vector Institute, and METR.<br><br>
 
-    </div>
-    <div class="project-desc">Inspect Viz is a a data visualisation library for Inspect AI. Inspect Viz provides flexible tools for creating high quality interactive visualisations from Inspect evaluations. Inspect Viz includes a support for a variety of built in visualizations for helping understand evaluation results as well as components to make it easy to create custom visualizations from Inspect Data.</div>
-  </div>
-
-  <div class="project">
-    <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_swe/" title="Documentation">Inspect SWE</a>
-        <div class="project-links"> 
-        
-            <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" title="Source Code">
-            <i class="bi bi-github"></i>
-            </a>
-        
-            <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" title="Package">
-            <i class="bi bi-boxes"></i>
-            </a>
-        
-    </div>
-
-    </div>
-    <div class="project-desc">The inspect_swe package makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents. This allows researchers to easily evaluate the performance of these agents on a wide variety of tasks using the Inspect AI framework.</div>
+Previously, Alexandra was Engineering Lead at Wise, managing a team of 5 engineers on projects that saved millions in foreign exchange losses. She has published first-author research on AI evaluations and adversarial training, and holds an MSc in Big Data Engineering from the University of Stirling.
+</div>
   </div>
 
 </div>
@@ -277,11 +277,17 @@ window.Quarto = {
 
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

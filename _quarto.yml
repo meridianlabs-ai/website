@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: www
+
+website:
+  navbar:
+    background: white
+    title: "<img src='images/meridian-logo-black.svg' width='120'>"
+    left:
+      - mission.qmd
+      - team.qmd
+      - href: contact.qmd
+        text: Contact
+  page-footer: 
+    left: ""
+    center: "© 2025 Meridian Labs"
+    right: ""
+
+format:
+  html:
+    theme:
+      light: spacelab
+    css: 
+      - styles.css
+      - fonts/fonts.css
+    toc: true
+    grid:
+      sidebar-width: 350px    
+
+
+

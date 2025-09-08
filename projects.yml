@@ -1,0 +1,45 @@
+- title: Inspect AI
+  description: |
+    Inspect AI is an open-source framework developed by the UK AI Safety Institute (AISI) with Meridian Labs as contributors. This framework enables systematic evaluation of large language models (LLMs), providing researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors. The platform enables standardized testing protocols to track model progress, identify potential risks, and ensure that AI systems are reliable and aligned with human values before deployment.
+  href: https://inspect.aisi.org.uk
+  secondary-links:
+    - text: Source Code
+      icon: github
+      href: https://github.com/UKGovernmentBEIS/inspect_ai
+    - text: Package
+      icon: boxes
+      href: https://pypi.org/project/inspect-ai/
+
+- title: Inspect VSCode
+  description: | 
+    The Inspect AI Visual Studio Code extension makes it simple and productive to use Inspect AI directly in the VSCode IDE. Includes features like an integrated log viewer, task browser, panels for configuring .env files and CLI options, as well as command for running and debugging tasks.
+  href: https://inspect.aisi.org.uk/vscode.html
+  secondary-links:
+    - text: Source Code
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect-vscode
+    - text: Marketplace
+      icon: boxes
+      href: https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai
+
+- title: Inspect Viz
+  description: Inspect Viz is a a data visualisation library for Inspect AI. Inspect Viz provides flexible tools for creating high quality interactive visualisations from Inspect evaluations. Inspect Viz includes a support for a variety of built in visualizations for helping understand evaluation results as well as components to make it easy to create custom visualizations from Inspect Data.
+  href: https://meridianlabs-ai.github.io/inspect_viz/
+  secondary-links:
+    - text: Source Code
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect_viz
+    - text: Package
+      icon: boxes
+      href: https://pypi.org/project/inspect-viz/
+
+- title: Inspect SWE
+  description: The inspect_swe package makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents. This allows researchers to easily evaluate the performance of these agents on a wide variety of tasks using the Inspect AI framework.
+  href: https://meridianlabs-ai.github.io/inspect_swe/
+  secondary-links:
+    - text: Source Code
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect_swe
+    - text: Package
+      icon: boxes
+      href: https://pypi.org/project/inspect-swe/

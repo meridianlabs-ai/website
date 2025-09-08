@@ -1,0 +1,15 @@
+---
+title: Team
+toc-title: Team Members
+listing:
+    id: listing
+    contents: team.yml
+    template: templates/team.ejs
+---
+
+Meet the dedicated experts behind Meridian Labs.
+
+:::{#listing}
+
+
+:::

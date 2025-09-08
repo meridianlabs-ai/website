@@ -1,0 +1,133 @@
+/* css styles */
+
+/* Navbar styles */
+.navbar {
+    border-bottom: solid 1px #ddd;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+/* Splash styles */
+.splash {
+    padding-top: 0em;
+}
+
+.splash h1 { 
+    margin-top: 0;
+    font-size: 3.2em;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+.splash-secondary {
+    font-size: 2.5em;
+    line-height: 1.3em;
+}
+
+.splash-tertiary {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 0.2em;
+}   
+
+/* Projects Styles */
+.project {
+    margin-bottom: 1em;
+}
+
+.project .project-links {
+    margin-top: 0.3em;
+    padding-left: 0.4em;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 0.2em;
+}
+
+.project .project-links .bi:hover {
+    opacity: 1;
+    color: var(--quarto-link-color);
+}
+
+.project .project-links .bi {
+    margin-right: .1em;
+    color: black;
+    font-size: 0.8em;
+    opacity: 0.6;
+}
+
+.project .project-links a {
+    padding-left: 0;
+    text-decoration: none;
+}
+
+.project .project-title {
+    font-weight: bold;
+    font-size: 1.3em;
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: baseline
+}
+
+.project .project-title > a {
+    text-decoration: none;
+}
+
+.project-separator {
+    margin-top: 1.5em;
+    text-decoration: none;
+    border-bottom: none;
+    margin-bottom: 0;
+    
+}
+
+
+
+/* Contact Page Styles */
+.quarto-about-jolla h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Team Listing Styles */
+.team-member {
+    margin-bottom: 2em;
+}
+
+.team-member .team-title {
+    display:grid;
+    grid-template-columns: max-content max-content 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 0.3em;
+    align-items: baseline;
+}
+
+.team-member .team-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: black
+}
+
+.team-member .team-role {
+    color: #666;
+    font-size: 0.8em;
+    grid-column: -1/1;
+}
+
+.team-member .team-links {
+    margin-left: 0.2em;
+    display: flex;
+    gap: 0.3em;
+    justify-self: end;
+}
+
+.team-member .team-links .bi {
+    color: black;
+    opacity: 0.6;
+    font-size: 0.9em;
+}
+
+.team-member .team-links .bi:hover {
+    opacity: 1;
+    color: var(--quarto-link-color);
+}
+

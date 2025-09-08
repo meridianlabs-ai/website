@@ -1,0 +1,21 @@
+```{=html}
+<div>
+<% for (const item of items) { %>
+  <div class="team-member">
+    <div class="team-title">
+      <div class="team-name"><%= item.name %> </div>
+      <div class="team-links">
+      <% for (const link of item.links) { %>
+        <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-<%= link.icon %>"></i>
+        </a>
+      <% } %>
+      </div>
+      <div class="team-role">(<%= item.role %>)</div>
+    </div>
+    
+    <div class="team-bio"><%= item.bio %></div>
+  </div>
+<% } %>
+</div>
+```

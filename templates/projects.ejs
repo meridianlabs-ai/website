@@ -1,0 +1,20 @@
+```{=html}
+<div>
+<% for (const item of items) { %>
+  <div class="project">
+    <div class="project-title">
+        <a href="<%= item.href %>" title="Documentation"><%= item.title %></a>
+        <div class="project-links"> 
+        <% for (const link of item["secondary-links"]) { %>
+            <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" title="<%= link.text %>">
+            <i class="bi bi-<%= link.icon %>"></i>
+            </a>
+        <% } %>
+    </div>
+
+    </div>
+    <div class="project-desc"><%= item.description %></div>
+  </div>
+<% } %>
+</div>
+```
