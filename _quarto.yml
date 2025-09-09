@@ -13,7 +13,7 @@ website:
         text: Contact
   page-footer: 
     left: ""
-    center: "© 2025 Meridian Labs"
+    center: "Meridian Labs is a 501(c)(3) non-profit<br/>© 2025 Meridian Labs"
     right: ""
 
 format:

@@ -131,3 +131,13 @@
     color: var(--quarto-link-color);
 }
 
+
+/* Contact page styles */
+#title-block-header {
+    margin-bottom: 0 !important;
+}
+
+#quarto-document-content {
+    margin-top: 0 !important;
+}
+

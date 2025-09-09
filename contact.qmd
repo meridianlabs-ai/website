@@ -16,11 +16,10 @@ about:
       href: https://www.linkedin.com/company/meridian-research-labs/
 ---
 
-
+a 501(c)(3) nonprofit.<br/><br/>
 501 Boylston St<br/>
 10th Floor<br/>
 Boston, MA<br/>
 02116<br/>
 
 
-Meridian Labs is a 501(c)(3) nonprofit.
