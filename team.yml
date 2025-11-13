@@ -1,4 +1,3 @@
-
 - name: Alexandra Abbas
   role: Technical Program Manager
   links:
@@ -35,9 +34,9 @@
       text: github
       href: https://www.github.com/ransomr
   bio: |
-   Ransom joined Meridian Labs in 2025 as Principal Researcher where he works to advance AI evaluation platform technology. Prior to joining Meridian, Ransom served as Principal Software Architect at Microsoft, where he led the technical design of Copilot Pages and directed the development of Microsoft Loop Copilot, delivering features with exceptional customer feedback.<br/><br/>
-   
-   Previously, Ransom built a machine learning team focused on improving collaboration in Microsoft Office, partnered with the Microsoft AI Development Acceleration Program to develop early-in-career AI talent at Microsoft, shipped Azure ML FPGA inferencing, co-founded Talko Inc. (acquired by Microsoft) as service team lead, and was an engineer at Groove Networks where he designed their peer-to-peer synchronization engine. He holds 20+ patents and published research in cryptography.
+    Ransom joined Meridian Labs in 2025 as Principal Researcher where he works to advance AI evaluation platform technology. Prior to joining Meridian, Ransom served as Principal Software Architect at Microsoft, where he led the technical design of Copilot Pages and directed the development of Microsoft Loop Copilot, delivering features with exceptional customer feedback.<br/><br/>
+
+    Previously, Ransom built a machine learning team focused on improving collaboration in Microsoft Office, partnered with the Microsoft AI Development Acceleration Program to develop early-in-career AI talent at Microsoft, shipped Azure ML FPGA inferencing, co-founded Talko Inc. (acquired by Microsoft) as service team lead, and was an engineer at Groove Networks where he designed their peer-to-peer synchronization engine. He holds 20+ patents and published research in cryptography.
 - name: Charles Teague
   role: CEO
   links:
@@ -48,6 +47,6 @@
       text: github
       href: https://www.github.com/dragonstyle
   bio: |
-    Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems. Prior to founding Meridian, Charles was a TASP Fellow at the RAND Corporation, where he focused on frameworks and methdologies for evaluating large language models, helping build the Inspect AI platform.<br/><br/>
+    Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems through comprehensive evaluation tools and research. Prior to founding Meridian, Charles was a Technology and Security Policy Fellow at the RAND Corporation, where he contributed to Inspect AI, an open-source platform for evaluating large language models, helping build frameworks and methodologies to improve AI evaluation infrastructure.<br/><br/>
 
-    Prior to his work in open source software, Charles built products used by millions of people and co-founded companies with successful exits to Macromedia, Microsoft, and EverydayHealth.
+    Previously, Charles was Software Architect at Posit PBC, where he served as a core contributor to Quarto, a widely-adopted tool for scientific and technical communication. Before his work in open source software, Charles founded and led Lose It! as CEO for over a decade, growing the weight loss platform to 30 million users before its acquisition by EverydayHealth in 2022. Earlier in his career, Charles co-founded Onfolio (acquired by Microsoft in 2006), where he led engineering for Windows Live Writer, and served as Engineering Manager at Allaire/Macromedia, directing the ColdFusion MX team. He has founded and exited multiple companies to Macromedia, Microsoft, and EverydayHealth.
