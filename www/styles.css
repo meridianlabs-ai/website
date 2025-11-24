@@ -139,6 +139,7 @@
 }
 
 
+
 /* Contact page styles */
 #title-block-header {
     margin-bottom: 0 !important;
@@ -148,3 +149,6 @@
     margin-top: 0 !important;
 }
 
+body {
+    font-size: 0.9em;
+}
