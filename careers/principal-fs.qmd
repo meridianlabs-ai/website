@@ -1,0 +1,51 @@
+---
+title: Principal Full-Stack Engineer
+---
+
+Meridian Labs is building an open source platform for the research and evaluation of large language models. We're looking for a Principal Full-Stack Engineer to contribute to development across our platform — from the React-based interfaces researchers use daily to the Python infrastructure that powers evaluation workflows.
+
+You'll help build the vision and architecture for how AI researchers interact with and understand model behavior. This role combines deep technical leadership across the stack with product sensibility and stewardship of our open source community.
+
+### Responsibilities
+
+- Build and ship production features using Python and related technologies
+- Own major systems and make high-impact technical decisions that shape the product
+- Mentor other engineers and elevate the team's capabilities across the stack
+- Drive product direction by synthesizing user feedback and identifying opportunities
+- Steward our open source community—setting standards, reviewing PRs, and engaging contributors
+- Communicate technical strategy to leadership and stakeholders
+
+### Minimum Qualifications
+
+- 10+ years of software engineering experience
+- 3+ years building production systems in Python
+- Experience leading architecture for complex full-stack applications
+- Track record of owning and delivering major product initiatives
+- History of mentoring engineers and influencing technical direction
+- Strong interpersonal skills and collaborative mindset
+- Bachelor's degree in CS or related field (or equivalent experience)
+
+### Preferred Qualifications
+
+- Background in data visualization or complex UI for technical users
+- Experience leading open source projects or communities
+- Familiarity with AI safety, model evaluation, or ML operations
+- Experience with Inspect AI or similar evaluation platforms
+- Experience with cloud infrastructure and deployment
+
+### Location
+
+Meridian Labs is based in Boston, MA. We prefer in-person or hybrid work.
+
+### Compensation
+
+$225,000 – $325,000 with benefits, commensurate with experience.
+
+### Applying
+
+To apply, please email the following to **jobs@meridianlabs.ai**:
+
+- Your resume
+- LinkedIn URL (if available)
+- GitHub URL (if available)
+- A brief summary of why you're interested in joining Meridian Labs

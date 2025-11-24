@@ -1,0 +1,49 @@
+---
+title: Senior Front-End Engineer
+---
+
+Meridian Labs is building an open source platform for the research and evaluation of large language models. We're looking for a Senior Front-End Engineer to help build the interfaces that researchers use to interact with complex evaluation data through tools like Inspect Viewer and Inspect Viz.
+
+You'll help build the products that AI researchers use to make sense of model behavior—turning dense evaluation results into clear, actionable insights. This role combines front-end expertise with product sensibility and direct engagement with our user community.
+
+### Responsibilities
+
+- Build and ship production features in Inspect's front-end applications using TypeScript and React
+- Own significant portions of our UI codebase and make sound technical decisions
+- Collaborate with internal engineers and gather feedback from external users to inform product direction
+- Design compelling, usable interfaces for technically sophisticated users
+- Participate in our open source community—reviewing PRs and engaging contributors
+- Communicate progress and decisions to leadership and stakeholders
+
+### Minimum Qualifications
+
+- 5+ years of software engineering experience
+- 3+ years building production web applications with TypeScript and React
+- Experience owning and shipping significant front-end features
+- Track record of executing projects with multiple stakeholders
+- Strong interpersonal skills and collaborative mindset
+- Bachelor's degree in CS or related field (or equivalent experience)
+
+### Preferred Qualifications
+
+- Experience with Python and comfort contributing to backend systems
+- Background in data visualization or complex UI for technical users
+- Experience with open source communities
+- Familiarity with AI safety, model evaluation, or ML operations
+
+### Location
+
+Meridian Labs is based in Boston, MA. We prefer in-person or hybrid work.
+
+### Compensation
+
+$150,000 – $225,000 with benefits, commensurate with experience.
+
+### Applying
+
+To apply, please email the following to **jobs@meridianlabs.ai**:
+
+- Your resume
+- LinkedIn URL (if available)
+- GitHub URL (if available)
+- A brief summary of why you're interested in joining Meridian Labs

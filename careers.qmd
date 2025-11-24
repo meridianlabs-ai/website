@@ -1,0 +1,25 @@
+---
+title: Careers
+---
+
+Meridian Labs is a 501(c)(3) non-profit building open source tools for AI research and evaluation based in Boston, Massachusetts. All positions at Meridian Labs include:
+
+- Competitive salary
+- Benefits including health insurance, dental, and vision
+- Flexible time off policy
+
+Meridian Labs has built or contributed to many important open source packages used by Governments, Labs, and Researchers to better measure and understand AI systems. Join us to help contribute to a platform which is supporting the responsible development of AI technology.
+
+## Open Positions
+
+### [Senior Front-End Engineer](/careers/senior-fe.qmd)
+
+Build the interfaces that help AI researchers make sense of model behavior. You'll ship production features in TypeScript and React, own significant portions of our UI, and engage directly with our open source community. 5+ years experience required.
+
+### [Principal Front-End Engineer](/careers/principal-fe.qmd)
+
+Design and build the interfaces that help AI researchers make sense of model behavior. You'll ship production features in TypeScript and React, own significant portions of our UI, and engage directly with our open source community. 10+ years experience required.
+
+### [Principal Full-Stack Engineer](/careers/principal-fs.qmd)
+
+Design and build features that help AI researchers interact with and understand model behavior throughout our stack. You'll own major systems and shape how researchers interact with evaluation data. 10+ years experience required.

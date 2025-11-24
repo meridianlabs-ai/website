@@ -1,0 +1,51 @@
+---
+title: Principal Front-End Engineer
+---
+
+Meridian Labs is building an open source platform for the research and evaluation of large language models. We're looking for a Principal Front-End Engineer to drive the development of the interfaces that researchers use to interact with complex evaluation data through tools like Inspect Viewer and Inspect Viz.
+
+You'll help build the products that AI researchers use to make sense of model behavior—turning dense evaluation results into clear, actionable insights. This role combines deep technical leadership with product sensibility and stewardship of our open source community.
+
+### Responsibilities
+
+- Build and ship production features using TypeScript and React
+- Own major systems and make high-impact technical decisions that shape the product
+- Mentor other engineers and elevate the team's front-end capabilities
+- Drive product direction by synthesizing user feedback and identifying opportunities
+- Steward our open source community—setting standards, reviewing PRs, and engaging contributors
+- Communicate technical strategy to leadership and stakeholders
+
+### Minimum Qualifications
+
+- 10+ years of software engineering experience
+- 7+ years building production web applications with TypeScript and React
+- Experience leading front-end architecture for complex applications
+- Track record of owning and delivering major product initiatives
+- History of mentoring engineers and influencing technical direction
+- Strong interpersonal skills and collaborative mindset
+- Bachelor's degree in CS or related field (or equivalent experience)
+
+### Preferred Qualifications
+
+- Experience with Python and comfort contributing across the stack
+- Background in data visualization or complex UI for technical users
+- Experience leading open source projects or communities
+- Familiarity with AI safety, model evaluation, or ML operations
+- Experience with Inspect AI or similar evaluation platforms
+
+### Location
+
+Meridian Labs is based in Boston, MA. We prefer in-person or hybrid work.
+
+### Compensation
+
+$225,000 – $325,000 with benefits, commensurate with experience.
+
+### Applying
+
+To apply, please email the following to **jobs@meridianlabs.ai**:
+
+- Your resume
+- LinkedIn URL (if available)
+- GitHub URL (if available)
+- A brief summary of why you're interested in joining Meridian Labs

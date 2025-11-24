@@ -5,16 +5,18 @@ project:
 website:
   navbar:
     background: "#fafafa"
-    title: "<img src='images/meridian-logo-black.svg' width='120'>"
+    title: "<img src='/images/meridian-logo-black.svg' width='120'>"
     left:
       - mission.qmd
       - team.qmd
+      - careers.qmd
       - href: contact.qmd
         text: Contact
   page-footer: 
     left: ""
     center: "Meridian Labs is a 501(c)(3) non-profit<br/>© 2025 Meridian Labs"
     right: ""
+  bread-crumbs: true
 
 format:
   html:
