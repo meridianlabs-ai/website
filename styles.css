@@ -8,9 +8,17 @@
     margin-bottom: 1em;
 }
 
+.home-content {
+    max-width:1200px;
+}
+
 /* Splash styles */
 .splash {
-    padding-top: 0em;
+    padding-top: 0em !important;
+    border-bottom: solid 1px #ddd;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
 }
 
 .splash h1 { 
@@ -22,8 +30,7 @@
 
 .splash-secondary {
     font-size: 1.6em;
-    line-height: 1.3em;
-    
+    line-height: 1.3em;   
 }
 
 .splash-tertiary {
@@ -79,12 +86,16 @@
 }
 
 .project-separator {
-    margin-top: 1.5em;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.project-separator > h2 {
+    margin-top: 1rem;
     text-decoration: none;
     border-bottom: none;
     margin-bottom: 0;
     font-size: 1.2em;
-    
 }
 
 
