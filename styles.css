@@ -156,6 +156,10 @@
     margin-bottom: 0 !important;
 }
 
+#title-block-header.quarto-title-block.default .quarto-title .title {
+    margin-bottom: 0.5rem;
+}
+
 #quarto-document-content {
     margin-top: 0 !important;
 }
