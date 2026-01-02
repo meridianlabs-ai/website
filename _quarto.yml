@@ -4,7 +4,7 @@ project:
 
 website:
   navbar:
-    background: "#3399F322"
+    background: "#E6F1FD"
     title: "<img src='/images/meridian-logo-black.svg' width='120'>"
     left:
       - mission.qmd
