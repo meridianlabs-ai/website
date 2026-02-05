@@ -1,3 +1,31 @@
+- name: Charles Teague
+  role: CEO, Co-founder
+  links:
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/in/cteague
+    - icon: github
+      text: github
+      href: https://www.github.com/dragonstyle
+  bio: |
+    Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems through comprehensive evaluation tools and research. Prior to founding Meridian, Charles was a Technology and Security Policy Fellow at the RAND Corporation, where he helped develop Inspect AI, an open-source platform for evaluating large language models, helping build frameworks and methodologies to improve AI evaluation infrastructure.<br/><br/>
+
+    Previously, Charles was Software Architect at Posit PBC, where he was a creator and maintainer of Quarto, a widely-adopted tool for scientific and technical communication. Before his work in open source software, Charles founded and led Lose It! as CEO for over a decade, growing the weight loss platform to 30 million users before its acquisition by EverydayHealth in 2022. Earlier in his career, Charles co-founded Onfolio (acquired by Microsoft in 2006), where he led engineering for Windows Live Writer, and served as Engineering Manager at Allaire/Macromedia, directing the ColdFusion MX team. He has founded and exited multiple companies to Macromedia, Microsoft, and EverydayHealth.
+
+- name: Eric Patey
+  role: Principal Engineer, Co-founder
+  links:
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/in/epatey
+    - icon: github
+      text: github
+      href: https://www.github.com/epatey
+  bio: |
+    Eric co-founded Meridian Labs in 2025, bringing extensive expertise in software architecture and engineering leadership. Most recently, he served as Distinguished Engineer at Sonos after leading their entry into B2B as Senior Director for Sonos for Business.<br/><br/>
+
+    Previously, Eric co-founded Talko Inc. as VP of Development, was Partner Software Engineering Manager at Microsoft across Xbox and Office platforms, and was a co-founder/VP of Development at Groove Networks (acquired by Microsoft), was a founding engineer at SilverStream Software and led development at Iris Associates (Lotus Notes).
+
 - name: Alexandra Abbas
   role: Technical Program Manager
   links:
@@ -11,19 +39,7 @@
     Alexandra is Technical Program Manager at Meridian Labs, directing projects that advance AI evaluations through scalable systems. Prior to joining Meridian, Alexandra co-founded the AI Safety Engineering Taskforce in 2024. She has lead the development of Inspect Evals, an open-source repository of 70+ AI evaluations, and has collaborated with the UK AI Security Institute, Vector Institute, and METR..<br/><br/>
 
     Previously, Alexandra was Engineering Lead at Wise, managing a team of 5 engineers on projects that saved millions in foreign exchange losses. She has published first-author research on AI evaluations and adversarial training, and holds an MSc in Big Data Engineering from the University of Stirling.
-- name: Eric Patey
-  role: Principal Engineer
-  links:
-    - icon: linkedin
-      text: linkedin
-      href: https://www.linkedin.com/in/epatey
-    - icon: github
-      text: github
-      href: https://www.github.com/epatey
-  bio: |
-    Eric co-founded Meridian Labs in 2025, bringing extensive expertise in software architecture and engineering leadership. Most recently, he served as Distinguished Engineer at Sonos after leading their entry into B2B as Senior Director for Sonos for Business.<br/><br/>
 
-    Previously, Eric co-founded Talko Inc. as VP of Development, was Partner Software Engineering Manager at Microsoft across Xbox and Office platforms, and was a co-founder/VP of Development at Groove Networks (acquired by Microsoft), was a founding engineer at SilverStream Software and led development at Iris Associates (Lotus Notes).
 - name: Ransom Richardson
   role: Principal Engineer
   links:
@@ -37,16 +53,17 @@
     Ransom joined Meridian Labs in 2025 as Principal Researcher where he works to advance AI evaluation platform technology. Prior to joining Meridian, Ransom served as Principal Software Architect at Microsoft, where he led the technical design of Copilot Pages and directed the development of Microsoft Loop Copilot, delivering features with exceptional customer feedback.<br/><br/>
 
     Previously, Ransom built a machine learning team focused on improving collaboration in Microsoft Office, partnered with the Microsoft AI Development Acceleration Program to develop early-in-career AI talent at Microsoft, shipped Azure ML FPGA inferencing, co-founded Talko Inc. (acquired by Microsoft) as service team lead, and was an engineer at Groove Networks where he designed their peer-to-peer synchronization engine. He holds 20+ patents and published research in cryptography.
-- name: Charles Teague
-  role: CEO
+
+- name: Kai Fronsdal
+  role: Research Engineer
   links:
     - icon: linkedin
       text: linkedin
-      href: https://www.linkedin.com/in/cteague
+      href: https://www.linkedin.com/in/kaifronsdal
     - icon: github
       text: github
-      href: https://www.github.com/dragonstyle
+      href: https://github.com/kaifronsdal
   bio: |
-    Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems through comprehensive evaluation tools and research. Prior to founding Meridian, Charles was a Technology and Security Policy Fellow at the RAND Corporation, where he helped develop Inspect AI, an open-source platform for evaluating large language models, helping build frameworks and methodologies to improve AI evaluation infrastructure.<br/><br/>
-
-    Previously, Charles was Software Architect at Posit PBC, where he was a creator and maintainer of Quarto, a widely-adopted tool for scientific and technical communication. Before his work in open source software, Charles founded and led Lose It! as CEO for over a decade, growing the weight loss platform to 30 million users before its acquisition by EverydayHealth in 2022. Earlier in his career, Charles co-founded Onfolio (acquired by Microsoft in 2006), where he led engineering for Windows Live Writer, and served as Engineering Manager at Allaire/Macromedia, directing the ColdFusion MX team. He has founded and exited multiple companies to Macromedia, Microsoft, and EverydayHealth.
+    Kai joined Meridian Labs in 2026 as a Research Engineer, where he works on advancing the state of automated alignment auditing and evaluations in collaboration with the UK AI Security Institute. 
+    
+    Prior to joining Meridian, Kai was an Anthropic Fellow and MATS AI Safety Researcher, where he developed Petri, an open-source alignment auditing tool that enables diverse and rapid evaluations of model alignment. Petri has been widely adopted by researchers across multiple organizations and most frontier labs. Kai has conducted predeployment safety audits of frontier models and has been working on model evaluations for over two years, collaborating with researchers at Anthropic, Google DeepMind, OpenAI, and Stanford. He holds an MSc from Stanford University, where his research focused on AI safety and alignment.
