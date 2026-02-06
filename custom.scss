@@ -1,29 +1,29 @@
 /*-- scss:defaults --*/
 
-// Color palette — derived from dark navy + gold neural network hero
-$midnight: #0a0a09;
-$deep-navy: #232347;
-$navy: #2A2A52;
-$gold: #C9A84C;
-$light-gold: #E8D5A3;
-$dim-gold: #9A8556;
-$cream-bg: #F5F2EB;
-$warm-white: #FDFBF7;
-$card-border: #E8E2D5;
-$heading-dark: #1C1C3A;
-$body-text: #4A4A5A;
-$muted-slate: #8B8BA3;
-$link-blue: #7B7BA0;
+// Color palette — derived from watercolor sci-fi cityscape hero
+$dark-navy: #2D3748;
+$darkest-navy: #1A202C;
+$steel-blue: #4A5568;
+$warm-peach: #D4956A;
+$cream-bg: #F5F0E8;
+$warm-white: #FAF7F2;
+$card-border: #EDE8DD;
+$off-white: #F0E6D3;
+$muted-cream: #D4CFC5;
+$dark-brown: #3D2B2B;
+$grey-brown: #5C4A4A;
+$periwinkle: #7B8FB2;
+$lavender: #8B9DC3;
 
 // Bootstrap overrides
 $body-bg: $cream-bg;
-$body-color: $body-text;
+$body-color: $grey-brown;
 $font-family-sans-serif: 'Roboto', sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.7;
-$headings-color: $heading-dark;
-$link-color: $link-blue;
-$link-hover-color: $gold;
+$headings-color: $dark-brown;
+$link-color: $periwinkle;
+$link-hover-color: $warm-peach;
 $border-radius: 8px;
 $card-bg: $warm-white;
 $card-border-color: $card-border;
@@ -36,7 +36,7 @@ $card-border-color: $card-border;
 body {
   font-family: 'Roboto', sans-serif;
   background-color: $cream-bg;
-  color: $body-text;
+  color: $grey-brown;
 }
 
 a {
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: $heading-dark;
+  color: $dark-brown;
 }
 
 h1 {
@@ -63,24 +63,20 @@ h2, h3, h4, h5, h6 {
 // Navbar
 // =====================
 .navbar {
-  background-color: $midnight !important;
+  background-color: $dark-navy !important;
   border-bottom: none;
-  box-shadow: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   padding-top: 0.6em;
   padding-bottom: 0.6em;
   margin-bottom: 0;
-  position: relative;
-  z-index: 1030;
 }
-
 
 .navbar .navbar-brand img {
   width: 140px;
 }
 
-// Default nav links (dark bg pages: home)
 .navbar .navbar-nav .nav-link {
-  color: $light-gold !important;
+  color: $off-white !important;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -93,16 +89,15 @@ h2, h3, h4, h5, h6 {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-  color: $gold !important;
-  border-bottom-color: $gold;
+  color: $warm-peach !important;
+  border-bottom-color: $warm-peach;
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-item .nav-link.active {
-  color: $gold !important;
-  border-bottom-color: $gold;
+  color: $warm-peach !important;
+  border-bottom-color: $warm-peach;
 }
-
 
 .navbar .navbar-toggler {
   border: none;
@@ -110,7 +105,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23E8D5A3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F0E6D3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar .navbar-toggler:focus {
@@ -145,8 +140,20 @@ body.quarto-light {
     top: 0;
     left: 0;
     width: 100%;
-    height: 30px;
-    background: linear-gradient(to bottom, $midnight, transparent);
+    height: 40px;
+    background: linear-gradient(to bottom, $dark-navy, transparent);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, $cream-bg);
     z-index: 1;
     pointer-events: none;
   }
@@ -154,7 +161,7 @@ body.quarto-light {
 
 .splash-inner img.hero-img {
   width: 100%;
-  height: 250px;
+  height: 380px;
   object-fit: cover;
   object-position: center center;
   display: block;
@@ -166,12 +173,17 @@ body.quarto-light {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 2.5rem 2rem 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 32, 44, 0.5) 0%,
+    rgba(26, 32, 44, 0.15) 60%,
+    transparent 100%
+  );
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.15) 70%, transparent 100%);
 }
 
 .splash h1 {
@@ -179,25 +191,25 @@ body.quarto-light {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: $light-gold;
+  letter-spacing: 0.08em;
+  color: $off-white;
   margin-top: 0;
-  margin-bottom: 0.4rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.3rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .splash-secondary {
-  font-size: 1.25em;
+  font-size: 1.3em;
   line-height: 1.4;
-  color: rgba($light-gold, 0.85);
+  color: $off-white;
   font-weight: 400;
   font-style: italic;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .splash-tertiary {
   font-size: 1.05rem;
-  color: $body-text;
+  color: $grey-brown;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.7;
@@ -226,7 +238,7 @@ body.quarto-light {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.3em;
-  color: $heading-dark;
+  color: $dark-brown;
   border-bottom: none;
 }
 
@@ -244,16 +256,16 @@ body.quarto-light {
   display: grid;
   grid-template-columns: max-content auto;
   align-items: baseline;
-  color: $heading-dark;
+  color: $dark-brown;
 }
 
 .project .project-title > a {
   text-decoration: none;
-  color: $heading-dark;
+  color: $dark-brown;
 }
 
 .project .project-title > a:hover {
-  color: $gold;
+  color: $warm-peach;
 }
 
 .project .project-links {
@@ -271,7 +283,7 @@ body.quarto-light {
 
 .project .project-links .bi {
   margin-right: 0.1em;
-  color: $body-text;
+  color: $grey-brown;
   font-size: 0.8em;
   opacity: 0.6;
   transition: color 0.2s ease, opacity 0.2s ease;
@@ -279,12 +291,12 @@ body.quarto-light {
 
 .project .project-links .bi:hover {
   opacity: 1;
-  color: $gold;
+  color: $warm-peach;
 }
 
 .project .project-desc {
   font-size: 0.9em;
-  color: $body-text;
+  color: $grey-brown;
 }
 
 // =====================
@@ -309,11 +321,11 @@ body.quarto-light {
 .team-member .team-name {
   font-weight: bold;
   font-size: 1.2em;
-  color: $heading-dark;
+  color: $dark-brown;
 }
 
 .team-member .team-role {
-  color: $dim-gold;
+  color: $periwinkle;
   font-size: 0.85em;
   grid-column: -1 / 1;
 }
@@ -326,7 +338,7 @@ body.quarto-light {
 }
 
 .team-member .team-links .bi {
-  color: $body-text;
+  color: $grey-brown;
   opacity: 0.6;
   font-size: 0.9em;
   transition: color 0.2s ease, opacity 0.2s ease;
@@ -334,11 +346,11 @@ body.quarto-light {
 
 .team-member .team-links .bi:hover {
   opacity: 1;
-  color: $gold;
+  color: $warm-peach;
 }
 
 .team-member .team-bio {
-  color: $body-text;
+  color: $grey-brown;
   font-size: 0.95em;
   line-height: 1.7;
 }
@@ -353,7 +365,7 @@ body.quarto-light {
 
 #title-block-header {
   margin-bottom: 0 !important;
-  border-bottom: 3px solid $gold;
+  border-bottom: 3px solid $warm-peach;
   padding-bottom: 0.8rem;
 }
 
@@ -362,7 +374,7 @@ body.quarto-light {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: $heading-dark;
+  color: $dark-brown;
 }
 
 #quarto-document-content {
@@ -372,13 +384,13 @@ body.quarto-light {
 // Body text links on content pages
 .quarto-body-content a,
 #quarto-document-content a {
-  color: $link-blue;
+  color: $periwinkle;
   transition: color 0.2s ease;
 }
 
 .quarto-body-content a:hover,
 #quarto-document-content a:hover {
-  color: $gold;
+  color: $warm-peach;
 }
 
 // =====================
@@ -397,49 +409,49 @@ body.quarto-light {
 .quarto-about-jolla h1 {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
-  color: $heading-dark;
+  color: $dark-brown;
 }
 
 .quarto-about-jolla .about-link {
-  color: $link-blue;
+  color: $periwinkle;
 }
 
 .quarto-about-jolla .about-link:hover {
-  color: $gold;
+  color: $warm-peach;
 }
 
 // =====================
 // Footer
 // =====================
 .nav-footer {
-  background-color: $midnight !important;
-  color: $muted-slate;
-  border-top: 1px solid rgba($gold, 0.15);
+  background-color: $darkest-navy !important;
+  color: $muted-cream;
+  border-top: none;
 }
 
 .nav-footer a {
-  color: $muted-slate;
+  color: $lavender;
   transition: color 0.2s ease;
 }
 
 .nav-footer a:hover {
-  color: $gold;
+  color: $warm-peach;
 }
 
 .nav-footer .nav-footer-center {
-  color: $muted-slate;
+  color: $muted-cream;
 }
 
 // =====================
 // Quarto sidebar / TOC overrides
 // =====================
 .sidebar nav[role="doc-toc"] a {
-  color: $body-text;
+  color: $grey-brown;
 }
 
 .sidebar nav[role="doc-toc"] a:hover,
 .sidebar nav[role="doc-toc"] a.active {
-  color: $gold;
+  color: $warm-peach;
 }
 
 // =====================
@@ -462,7 +474,7 @@ body.quarto-light {
   }
 
   .splash-inner img.hero-img {
-    height: 170px;
+    height: 260px;
   }
 
   .project-separator {
