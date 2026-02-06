@@ -45,7 +45,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: $dark-brown;
@@ -152,7 +152,7 @@ body.quarto-light {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 50px;
     background: linear-gradient(to bottom, transparent, $cream-bg);
     z-index: 1;
     pointer-events: none;
@@ -161,7 +161,7 @@ body.quarto-light {
 
 .splash-inner img.hero-img {
   width: 100%;
-  height: 380px;
+  height: 190px;
   object-fit: cover;
   object-position: center center;
   display: block;
@@ -173,7 +173,7 @@ body.quarto-light {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 2.5rem 2rem 0;
+  padding: 1rem 2rem 0;
   background: linear-gradient(
     to bottom,
     rgba(26, 32, 44, 0.5) 0%,
@@ -187,14 +187,14 @@ body.quarto-light {
 }
 
 .splash h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 3.5rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: $off-white;
   margin-top: 0;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -214,7 +214,7 @@ body.quarto-light {
   margin-bottom: 0.5rem;
   line-height: 1.7;
   max-width: 900px;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 // =====================
@@ -230,32 +230,44 @@ body.quarto-light {
 // Project Separator & Cards
 // =====================
 .project-separator {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .project-separator > h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
   font-size: 1.3em;
   color: $dark-brown;
   border-bottom: none;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .project {
   background: $warm-white;
   border: 1px solid $card-border;
-  border-radius: 8px;
   padding: 1.2rem 1.4rem;
-  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
 
 .project .project-title {
   font-weight: bold;
   font-size: 1.1em;
-  display: grid;
-  grid-template-columns: max-content auto;
+  display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   color: $dark-brown;
 }
 
@@ -269,11 +281,9 @@ body.quarto-light {
 }
 
 .project .project-links {
-  margin-top: 0.3em;
   padding-left: 0.4em;
-  display: grid;
-  grid-template-columns: max-content max-content;
-  column-gap: 0.2em;
+  display: flex;
+  gap: 0.2em;
 }
 
 .project .project-links a {
@@ -295,8 +305,23 @@ body.quarto-light {
 }
 
 .project .project-desc {
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: $grey-brown;
+  margin-top: 0.5em;
+  flex: 1;
+}
+
+.project.project-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .project-title {
+    font-weight: 500;
+    font-size: 1em;
+    color: $muted-cream;
+    font-style: italic;
+  }
 }
 
 // =====================
@@ -364,14 +389,14 @@ body.quarto-light {
 }
 
 #title-block-header {
-  margin-bottom: 0 !important;
+  margin-bottom: 1.5rem !important;
   border-bottom: 3px solid $warm-peach;
   padding-bottom: 0.8rem;
 }
 
 #title-block-header.quarto-title-block.default .quarto-title .title {
   margin-bottom: 0.5rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: $dark-brown;
@@ -407,7 +432,7 @@ body.quarto-light {
 }
 
 .quarto-about-jolla h1 {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   color: $dark-brown;
 }
@@ -464,22 +489,32 @@ body.quarto-light {
 // =====================
 // Mobile Responsive
 // =====================
+@media (max-width: 992px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .splash h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .splash-secondary {
-    font-size: 1.1em;
+    font-size: 0.95em;
   }
 
   .splash-inner img.hero-img {
-    height: 260px;
+    height: 140px;
   }
 
   .project-separator {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 
   .project, .team-member {

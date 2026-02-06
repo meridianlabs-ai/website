@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-839b3f96a757ad14216f97176de32ee5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-50536912e188628d642f4595e10d74fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -200,12 +200,12 @@ Open source tools for frontier AI research and evaluation.
 <section id="projects" class="level2 project-separator">
 <h2 data-anchor-id="projects">Projects</h2>
 <div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
-<div>
+<div class="project-grid">
 
   <div class="project">
     <div class="project-title">
         <a href="https://inspect.aisi.org.uk" title="Documentation">Inspect AI</a>
-        <div class="project-links"> 
+        <div class="project-links">
         
             <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" title="Source Code">
             <i class="bi bi-github"></i>
@@ -224,47 +224,8 @@ Open source tools for frontier AI research and evaluation.
 
   <div class="project">
     <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_swe/" title="Documentation">Inspect SWE</a>
-        <div class="project-links"> 
-        
-            <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" title="Source Code">
-            <i class="bi bi-github"></i>
-            </a>
-        
-            <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" title="Package">
-            <i class="bi bi-boxes"></i>
-            </a>
-        
-    </div>
-
-    </div>
-    <div class="project-desc">The inspect_swe package makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents. This allows researchers to easily evaluate the performance of these agents on a wide variety of tasks using the Inspect AI framework.</div>
-  </div>
-
-  <div class="project">
-    <div class="project-title">
-        <a href="https://inspect.aisi.org.uk/vscode.html" title="Documentation">Inspect VSCode</a>
-        <div class="project-links"> 
-        
-            <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" title="Source Code">
-            <i class="bi bi-github"></i>
-            </a>
-        
-            <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" title="Marketplace">
-            <i class="bi bi-boxes"></i>
-            </a>
-        
-    </div>
-
-    </div>
-    <div class="project-desc">The Inspect AI Visual Studio Code extension makes it simple and productive to use Inspect AI directly in the VSCode IDE. Includes features like an integrated log viewer, task browser, panels for configuring .env files and CLI options, as well as command for running and debugging tasks.
-</div>
-  </div>
-
-  <div class="project">
-    <div class="project-title">
         <a href="https://meridianlabs-ai.github.io/inspect_scout/" title="Documentation">Inspect Scout</a>
-        <div class="project-links"> 
+        <div class="project-links">
         
             <a href="https://github.com/meridianlabs-ai/inspect_scout" target="_blank" rel="noopener noreferrer" title="Source Code">
             <i class="bi bi-github"></i>
@@ -283,8 +244,47 @@ Open source tools for frontier AI research and evaluation.
 
   <div class="project">
     <div class="project-title">
+        <a href="https://inspect.aisi.org.uk/vscode.html" title="Documentation">Inspect VSCode</a>
+        <div class="project-links">
+        
+            <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" title="Source Code">
+            <i class="bi bi-github"></i>
+            </a>
+        
+            <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" title="Marketplace">
+            <i class="bi bi-boxes"></i>
+            </a>
+        
+    </div>
+
+    </div>
+    <div class="project-desc">The Inspect AI Visual Studio Code extension makes it simple and productive to use Inspect AI directly in the VSCode IDE. Includes features like an integrated log viewer, task browser, panels for configuring .env files and CLI options, as well as command for running and debugging tasks.
+</div>
+  </div>
+
+  <div class="project">
+    <div class="project-title">
+        <a href="https://meridianlabs-ai.github.io/inspect_swe/" title="Documentation">Inspect SWE</a>
+        <div class="project-links">
+        
+            <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" title="Source Code">
+            <i class="bi bi-github"></i>
+            </a>
+        
+            <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" title="Package">
+            <i class="bi bi-boxes"></i>
+            </a>
+        
+    </div>
+
+    </div>
+    <div class="project-desc">The inspect_swe package makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents. This allows researchers to easily evaluate the performance of these agents on a wide variety of tasks using the Inspect AI framework.</div>
+  </div>
+
+  <div class="project">
+    <div class="project-title">
         <a href="https://meridianlabs-ai.github.io/inspect_viz/" title="Documentation">Inspect Viz</a>
-        <div class="project-links"> 
+        <div class="project-links">
         
             <a href="https://github.com/meridianlabs-ai/inspect_viz" target="_blank" rel="noopener noreferrer" title="Source Code">
             <i class="bi bi-github"></i>
@@ -297,9 +297,12 @@ Open source tools for frontier AI research and evaluation.
     </div>
 
     </div>
-    <div class="project-desc">Inspect Viz is a a data visualisation library for Inspect AI. Inspect Viz provides flexible tools for creating high quality interactive visualisations from Inspect evaluations. Inspect Viz includes a support for a variety of built in visualizations for helping understand evaluation results as well as components to make it easy to create custom visualizations from Inspect Data.</div>
+    <div class="project-desc">Inspect Viz is a data visualisation library for Inspect AI. Inspect Viz provides flexible tools for creating high quality interactive visualisations from Inspect evaluations. Inspect Viz includes support for a variety of built in visualizations for helping understand evaluation results as well as components to make it easy to create custom visualizations from Inspect Data.</div>
   </div>
 
+  <div class="project project-coming-soon">
+    <div class="project-title">More coming soon...</div>
+  </div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
