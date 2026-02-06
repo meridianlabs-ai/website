@@ -4,30 +4,28 @@ project:
 
 website:
   navbar:
-    background: "#E6F1FD"
-    title: "<img src='/images/meridian-logo-black.svg' width='120'>"
+    background: "#2D3748"
+    title: "<img src='/images/meridian-logo-white.svg' width='140'>"
     left:
       - mission.qmd
       - team.qmd
       - careers.qmd
       - href: contact.qmd
         text: Contact
-  page-footer: 
-    left: ""
-    center: "Meridian Labs is a 501(c)(3) non-profit<br/>© 2025 Meridian Labs"
-    right: ""
-  bread-crumbs: true
+  page-footer:
+    left: "Meridian Labs is a 501(c)(3) non-profit"
+    center: ""
+    right: "© 2025 Meridian Labs"
+    background: "#1A202C"
+    foreground: "#D4CFC5"
+  bread-crumbs: false
 
 format:
   html:
     theme:
-      light: spacelab
-    css: 
-      - styles.css
+      light: custom.scss
+    css:
       - fonts/fonts.css
     toc: true
     grid:
-      sidebar-width: 350px    
-
-
-
+      sidebar-width: 350px
