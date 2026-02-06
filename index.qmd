@@ -12,7 +12,7 @@ page-layout: custom
 :::{.splash}
 :::{.splash-inner}
 
-<img class="hero-img" src="/images/hero.png" alt="Retro-futuristic cityscape illustration">
+<img class="hero-img" src="/images/hero.png" alt="Abstract neural network with gold lines flowing from chaos to structured grid on dark navy background">
 <div class="hero-overlay">
 <h1>Meridian Labs</h1>
 <p class="splash-secondary">Open source tools for frontier AI research and evaluation.</p>
