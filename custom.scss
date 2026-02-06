@@ -1,7 +1,7 @@
 /*-- scss:defaults --*/
 
 // Color palette — derived from dark navy + gold neural network hero
-$midnight: #101326;
+$midnight: #111133;
 $deep-navy: #232347;
 $navy: #2A2A52;
 $gold: #C9A84C;
@@ -166,6 +166,7 @@ body.quarto-light {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.15) 70%, transparent 100%);
 }
 
 .splash h1 {
@@ -177,16 +178,16 @@ body.quarto-light {
   color: $light-gold;
   margin-top: 0;
   margin-bottom: 0.4rem;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.6);
 }
 
 .splash-secondary {
   font-size: 1.25em;
   line-height: 1.4;
-  color: rgba($light-gold, 0.8);
+  color: rgba($light-gold, 0.85);
   font-weight: 400;
   font-style: italic;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 24px rgba(0, 0, 0, 0.6);
 }
 
 .splash-tertiary {
