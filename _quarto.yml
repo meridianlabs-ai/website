@@ -4,7 +4,7 @@ project:
 
 website:
   navbar:
-    background: "#111133"
+    background: "#121a2d"
     title: "<img src='/images/meridian-logo-white.svg' width='140'>"
     left:
       - mission.qmd
@@ -16,7 +16,7 @@ website:
     left: "Meridian Labs is a 501(c)(3) non-profit"
     center: ""
     right: "© 2025 Meridian Labs"
-    background: "#111133"
+    background: "#121a2d"
     foreground: "#8B8BA3"
   bread-crumbs: false
 
