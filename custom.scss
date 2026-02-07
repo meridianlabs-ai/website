@@ -153,6 +153,10 @@ body.quarto-light {
   font-size: 28px !important;
 }
 
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+  color: $cream-bg;
+}
+
 // Sticky footer: dark background fills below short pages
 body {
   display: flex;
