@@ -12,6 +12,9 @@ website:
       - careers.qmd
       - href: contact.qmd
         text: Contact
+      - icon: github
+        href: https://github.com/meridianlabs-ai
+        aria-label: GitHub
   page-footer:
     left: "Meridian Labs is a 501(c)(3) non-profit"
     center: ""
