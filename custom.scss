@@ -1,0 +1,534 @@
+/*-- scss:defaults --*/
+
+// Color palette — derived from watercolor sci-fi cityscape hero
+$dark-navy: #2D3748;
+$darkest-navy: #1A202C;
+$steel-blue: #4A5568;
+$warm-peach: #D4956A;
+$cream-bg: #F5F0E8;
+$warm-white: #FAF7F2;
+$card-border: #EDE8DD;
+$off-white: #F0E6D3;
+$muted-cream: #D4CFC5;
+$dark-brown: #3D2B2B;
+$grey-brown: #5C4A4A;
+$periwinkle: #7B8FB2;
+$lavender: #8B9DC3;
+
+// Bootstrap overrides
+$body-bg: $cream-bg;
+$body-color: $grey-brown;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.7;
+$headings-color: $dark-brown;
+$link-color: $periwinkle;
+$link-hover-color: $warm-peach;
+$border-radius: 8px;
+$card-bg: $warm-white;
+$card-border-color: $card-border;
+
+/*-- scss:rules --*/
+
+// =====================
+// Global
+// =====================
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $grey-brown;
+  background-color: $darkest-navy !important;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $dark-brown;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+// =====================
+// Navbar
+// =====================
+.navbar {
+  background-color: $dark-navy !important;
+  border-bottom: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  margin-bottom: 0;
+
+  > .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+.navbar .navbar-brand img {
+  width: 140px;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: $off-white !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  color: $warm-peach !important;
+  border-bottom-color: $warm-peach;
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-item .nav-link.active {
+  color: $warm-peach !important;
+  border-bottom-color: $warm-peach;
+}
+
+.navbar .navbar-nav {
+  margin-left: auto;
+}
+
+.navbar .navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F0E6D3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar .aa-DetachedSearchButton {
+  color: $off-white;
+  border: none;
+  background: none;
+
+  &:hover, &:focus {
+    color: $warm-peach;
+  }
+}
+
+// =====================
+// Hero
+// =====================
+
+// Prevent horizontal scrollbar from full-bleed sections
+body.quarto-light {
+  overflow-x: hidden;
+}
+
+.hero {
+  background-color: $dark-navy;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: -1px;
+  padding: 1rem 10rem 3.5rem !important;
+}
+
+.hero h2 {
+  font-size: 28px !important;
+}
+
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+  color: $cream-bg;
+}
+
+// Sticky footer: dark background fills below short pages
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav-footer {
+  margin-top: auto !important;
+}
+
+.quarto-container {
+  background-color: $cream-bg;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: $off-white;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  // Peach accent rule
+  h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: $warm-peach;
+    margin: 1.2rem auto 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: $muted-cream;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 700px;
+    opacity: 0.85;
+  }
+
+  h2 {
+    color: $off-white;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding-bottom: 0.8rem;
+    border-bottom: none;
+    letter-spacing: 0.12em;
+  }
+}
+
+// =====================
+// Home Content
+// =====================
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// =====================
+// Project Separator & Cards
+// =====================
+.project-separator {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%) !important;
+}
+
+// Remove bottom gap between home content and footer
+.home-content {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.quarto-listing-container-custom {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.quarto-container.page-layout-custom {
+  min-height: 0 !important;
+}
+
+#quarto-content.page-layout-custom > *:not(.hero) {
+  padding-top: 0 !important;
+}
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project {
+  background: $warm-white;
+  border: 1px solid $card-border;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.project .project-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  color: $dark-brown;
+}
+
+.project .project-title > a {
+  text-decoration: none;
+  color: $dark-brown;
+}
+
+.project .project-title > a:hover {
+  color: $warm-peach;
+}
+
+.project .project-links {
+  padding-left: 0.4em;
+  display: flex;
+  gap: 0.2em;
+}
+
+.project .project-links a {
+  padding-left: 0;
+  text-decoration: none;
+}
+
+.project .project-links .bi {
+  margin-right: 0.1em;
+  color: $grey-brown;
+  font-size: 0.8em;
+  opacity: 0.6;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.project .project-links .bi:hover {
+  opacity: 1;
+  color: $warm-peach;
+}
+
+.project .project-desc {
+  font-size: 0.85em;
+  color: $grey-brown;
+  margin-top: 0.5em;
+  flex: 1;
+}
+
+.project.project-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .project-title {
+    font-weight: 500;
+    font-size: 1em;
+    color: $muted-cream;
+    font-style: italic;
+  }
+}
+
+// =====================
+// Team Cards
+// =====================
+.team-member {
+  background: $warm-white;
+  border: 1px solid $card-border;
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.2em;
+}
+
+.team-member .team-title {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.3em;
+  align-items: baseline;
+}
+
+.team-member .team-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: $dark-brown;
+}
+
+.team-member .team-role {
+  color: $periwinkle;
+  font-size: 0.85em;
+  grid-column: -1 / 1;
+}
+
+.team-member .team-links {
+  margin-left: 0.2em;
+  display: flex;
+  gap: 0.3em;
+  justify-self: end;
+}
+
+.team-member .team-links .bi {
+  color: $grey-brown;
+  opacity: 0.6;
+  font-size: 0.9em;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.team-member .team-links .bi:hover {
+  opacity: 1;
+  color: $warm-peach;
+}
+
+.team-member .team-bio {
+  color: $grey-brown;
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+// =====================
+// Content Pages (Mission, Careers, etc.)
+// =====================
+#quarto-content.page-layout-article,
+#quarto-content.page-layout-full {
+  padding-top: 1.5rem;
+}
+
+#title-block-header {
+  margin-bottom: 1.5rem !important;
+  border-bottom: 3px solid $warm-peach;
+  padding-bottom: 0.8rem;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title .title {
+  margin-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $dark-brown;
+}
+
+#quarto-document-content {
+  margin-top: 0 !important;
+}
+
+// Body text links on content pages
+.quarto-body-content a,
+#quarto-document-content a {
+  color: $periwinkle;
+  transition: color 0.2s ease;
+}
+
+.quarto-body-content a:hover,
+#quarto-document-content a:hover {
+  color: $warm-peach;
+}
+
+// =====================
+// Contact Page (Jolla)
+// =====================
+.quarto-about-jolla {
+  background: $warm-white;
+  border: 1px solid $card-border;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.quarto-about-jolla h1 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  color: $dark-brown;
+}
+
+.quarto-about-jolla .about-link {
+  color: $periwinkle;
+}
+
+.quarto-about-jolla .about-link:hover {
+  color: $warm-peach;
+}
+
+// =====================
+// Footer
+// =====================
+.nav-footer {
+  background-color: $darkest-navy !important;
+  color: $muted-cream;
+  border-top: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0 !important;
+}
+
+.nav-footer a {
+  color: $lavender;
+  transition: color 0.2s ease;
+}
+
+.nav-footer a:hover {
+  color: $warm-peach;
+}
+
+.nav-footer .nav-footer-center {
+  color: $muted-cream;
+}
+
+// =====================
+// Quarto sidebar / TOC overrides
+// =====================
+.sidebar nav[role="doc-toc"] a {
+  color: $grey-brown;
+}
+
+.sidebar nav[role="doc-toc"] a:hover,
+.sidebar nav[role="doc-toc"] a.active {
+  color: $warm-peach;
+}
+
+// =====================
+// Breadcrumbs (hidden)
+// =====================
+.quarto-page-breadcrumbs {
+  display: none !important;
+}
+
+// =====================
+// Mobile Responsive
+// =====================
+@media (max-width: 992px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-inner h1 {
+    font-size: 1.15rem;
+  }
+
+  .project-separator {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project, .team-member {
+    padding: 1rem;
+  }
+}
