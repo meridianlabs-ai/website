@@ -4,7 +4,7 @@ project:
 
 website:
   navbar:
-    background: "#2D3748"
+    background: "#1E293B"
     title: "<img src='/images/meridian-logo-white.svg' width='140'>"
     right:
       - mission.qmd
@@ -16,8 +16,8 @@ website:
     left: "Meridian Labs is a 501(c)(3) non-profit"
     center: ""
     right: "© 2025 Meridian Labs"
-    background: "#1A202C"
-    foreground: "#D4CFC5"
+    background: "#1E293B"
+    foreground: "#94A3B8"
   bread-crumbs: false
 
 format:
@@ -26,6 +26,10 @@ format:
       light: custom.scss
     css:
       - fonts/fonts.css
+    include-in-header:
+      - text: |
+          <link rel="preload" href="/fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin>
+          <link rel="preload" href="/fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin>
     toc: true
     grid:
       sidebar-width: 350px

@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2a64772de7540538381f39bf0709ed1d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8c452f05e2d866e1ca0af2799f6a4290.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,9 +78,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-href','listing-secondary-links',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-tagline','listing-icon','listing-featured','listing-href','listing-secondary-links',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-description","listing-href","listing-secondary-links"],
+      searchColumns: ["listing-title","listing-tagline","listing-icon","listing-featured","listing-href","listing-secondary-links"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -97,6 +97,8 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<link rel="preload" href="./fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="./fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -181,8 +183,8 @@ window.Quarto = {
 
 
 <div class="hero">
-<section id="open-source-tools-for-frontier-ai-research-and-evaluation" class="level2 hero-inner">
-<h2 data-anchor-id="open-source-tools-for-frontier-ai-research-and-evaluation">Open Source Tools for Frontier AI Research and Evaluation</h2>
+<section id="open-source-tools-for-frontier-ai-research-and-evaluation" class="level1 hero-inner">
+<h1>Open Source Tools for Frontier AI Research and Evaluation</h1>
 <p>Meridian Labs is a 501(c)(3) non-profit building open source tools which help organizations make empirically grounded assessments of the capabilities, opportunities, and risks of frontier models.</p>
 </section>
 </div>
@@ -191,121 +193,171 @@ window.Quarto = {
 <div class="project-grid">
 
   <div class="project">
-    <div class="project-title">
-        <a href="https://inspect.aisi.org.uk" title="Documentation">Inspect AI</a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-cpu"></i>
+      </div>
+      <div class="project-name">
+        <a href="https://inspect.aisi.org.uk">Inspect AI</a>
+      </div>
+    </div>
+    <div class="project-tagline">Open-source framework for systematic evaluation of large language models, built by the UK AI Safety Institute with Meridian Labs as contributors.</div>
+    <div class="project-footer">
+      <a href="https://inspect.aisi.org.uk" class="project-learn-more">Learn more →</a>
+      <div class="project-badges">
         
-            <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" title="Source Code">
+          <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
             <i class="bi bi-github"></i>
-            </a>
+            GitHub
+          </a>
         
-            <a href="https://pypi.org/project/inspect-ai/" target="_blank" rel="noopener noreferrer" title="Package">
+          <a href="https://pypi.org/project/inspect-ai/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
             <i class="bi bi-boxes"></i>
-            </a>
+            PyPI
+          </a>
         
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc">Inspect AI is an open-source framework developed by the UK AI Safety Institute (AISI) with Meridian Labs as contributors. This framework enables systematic evaluation of large language models (LLMs), providing researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors.
-</div>
   </div>
 
   <div class="project">
-    <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_scout/" title="Documentation">Inspect Scout</a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-search"></i>
+      </div>
+      <div class="project-name">
+        <a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout</a>
+      </div>
+    </div>
+    <div class="project-tagline">In-depth analysis of AI agent transcripts with high-performance parallel scanning and rich visualization of results.</div>
+    <div class="project-footer">
+      <a href="https://meridianlabs-ai.github.io/inspect_scout/" class="project-learn-more">Learn more →</a>
+      <div class="project-badges">
         
-            <a href="https://github.com/meridianlabs-ai/inspect_scout" target="_blank" rel="noopener noreferrer" title="Source Code">
+          <a href="https://github.com/meridianlabs-ai/inspect_scout" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
             <i class="bi bi-github"></i>
-            </a>
+            GitHub
+          </a>
         
-            <a href="https://pypi.org/project/inspect-scout/" target="_blank" rel="noopener noreferrer" title="Package">
+          <a href="https://pypi.org/project/inspect-scout/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
             <i class="bi bi-boxes"></i>
-            </a>
+            PyPI
+          </a>
         
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc">Inspect Scout is a tool for in-depth analysis of AI agent transcripts. Scout can scan full transcripts of agent interactions, individual messages or events using high performance parallel processing. Use Scout View to see rich visualization of scan results.
-</div>
   </div>
 
   <div class="project">
-    <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_flow/" title="Documentation">Inspect Flow</a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-diagram-3"></i>
+      </div>
+      <div class="project-name">
+        <a href="https://meridianlabs-ai.github.io/inspect_flow/">Inspect Flow</a>
+      </div>
+    </div>
+    <div class="project-tagline">Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.</div>
+    <div class="project-footer">
+      <a href="https://meridianlabs-ai.github.io/inspect_flow/" class="project-learn-more">Learn more →</a>
+      <div class="project-badges">
         
-            <a href="https://github.com/meridianlabs-ai/inspect_flow" target="_blank" rel="noopener noreferrer" title="Source Code">
+          <a href="https://github.com/meridianlabs-ai/inspect_flow" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
             <i class="bi bi-github"></i>
-            </a>
+            GitHub
+          </a>
         
-            <a href="https://pypi.org/project/inspect-flow/" target="_blank" rel="noopener noreferrer" title="Package">
+          <a href="https://pypi.org/project/inspect-flow/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
             <i class="bi bi-boxes"></i>
-            </a>
+            PyPI
+          </a>
         
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc">As evaluation workflows grow in complexity running multiple tasks across different models with varying parameters and managing these experiments becomes challenging. Inspect Flow is a workflow orchestration tool for Inspect AI that enables you to run evaluations at scale with repeatability and maintainability.
-</div>
   </div>
 
   <div class="project">
-    <div class="project-title">
-        <a href="https://inspect.aisi.org.uk/vscode.html" title="Documentation">Inspect VSCode</a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-code-square"></i>
+      </div>
+      <div class="project-name">
+        <a href="https://inspect.aisi.org.uk/vscode.html">Inspect VSCode</a>
+      </div>
+    </div>
+    <div class="project-tagline">Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.</div>
+    <div class="project-footer">
+      <a href="https://inspect.aisi.org.uk/vscode.html" class="project-learn-more">Learn more →</a>
+      <div class="project-badges">
         
-            <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" title="Source Code">
+          <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
             <i class="bi bi-github"></i>
-            </a>
+            GitHub
+          </a>
         
-            <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" title="Marketplace">
+          <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" class="project-badge" title="Marketplace">
             <i class="bi bi-boxes"></i>
-            </a>
+            Marketplace
+          </a>
         
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc">The Inspect AI Visual Studio Code extension makes it simple and productive to use Inspect AI directly in the VSCode IDE. Includes features like an integrated log viewer, task browser, panels for configuring .env files and CLI options, as well as command for running and debugging tasks.
-</div>
   </div>
 
   <div class="project">
-    <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_swe/" title="Documentation">Inspect SWE</a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-terminal"></i>
+      </div>
+      <div class="project-name">
+        <a href="https://meridianlabs-ai.github.io/inspect_swe/">Inspect SWE</a>
+      </div>
+    </div>
+    <div class="project-tagline">Makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents for evaluation.</div>
+    <div class="project-footer">
+      <a href="https://meridianlabs-ai.github.io/inspect_swe/" class="project-learn-more">Learn more →</a>
+      <div class="project-badges">
         
-            <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" title="Source Code">
+          <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
             <i class="bi bi-github"></i>
-            </a>
+            GitHub
+          </a>
         
-            <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" title="Package">
+          <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
             <i class="bi bi-boxes"></i>
-            </a>
+            PyPI
+          </a>
         
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc">The inspect_swe package makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents. This allows researchers to easily evaluate the performance of these agents on a wide variety of tasks using the Inspect AI framework.</div>
   </div>
 
   <div class="project">
-    <div class="project-title">
-        <a href="https://meridianlabs-ai.github.io/inspect_viz/" title="Documentation">Inspect Viz</a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-bar-chart-line"></i>
+      </div>
+      <div class="project-name">
+        <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz</a>
+      </div>
+    </div>
+    <div class="project-tagline">Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results.</div>
+    <div class="project-footer">
+      <a href="https://meridianlabs-ai.github.io/inspect_viz/" class="project-learn-more">Learn more →</a>
+      <div class="project-badges">
         
-            <a href="https://github.com/meridianlabs-ai/inspect_viz" target="_blank" rel="noopener noreferrer" title="Source Code">
+          <a href="https://github.com/meridianlabs-ai/inspect_viz" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
             <i class="bi bi-github"></i>
-            </a>
+            GitHub
+          </a>
         
-            <a href="https://pypi.org/project/inspect-viz/" target="_blank" rel="noopener noreferrer" title="Package">
+          <a href="https://pypi.org/project/inspect-viz/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
             <i class="bi bi-boxes"></i>
-            </a>
+            PyPI
+          </a>
         
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc">Inspect Viz is a data visualisation library for Inspect AI. Inspect Viz provides flexible tools for creating high quality interactive visualisations from Inspect evaluations. Inspect Viz includes support for a variety of built in visualizations for helping understand evaluation results as well as components to make it easy to create custom visualizations from Inspect Data.</div>
   </div>
 
 </div>

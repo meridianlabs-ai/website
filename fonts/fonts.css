@@ -2,14 +2,14 @@
   font-family: 'Orbitron';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
   src: url('orbitron-600.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Orbitron';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url('orbitron-700.ttf') format('truetype');
 }
 @font-face {
@@ -17,7 +17,7 @@
   font-style: normal;
   font-weight: 300;
   font-stretch: normal;
-  font-display: swap;
+  font-display: optional;
   src: url('roboto-300.ttf') format('truetype');
 }
 @font-face {
@@ -25,7 +25,7 @@
   font-style: normal;
   font-weight: 400;
   font-stretch: normal;
-  font-display: swap;
+  font-display: optional;
   src: url('roboto-400.ttf') format('truetype');
 }
 @font-face {
@@ -33,7 +33,7 @@
   font-style: normal;
   font-weight: 500;
   font-stretch: normal;
-  font-display: swap;
+  font-display: optional;
   src: url('roboto-500.ttf') format('truetype');
 }
 @font-face {
@@ -41,6 +41,6 @@
   font-style: normal;
   font-weight: 700;
   font-stretch: normal;
-  font-display: swap;
+  font-display: optional;
   src: url('roboto-700.ttf') format('truetype');
 }

@@ -2,18 +2,26 @@
 <div class="project-grid">
 <% for (const item of items) { %>
   <div class="project">
-    <div class="project-title">
-        <a href="<%= item.href %>" title="Documentation"><%= item.title %></a>
-        <div class="project-links">
+    <div class="project-header">
+      <div class="project-icon">
+        <i class="bi bi-<%= item.icon %>"></i>
+      </div>
+      <div class="project-name">
+        <a href="<%= item.href %>"><%= item.title %></a>
+      </div>
+    </div>
+    <div class="project-tagline"><%= item.tagline %></div>
+    <div class="project-footer">
+      <a href="<%= item.href %>" class="project-learn-more">Learn more &rarr;</a>
+      <div class="project-badges">
         <% for (const link of item["secondary-links"]) { %>
-            <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" title="<%= link.text %>">
+          <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" class="project-badge" title="<%= link.text %>">
             <i class="bi bi-<%= link.icon %>"></i>
-            </a>
+            <%= link.text %>
+          </a>
         <% } %>
+      </div>
     </div>
-
-    </div>
-    <div class="project-desc"><%= item.description %></div>
   </div>
 <% } %>
 </div>

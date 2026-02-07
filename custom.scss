@@ -1,32 +1,31 @@
 /*-- scss:defaults --*/
 
-// Color palette — derived from watercolor sci-fi cityscape hero
-$dark-navy: #2D3748;
-$darkest-navy: #1A202C;
-$steel-blue: #4A5568;
-$warm-peach: #D4956A;
-$cream-bg: #F5F0E8;
-$warm-white: #FAF7F2;
-$card-border: #EDE8DD;
-$off-white: #F0E6D3;
-$muted-cream: #D4CFC5;
-$dark-brown: #3D2B2B;
-$grey-brown: #5C4A4A;
-$periwinkle: #7B8FB2;
-$lavender: #8B9DC3;
+// Color palette — cool slate/cyan tech-forward palette
+$deep-slate: #0F172A;
+$primary-dark: #1E293B;
+$dark-hover: #334155;
+$accent-cyan: #0EA5E9;
+$accent-blue: #3B82F6;
+$accent-amber: #F59E0B;
+$cool-gray-50: #F8FAFC;
+$cool-gray-100: #F1F5F9;
+$border-gray: #E2E8F0;
+$heading-slate: #0F172A;
+$body-gray: #475569;
+$light-text: #94A3B8;
 
 // Bootstrap overrides
-$body-bg: $cream-bg;
-$body-color: $grey-brown;
+$body-bg: $cool-gray-50;
+$body-color: $body-gray;
 $font-family-sans-serif: 'Roboto', sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.7;
-$headings-color: $dark-brown;
-$link-color: $periwinkle;
-$link-hover-color: $warm-peach;
+$headings-color: $heading-slate;
+$link-color: $accent-blue;
+$link-hover-color: $accent-cyan;
 $border-radius: 8px;
-$card-bg: $warm-white;
-$card-border-color: $card-border;
+$card-bg: $cool-gray-100;
+$card-border-color: $border-gray;
 
 /*-- scss:rules --*/
 
@@ -35,8 +34,8 @@ $card-border-color: $card-border;
 // =====================
 body {
   font-family: 'Roboto', sans-serif;
-  color: $grey-brown;
-  background-color: $darkest-navy !important;
+  color: $body-gray;
+  background-color: $primary-dark !important;
 }
 
 a {
@@ -46,9 +45,8 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: $dark-brown;
+  letter-spacing: 0.02em;
+  color: $heading-slate;
 }
 
 h1 {
@@ -63,9 +61,9 @@ h2, h3, h4, h5, h6 {
 // Navbar
 // =====================
 .navbar {
-  background-color: $dark-navy !important;
+  background-color: $primary-dark !important;
   border-bottom: none;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
   padding-top: 0.6em;
   padding-bottom: 0.6em;
   margin-bottom: 0;
@@ -82,7 +80,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .navbar-nav .nav-link {
-  color: $off-white !important;
+  color: #E2E8F0 !important;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -95,14 +93,14 @@ h2, h3, h4, h5, h6 {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-  color: $warm-peach !important;
-  border-bottom-color: $warm-peach;
+  color: $accent-cyan !important;
+  border-bottom-color: $accent-cyan;
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-item .nav-link.active {
-  color: $warm-peach !important;
-  border-bottom-color: $warm-peach;
+  color: $accent-cyan !important;
+  border-bottom-color: $accent-cyan;
 }
 
 .navbar .navbar-nav {
@@ -115,7 +113,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F0E6D3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23E2E8F0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar .navbar-toggler:focus {
@@ -123,12 +121,12 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .aa-DetachedSearchButton {
-  color: $off-white;
+  color: #E2E8F0;
   border: none;
   background: none;
 
   &:hover, &:focus {
-    color: $warm-peach;
+    color: $accent-cyan;
   }
 }
 
@@ -142,19 +140,35 @@ body.quarto-light {
 }
 
 .hero {
-  background-color: $dark-navy;
+  background-color: $primary-dark;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: -1px;
   padding: 1rem 10rem 3.5rem !important;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero h2 {
-  font-size: 28px !important;
+// Large faint starburst watermark
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: url('/images/meridian-icon-white.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.03;
+  pointer-events: none;
 }
 
 .navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
-  color: $cream-bg;
+  color: $cool-gray-50;
 }
 
 // Sticky footer: dark background fills below short pages
@@ -168,8 +182,21 @@ body {
   margin-top: auto !important;
 }
 
+// Container expands to push footer down
 .quarto-container {
-  background-color: $cream-bg;
+  flex: 1;
+  background-color: $cool-gray-50;
+}
+
+// Homepage: dark bg to match hero/cards/footer
+.quarto-container.page-layout-custom {
+  background-color: $primary-dark;
+}
+
+// Shimmer animation for accent line
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 .hero-inner {
@@ -177,41 +204,46 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: $off-white;
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    color: #F1F5F9;
     margin-top: 0;
     margin-bottom: 1.5rem;
-    line-height: 1.3;
+    line-height: 1.2;
   }
 
-  // Peach accent rule
+  // Gradient accent line with shimmer
   h1::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 2px;
-    background-color: $warm-peach;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, $accent-cyan, $accent-blue, $accent-cyan);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
     margin: 1.2rem auto 0;
+    border-radius: 2px;
   }
 
   p {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: $muted-cream;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #CBD5E1;
     line-height: 1.8;
     margin: 0 auto;
     max-width: 700px;
-    opacity: 0.85;
+    opacity: 0.9;
   }
 
   h2 {
-    color: $off-white;
+    color: #F1F5F9;
     font-size: 1.1em;
     font-weight: 500;
     margin-top: 2rem;
@@ -219,6 +251,7 @@ body {
     padding-bottom: 0.8rem;
     border-bottom: none;
     letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 }
 
@@ -264,76 +297,120 @@ body {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: $dark-hover;
 }
 
 .project {
-  background: $warm-white;
-  border: 1px solid $card-border;
-  padding: 1.2rem 1.4rem;
+  background-color: $primary-dark;
+  padding: 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   margin: 0;
+  transition: background-color 0.2s ease;
+  border-top: 2px solid $accent-cyan;
+
+  &:hover {
+    background-color: $dark-hover;
+  }
 }
 
-.project .project-title {
-  font-weight: bold;
-  font-size: 1.1em;
+.project .project-header {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  color: $dark-brown;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
-.project .project-title > a {
-  text-decoration: none;
-  color: $dark-brown;
-}
-
-.project .project-title > a:hover {
-  color: $warm-peach;
-}
-
-.project .project-links {
-  padding-left: 0.4em;
-  display: flex;
-  gap: 0.2em;
-}
-
-.project .project-links a {
-  padding-left: 0;
-  text-decoration: none;
-}
-
-.project .project-links .bi {
-  margin-right: 0.1em;
-  color: $grey-brown;
-  font-size: 0.8em;
-  opacity: 0.6;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.project .project-links .bi:hover {
-  opacity: 1;
-  color: $warm-peach;
-}
-
-.project .project-desc {
-  font-size: 0.85em;
-  color: $grey-brown;
-  margin-top: 0.5em;
-  flex: 1;
-}
-
-.project.project-coming-soon {
+.project .project-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba($accent-cyan, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
-  .project-title {
-    font-weight: 500;
-    font-size: 1em;
-    color: $muted-cream;
-    font-style: italic;
+  .bi {
+    font-size: 1.1rem;
+    color: $accent-cyan;
+  }
+}
+
+.project .project-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+
+  a {
+    text-decoration: none;
+    color: #F1F5F9;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-cyan;
+    }
+  }
+}
+
+.project .project-tagline {
+  font-size: 0.88rem;
+  color: #CBD5E1;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 0.8rem;
+}
+
+.project .project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.project .project-learn-more {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: $accent-cyan;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+
+.project .project-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.project .project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #CBD5E1;
+  border: 1px solid $dark-hover;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+
+  .bi {
+    font-size: 0.72rem;
+  }
+
+  &:hover {
+    background-color: $dark-hover;
+    border-color: $light-text;
+    color: #F1F5F9;
   }
 }
 
@@ -341,8 +418,8 @@ body {
 // Team Cards
 // =====================
 .team-member {
-  background: $warm-white;
-  border: 1px solid $card-border;
+  background: $cool-gray-100;
+  border: 1px solid $border-gray;
   border-radius: 8px;
   padding: 1.2rem 1.4rem;
   margin-bottom: 1.2em;
@@ -357,13 +434,13 @@ body {
 }
 
 .team-member .team-name {
-  font-weight: bold;
-  font-size: 1.2em;
-  color: $dark-brown;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: $heading-slate;
 }
 
 .team-member .team-role {
-  color: $periwinkle;
+  color: $light-text;
   font-size: 0.85em;
   grid-column: -1 / 1;
 }
@@ -376,7 +453,7 @@ body {
 }
 
 .team-member .team-links .bi {
-  color: $grey-brown;
+  color: $body-gray;
   opacity: 0.6;
   font-size: 0.9em;
   transition: color 0.2s ease, opacity 0.2s ease;
@@ -384,11 +461,11 @@ body {
 
 .team-member .team-links .bi:hover {
   opacity: 1;
-  color: $warm-peach;
+  color: $accent-cyan;
 }
 
 .team-member .team-bio {
-  color: $grey-brown;
+  color: $body-gray;
   font-size: 0.95em;
   line-height: 1.7;
 }
@@ -403,16 +480,15 @@ body {
 
 #title-block-header {
   margin-bottom: 1.5rem !important;
-  border-bottom: 3px solid $warm-peach;
+  border-bottom: 3px solid $accent-cyan;
   padding-bottom: 0.8rem;
 }
 
 #title-block-header.quarto-title-block.default .quarto-title .title {
   margin-bottom: 0.5rem;
   font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: $dark-brown;
+  letter-spacing: 0.02em;
+  color: $heading-slate;
 }
 
 #quarto-document-content {
@@ -422,21 +498,21 @@ body {
 // Body text links on content pages
 .quarto-body-content a,
 #quarto-document-content a {
-  color: $periwinkle;
+  color: $accent-blue;
   transition: color 0.2s ease;
 }
 
 .quarto-body-content a:hover,
 #quarto-document-content a:hover {
-  color: $warm-peach;
+  color: $accent-cyan;
 }
 
 // =====================
 // Contact Page (Jolla)
 // =====================
 .quarto-about-jolla {
-  background: $warm-white;
-  border: 1px solid $card-border;
+  background: $cool-gray-100;
+  border: 1px solid $border-gray;
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
@@ -446,24 +522,23 @@ body {
 
 .quarto-about-jolla h1 {
   font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  color: $dark-brown;
+  color: $heading-slate;
 }
 
 .quarto-about-jolla .about-link {
-  color: $periwinkle;
+  color: $accent-blue;
 }
 
 .quarto-about-jolla .about-link:hover {
-  color: $warm-peach;
+  color: $accent-cyan;
 }
 
 // =====================
 // Footer
 // =====================
 .nav-footer {
-  background-color: $darkest-navy !important;
-  color: $muted-cream;
+  background-color: $primary-dark !important;
+  color: $light-text;
   border-top: none;
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
@@ -474,28 +549,28 @@ body {
 }
 
 .nav-footer a {
-  color: $lavender;
+  color: $light-text;
   transition: color 0.2s ease;
 }
 
 .nav-footer a:hover {
-  color: $warm-peach;
+  color: $accent-cyan;
 }
 
 .nav-footer .nav-footer-center {
-  color: $muted-cream;
+  color: $light-text;
 }
 
 // =====================
 // Quarto sidebar / TOC overrides
 // =====================
 .sidebar nav[role="doc-toc"] a {
-  color: $grey-brown;
+  color: $body-gray;
 }
 
 .sidebar nav[role="doc-toc"] a:hover,
 .sidebar nav[role="doc-toc"] a.active {
-  color: $warm-peach;
+  color: $accent-cyan;
 }
 
 // =====================
@@ -516,7 +591,11 @@ body {
 
 @media (max-width: 768px) {
   .hero-inner h1 {
-    font-size: 1.15rem;
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding: 1rem 1.5rem 2.5rem !important;
   }
 
   .project-separator {
@@ -530,5 +609,15 @@ body {
 
   .project, .team-member {
     padding: 1rem;
+  }
+
+  .project .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project .project-badges {
+    justify-content: flex-start;
   }
 }
