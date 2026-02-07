@@ -22,6 +22,19 @@
       icon: boxes
       href: https://pypi.org/project/inspect-scout/
 
+- title: Inspect Flow
+  description: |
+    As evaluation workflows grow in complexity running multiple tasks across different models with varying parameters and managing these experiments becomes challenging. Inspect Flow is a workflow orchestration tool for Inspect AI that enables you to run evaluations at scale with repeatability and maintainability.
+  href: https://meridianlabs-ai.github.io/inspect_flow/
+  secondary-links:
+    - text: Source Code
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect_flow
+    - text: Package
+      icon: boxes
+      href: https://pypi.org/project/inspect-flow/
+
+
 - title: Inspect VSCode
   description: |
     The Inspect AI Visual Studio Code extension makes it simple and productive to use Inspect AI directly in the VSCode IDE. Includes features like an integrated log viewer, task browser, panels for configuring .env files and CLI options, as well as command for running and debugging tasks.

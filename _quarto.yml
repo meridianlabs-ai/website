@@ -6,7 +6,7 @@ website:
   navbar:
     background: "#2D3748"
     title: "<img src='/images/meridian-logo-white.svg' width='140'>"
-    left:
+    right:
       - mission.qmd
       - team.qmd
       - careers.qmd

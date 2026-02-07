@@ -35,8 +35,8 @@ $card-border-color: $card-border;
 // =====================
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: $cream-bg;
   color: $grey-brown;
+  background-color: $darkest-navy !important;
 }
 
 a {
@@ -56,7 +56,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 // =====================
@@ -69,6 +69,12 @@ h2, h3, h4, h5, h6 {
   padding-top: 0.6em;
   padding-bottom: 0.6em;
   margin-bottom: 0;
+
+  > .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 }
 
 .navbar .navbar-brand img {
@@ -99,6 +105,10 @@ h2, h3, h4, h5, h6 {
   border-bottom-color: $warm-peach;
 }
 
+.navbar .navbar-nav {
+  margin-left: auto;
+}
+
 .navbar .navbar-toggler {
   border: none;
   padding: 0.25rem 0.5rem;
@@ -112,109 +122,100 @@ h2, h3, h4, h5, h6 {
   box-shadow: none;
 }
 
+.navbar .aa-DetachedSearchButton {
+  color: $off-white;
+  border: none;
+  background: none;
+
+  &:hover, &:focus {
+    color: $warm-peach;
+  }
+}
+
 // =====================
-// Hero / Splash
+// Hero
 // =====================
 
-// Prevent horizontal scrollbar from full-bleed hero
+// Prevent horizontal scrollbar from full-bleed sections
 body.quarto-light {
   overflow-x: hidden;
 }
 
-.splash {
-  padding: 0 !important;
-  border-bottom: none;
-  margin-top: -1px;
+.hero {
+  background-color: $dark-navy;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: -1px;
+  padding: 1rem 10rem 3.5rem !important;
 }
 
-.splash-inner {
-  width: 100%;
-  position: relative;
-  text-align: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background: linear-gradient(to bottom, $dark-navy, transparent);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, transparent, $cream-bg);
-    z-index: 1;
-    pointer-events: none;
-  }
+.hero h2 {
+  font-size: 28px !important;
 }
 
-.splash-inner img.hero-img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-}
-
-.splash-inner .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 1rem 2rem 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 32, 44, 0.5) 0%,
-    rgba(26, 32, 44, 0.15) 60%,
-    transparent 100%
-  );
+// Sticky footer: dark background fills below short pages
+body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
 }
 
-.splash h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: $off-white;
-  margin-top: 0;
-  margin-bottom: 0.2rem;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
+.nav-footer {
+  margin-top: auto !important;
 }
 
-.splash-secondary {
-  font-size: 1.3em;
-  line-height: 1.4;
-  color: $off-white;
-  font-weight: 400;
-  font-style: italic;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+.quarto-container {
+  background-color: $cream-bg;
 }
 
-.splash-tertiary {
-  font-size: 1.05rem;
-  color: $grey-brown;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.7;
-  max-width: 900px;
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 1rem;
+  text-align: center;
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: $off-white;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+
+  // Peach accent rule
+  h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: $warm-peach;
+    margin: 1.2rem auto 0;
+  }
+
+  p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: $muted-cream;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 700px;
+    opacity: 0.85;
+  }
+
+  h2 {
+    color: $off-white;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding-bottom: 0.8rem;
+    border-bottom: none;
+    letter-spacing: 0.12em;
+  }
 }
 
 // =====================
@@ -230,23 +231,31 @@ body.quarto-light {
 // Project Separator & Cards
 // =====================
 .project-separator {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  margin-left: calc(-50vw + 50%) !important;
 }
 
-.project-separator > h2 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  font-size: 1.3em;
-  color: $dark-brown;
-  border-bottom: none;
+// Remove bottom gap between home content and footer
+.home-content {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
+
+.quarto-listing-container-custom {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.quarto-container.page-layout-custom {
+  min-height: 0 !important;
+}
+
+#quarto-content.page-layout-custom > *:not(.hero) {
+  padding-top: 0 !important;
+}
+
 
 .project-grid {
   display: grid;
@@ -452,6 +461,12 @@ body.quarto-light {
   background-color: $darkest-navy !important;
   color: $muted-cream;
   border-top: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0 !important;
 }
 
 .nav-footer a {
@@ -496,16 +511,8 @@ body.quarto-light {
 }
 
 @media (max-width: 768px) {
-  .splash h1 {
-    font-size: 1.5rem;
-  }
-
-  .splash-secondary {
-    font-size: 0.95em;
-  }
-
-  .splash-inner img.hero-img {
-    height: 140px;
+  .hero-inner h1 {
+    font-size: 1.15rem;
   }
 
   .project-separator {
