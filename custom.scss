@@ -23,7 +23,7 @@ $font-size-base: 1rem;
 $line-height-base: 1.7;
 $headings-color: $heading-slate;
 $link-color: $accent-blue;
-$link-hover-color: $accent-cyan;
+$link-hover-color: $accent-cyan-soft;
 $border-radius: 8px;
 $card-bg: $cool-gray-100;
 $card-border-color: $border-gray;
@@ -52,6 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-weight: 700;
+  text-wrap: nowrap;
 }
 
 h2, h3, h4, h5, h6 {
@@ -94,14 +95,14 @@ h2, h3, h4, h5, h6 {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-  color: $accent-cyan !important;
-  border-bottom-color: $accent-cyan;
+  color: $accent-cyan-soft !important;
+  border-bottom-color: $accent-cyan-soft;
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-item .nav-link.active {
-  color: $accent-cyan !important;
-  border-bottom-color: $accent-cyan;
+  color: $accent-cyan-soft !important;
+  border-bottom-color: $accent-cyan-soft;
 }
 
 .navbar .navbar-nav {
@@ -127,7 +128,7 @@ h2, h3, h4, h5, h6 {
   background: none;
 
   &:hover, &:focus {
-    color: $accent-cyan;
+    color: $accent-cyan-soft;
   }
 }
 
@@ -148,10 +149,14 @@ body.quarto-light {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: -1px;
-  padding: 2rem 10rem 3.5rem !important;
+  padding: 3rem 2rem !important;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid $border-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
 }
 
 .navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
@@ -214,7 +219,7 @@ body {
     border-radius: 2px;
   }
 
-  p {
+  .hero-subtext {
     font-size: 1.1rem;
     font-weight: 400;
     color: $body-gray;
@@ -222,6 +227,8 @@ body {
     margin: 0 auto;
     max-width: 700px;
     opacity: 0.9;
+    text-align: left;
+    max-width: 680px;
   }
 
   h2 {
@@ -316,7 +323,7 @@ body {
 
   .bi {
     font-size: 1.1rem;
-    color: $accent-cyan;
+    color: $accent-cyan-soft;
   }
 }
 
@@ -330,7 +337,7 @@ body {
     transition: color 0.2s ease;
 
     &:hover {
-      color: $accent-cyan;
+      color: $accent-cyan-soft;
     }
   }
 }
@@ -354,7 +361,7 @@ body {
 .project .project-learn-more {
   font-size: 0.82rem;
   font-weight: 500;
-  color: $accent-cyan;
+  color: $accent-cyan-soft;
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap;
@@ -443,7 +450,7 @@ body {
 
 .team-member .team-links .bi:hover {
   opacity: 1;
-  color: $accent-cyan;
+  color: $accent-cyan-soft;
 }
 
 .team-member .team-bio {
@@ -486,7 +493,7 @@ body {
 
 .quarto-body-content a:hover,
 #quarto-document-content a:hover {
-  color: $accent-cyan;
+  color: $accent-cyan-soft;
 }
 
 // =====================
@@ -512,7 +519,7 @@ body {
 }
 
 .quarto-about-jolla .about-link:hover {
-  color: $accent-cyan;
+  color: $accent-cyan-soft;
 }
 
 // =====================
@@ -536,7 +543,7 @@ body {
 }
 
 .nav-footer a:hover {
-  color: $accent-cyan;
+  color: $accent-cyan-soft;
 }
 
 .nav-footer .nav-footer-center {
@@ -552,7 +559,7 @@ body {
 
 .sidebar nav[role="doc-toc"] a:hover,
 .sidebar nav[role="doc-toc"] a.active {
-  color: $accent-cyan;
+  color: $accent-cyan-soft;
 }
 
 // =====================
@@ -569,11 +576,25 @@ body {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .hero-inner h1 {
+    font-size: 2.4rem;  
+    
+  }
+
+  .hero-inner p {
+    font-size: 1rem;
+  }
+
 }
 
 @media (max-width: 768px) {
   .hero-inner h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+  }
+
+  .hero-inner p {
+    font-size: 1rem;
   }
 
   .hero {
