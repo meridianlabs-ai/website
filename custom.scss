@@ -1,10 +1,11 @@
 /*-- scss:defaults --*/
 
-// Color palette — cool slate/cyan tech-forward palette
+// Color palette — cool slate with blue accents
 $deep-slate: #0F172A;
 $primary-dark: #1E293B;
 $dark-hover: #334155;
 $accent-cyan: #0EA5E9;
+$accent-cyan-soft: rgba(#0EA5E9, 0.55);
 $accent-blue: #3B82F6;
 $accent-amber: #F59E0B;
 $cool-gray-50: #F8FAFC;
@@ -35,7 +36,7 @@ $card-border-color: $border-gray;
 body {
   font-family: 'Roboto', sans-serif;
   color: $body-gray;
-  background-color: $primary-dark !important;
+  background-color: $cool-gray-50 !important;
 }
 
 a {
@@ -140,9 +141,9 @@ body.quarto-light {
 }
 
 .hero {
-  background-color: $primary-dark;
+  background-color: $cool-gray-50;
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+    radial-gradient(circle, rgba($primary-dark, 0.04) 1px, transparent 1px);
   background-size: 24px 24px;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -150,21 +151,7 @@ body.quarto-light {
   padding: 2rem 10rem 3.5rem !important;
   position: relative;
   overflow: hidden;
-}
-
-// Large faint starburst watermark
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  background: url('/images/meridian-icon-white.svg') no-repeat center center;
-  background-size: contain;
-  opacity: 0.03;
-  pointer-events: none;
+  border-bottom: 1px solid $border-gray;
 }
 
 .navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
@@ -188,11 +175,6 @@ body {
   background-color: $cool-gray-50;
 }
 
-// Homepage: dark bg to match hero/cards/footer
-.quarto-container.page-layout-custom {
-  background-color: $primary-dark;
-}
-
 // Shimmer animation for accent line
 @keyframes shimmer {
   0% { background-position: -200% center; }
@@ -213,7 +195,7 @@ body {
     font-weight: 700;
     text-transform: none;
     letter-spacing: -0.01em;
-    color: #F1F5F9;
+    color: $heading-slate;
     margin-top: 0;
     margin-bottom: 1.5rem;
     line-height: 1.2;
@@ -235,7 +217,7 @@ body {
   p {
     font-size: 1.1rem;
     font-weight: 400;
-    color: #CBD5E1;
+    color: $body-gray;
     line-height: 1.8;
     margin: 0 auto;
     max-width: 700px;
@@ -243,7 +225,7 @@ body {
   }
 
   h2 {
-    color: #F1F5F9;
+    color: $heading-slate;
     font-size: 1.1em;
     font-weight: 500;
     margin-top: 2rem;
@@ -298,20 +280,20 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background-color: $dark-hover;
+  background-color: $border-gray;
 }
 
 .project {
-  background-color: $primary-dark;
+  background-color: #FFFFFF;
   padding: 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   margin: 0;
-  transition: background-color 0.2s ease;
-  border-top: 2px solid $accent-cyan;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border-top: 2px solid rgba($accent-cyan, 0.35);
 
   &:hover {
-    background-color: $dark-hover;
+    background-color: $cool-gray-50;
   }
 }
 
@@ -326,7 +308,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba($accent-cyan, 0.12);
+  background-color: rgba($accent-cyan, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,7 +326,7 @@ body {
 
   a {
     text-decoration: none;
-    color: #F1F5F9;
+    color: $heading-slate;
     transition: color 0.2s ease;
 
     &:hover {
@@ -355,7 +337,7 @@ body {
 
 .project .project-tagline {
   font-size: 0.88rem;
-  color: #CBD5E1;
+  color: $body-gray;
   line-height: 1.6;
   flex: 1;
   margin-bottom: 0.8rem;
@@ -378,7 +360,7 @@ body {
   white-space: nowrap;
 
   &:hover {
-    color: #FFFFFF;
+    color: $accent-blue;
   }
 }
 
@@ -395,8 +377,8 @@ body {
   gap: 0.3rem;
   font-size: 0.72rem;
   font-weight: 500;
-  color: #CBD5E1;
-  border: 1px solid $dark-hover;
+  color: $body-gray;
+  border: 1px solid $border-gray;
   border-radius: 999px;
   padding: 0.2rem 0.6rem;
   text-decoration: none;
@@ -408,9 +390,9 @@ body {
   }
 
   &:hover {
-    background-color: $dark-hover;
+    background-color: $cool-gray-100;
     border-color: $light-text;
-    color: #F1F5F9;
+    color: $heading-slate;
   }
 }
 
@@ -480,7 +462,7 @@ body {
 
 #title-block-header {
   margin-bottom: 1.5rem !important;
-  border-bottom: 3px solid $accent-cyan;
+  border-bottom: 3px solid rgba($accent-cyan, 0.35);
   padding-bottom: 0.8rem;
 }
 

@@ -12,9 +12,9 @@ page-layout: custom
 :::{.hero}
 :::{.hero-inner}
 
-# Open Source Tools for Frontier AI Research and Evaluation
+# Tools for Frontier AI Research and Evaluation
 
-Meridian Labs is a 501(c)(3) non-profit building open source tools which help organizations make empirically grounded assessments of the capabilities, opportunities, and risks of frontier models.
+Meridian Labs is a 501(c)(3) non-profit building open source tools for understanding, evaluating, and testing AI models and agents.
 
 :::
 :::
