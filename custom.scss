@@ -106,8 +106,18 @@ h2, h3, h4, h5, h6 {
   border-bottom-color: $accent-cyan-light;
 }
 
+.navbar .navbar-nav .nav-link:has(.bi-github) {
+  border-bottom: none !important;
+
+  &:hover, &:focus {
+    color: #E2E8F0 !important;
+    border-bottom: none !important;
+  }
+}
+
 .navbar .navbar-nav {
   margin-left: auto;
+  align-items: center;
 }
 
 .navbar .navbar-toggler {
