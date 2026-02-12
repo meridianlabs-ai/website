@@ -2,16 +2,16 @@
 <div class="projects-page-list">
 <% for (const item of items) { %>
   <div class="projects-page-entry">
-    <h3 class="projects-page-name"><%= item.title %></h3>
-    <p class="projects-page-tagline"><%= item.tagline %></p>
-    <div class="projects-page-links">
-      <a href="<%= item.href %>" class="projects-page-learn-more">Learn more &rarr;</a>
-      <% for (const link of item["secondary-links"]) { %>
+    <h3 class="projects-page-name"><%= item.title %>      <% for (const link of item["secondary-links"]) { %>
         <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" class="project-badge">
           <i class="bi bi-<%= link.icon %>"></i>
           <%= link.text %>
         </a>
       <% } %>
+</h3>
+    <p class="projects-page-tagline"><%= item.description || item.tagline %></p>
+    <div class="projects-page-links">
+      <a href="<%= item.href %>" class="projects-page-learn-more">Learn more &rarr;</a>
     </div>
   </div>
 <% } %>

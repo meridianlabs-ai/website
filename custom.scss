@@ -23,7 +23,7 @@ $font-family-sans-serif: 'Roboto', sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.7;
 $headings-color: $heading-slate;
-$link-color: $accent-blue;
+$link-color: $accent-cyan;
 $link-hover-color: $accent-cyan-soft;
 $border-radius: 8px;
 $card-bg: $cool-gray-100;
@@ -263,6 +263,11 @@ body {
   display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
+  
+}
+
+#quarto-document-content .project-badge  {
+  color: $body-gray;
 }
 
 .project-badge {
@@ -443,10 +448,23 @@ body {
 }
 
 h3.projects-page-name {
-  font-size: 1.3rem !important;
-  font-weight: 700 !important;
-  color: $gray-600 !important;
+  font-family: Roboto, sans-serif;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  color: $body-gray;
   margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  .project-badge {
+    margin-left: auto;
+
+    & + .project-badge {
+      margin-left: 0;
+    }
+  }
 }
 
 .projects-page-tagline {
@@ -458,6 +476,7 @@ h3.projects-page-name {
 }
 
 .projects-page-links {
+  
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -587,7 +606,7 @@ h3.projects-page-name {
 // Body text links on content pages
 .quarto-body-content a,
 #quarto-document-content a {
-  color: $accent-blue;
+  color: $link-color;
   transition: color 0.2s ease;
 }
 
