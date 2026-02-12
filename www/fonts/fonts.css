@@ -37,3 +37,11 @@
   font-display: block;
   src: url('roboto-700.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: normal;
+  font-display: block;
+  src: url('roboto-900.ttf') format('truetype');
+}

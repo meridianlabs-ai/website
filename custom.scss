@@ -65,7 +65,7 @@ h2, h3, h4, h5, h6 {
 // =====================
 .navbar {
   background-color: $cool-gray-50 !important;
-  border-bottom: 1px solid $border-gray;
+  border-bottom: none;
   box-shadow: none;
   padding-top: 0.6em;
   padding-bottom: 0.6em;
@@ -89,29 +89,22 @@ h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
-  padding-bottom: 0.3rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
   color: $accent-cyan !important;
-  border-bottom-color: $accent-cyan;
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-item .nav-link.active {
   color: $accent-cyan !important;
-  border-bottom-color: $accent-cyan;
 }
 
 .navbar .navbar-nav .nav-link:has(.bi-github) {
-  border-bottom: none !important;
-
   &:hover, &:focus {
     color: $accent-cyan !important;
-    border-bottom: none !important;
   }
 }
 
@@ -199,7 +192,7 @@ body {
 
   h1 {
     font-family: 'Roboto Condensed', 'Roboto', sans-serif;
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     font-weight: 700;
     text-transform: none;
     letter-spacing: -0.01em;
@@ -258,6 +251,40 @@ body {
 }
 
 // =====================
+// Shared Project Styles (icons + badges)
+// =====================
+.project-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: $body-gray;
+  border: 1px solid $border-gray;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+
+  .bi {
+    font-size: 0.72rem;
+  }
+
+  &:hover {
+    background-color: $cool-gray-100;
+    border-color: $light-text;
+    color: $heading-slate;
+  }
+}
+
+// =====================
 // Featured Projects
 // =====================
 .featured-projects {
@@ -265,7 +292,6 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid $border-gray;
 }
 
 .featured-project {
@@ -306,8 +332,9 @@ body {
 
 .featured-project-links {
   display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .featured-project-link {
@@ -323,38 +350,46 @@ body {
 }
 
 // =====================
-// Projects Link (homepage)
+// CTA Buttons (hero)
 // =====================
-.projects-link {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1.5rem 2rem;
-  text-align: center;
+.cta-buttons {
+  margin-top: 1.75rem;
 
-  a {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: $accent-cyan;
-    text-decoration: none;
-    transition: color 0.2s ease;
+  // Quarto wraps links in a <p> — make it flex
+  p, & {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
 
-    &:hover {
-      color: $accent-cyan-light;
-    }
+  p {
+    margin-bottom: 0;
   }
 }
 
-// =====================
-// Contact Section (homepage)
-// =====================
-.contact-section {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  border-top: 1px solid $border-gray;
-  padding: 2rem 2rem;
-  background-color: $cool-gray-50;
+.cta-button {
+  display: inline-block;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $body-gray;
+  border: 1px solid $border-gray;
+  border-radius: $border-radius;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    color: $accent-cyan;
+    border-color: $accent-cyan;
+  }
 }
 
+
+// =====================
+// Footer Contact
+// =====================
 .contact-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -365,30 +400,25 @@ body {
 }
 
 .contact-info {
-  font-size: 0.88rem;
-  color: $body-gray;
-  line-height: 1.7;
+  font-size: 0.85rem;
+  color: $light-text;
+  line-height: 1.6;
 }
 
 .contact-org {
   font-weight: 700;
-  color: $heading-slate;
-  margin-bottom: 0.15rem;
+  color: $body-gray;
 }
 
 .contact-links {
-  display: flex;
-  gap: 1.5rem;
-
   a {
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: $accent-cyan;
+    font-size: 0.85rem;
+    color: $light-text;
     text-decoration: none;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $accent-cyan-light;
+      color: $accent-cyan;
     }
   }
 }
@@ -401,55 +431,42 @@ body {
 }
 
 .projects-page-entry {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid $border-gray;
-
-  &:first-child {
-    padding-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: none;
-  }
+  border-left: 2px solid $accent-cyan;
+  padding: 0 0 0 1.25rem;
+  margin-bottom: 2.75rem;
 }
 
-.projects-page-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-
-  a {
-    color: $heading-slate;
-    text-decoration: none;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $accent-cyan;
-    }
-  }
+h3.projects-page-name {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: $gray-600 !important;
+  margin-bottom: 0.4rem;
 }
 
 .projects-page-tagline {
   font-size: 0.92rem;
+  font-weight: 300;
   color: $body-gray;
   line-height: 1.7;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .projects-page-links {
   display: flex;
-  gap: 1.25rem;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-  a {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: $accent-cyan;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.projects-page-learn-more {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $accent-cyan;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-right: 0.75rem;
 
-    &:hover {
-      color: $accent-cyan-light;
-    }
+  &:hover {
+    color: $accent-cyan-light;
   }
 }
 
@@ -613,29 +630,35 @@ body {
 // =====================
 .nav-footer {
   background-color: $cool-gray-50 !important;
-  color: $light-text;
-  border-top: 1px solid $border-gray;
+  border-top: none;
+  box-shadow: none;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-top: 3rem !important;
-  padding: 1.5rem 2.5rem !important;
-  align-items: center;
-}
+  font-size: 0.85rem;
+  color: $light-text !important;
+  margin-top: 4rem !important;
+  padding: 2rem 2rem !important;
 
-.nav-footer a {
-  color: $light-text;
-  transition: color 0.2s ease;
-}
+  .nav-footer-left, .nav-footer-right {
+    color: $light-text;
+  }
 
-.nav-footer a:hover {
-  color: $accent-cyan;
-}
+  .nav-footer-left p, .nav-footer-right p {
+    color: $light-text;
+  }
 
-.nav-footer .nav-footer-center {
-  color: $light-text;
+  .contact-org {
+    font-weight: inherit;
+    color: inherit;
+  }
+
+  a {
+    color: $light-text;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-cyan;
+    }
+  }
 }
 
 // =====================
@@ -706,7 +729,7 @@ body {
   }
 
   .projects-page-entry {
-    padding: 1rem 0;
+    padding: 0 0 0 1rem;
   }
 
   .team-member {

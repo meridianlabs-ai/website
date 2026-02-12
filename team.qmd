@@ -7,8 +7,6 @@ listing:
     template: templates/team.ejs
 ---
 
-Meet the team behind Meridian Labs.
-
 :::{#listing}
 
 

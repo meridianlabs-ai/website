@@ -18,6 +18,13 @@ page-layout: custom
 Meridian Labs is a 501(c)(3) non-profit building an open source platform for understanding, evaluating, and testing AI models and agents. Our tools enable rigorous model testing and in-depth analysis of agent behavior.
 :::
 
+```{=html}
+<div class="cta-buttons">
+<a href="/projects.html" class="cta-button">Our Projects &rarr;</a>
+<a href="/about.html" class="cta-button">About Meridian &rarr;</a>
+</div>
+```
+
 :::
 :::
 
@@ -28,20 +35,3 @@ Meridian Labs is a 501(c)(3) non-profit building an open source platform for und
 :::
 
 ::::
-
-:::{.contact-section}
-
-<div class="contact-inner">
-<div class="contact-info">
-<div class="contact-org">Meridian Labs</div>
-<div>A 501(c)(3) nonprofit</div>
-<div>501 Boylston St, 10th Floor, Boston, MA 02116</div>
-</div>
-<div class="contact-links">
-<a href="mailto:info@meridianlabs.ai">Email</a>
-<a href="https://www.github.com/meridianlabs-ai">GitHub</a>
-<a href="https://www.linkedin.com/company/meridian-research-labs/">LinkedIn</a>
-</div>
-</div>
-
-:::
