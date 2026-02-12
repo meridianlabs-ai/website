@@ -102,7 +102,13 @@ h2, h3, h4, h5, h6 {
   color: $accent-cyan !important;
 }
 
-.navbar .navbar-nav .nav-link:has(.bi-github) {
+.navbar .navbar-nav .nav-link:has(.bi-github),
+.navbar .navbar-nav .nav-link:has(.bi-twitter),
+.navbar .navbar-nav .nav-link:has(.bi-linkedin) {
+  font-size: 0.75rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+
   &:hover, &:focus {
     color: $accent-cyan !important;
   }
@@ -291,7 +297,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .featured-project {
@@ -305,7 +311,7 @@ body {
 
 .featured-project-name {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: $heading-slate;
   margin-bottom: 0.75rem;
@@ -323,7 +329,7 @@ body {
 }
 
 .featured-project-tagline {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 300;
   color: $body-gray;
   line-height: 1.7;
@@ -709,7 +715,7 @@ h3.projects-page-name {
   }
 
   .featured-project {
-    padding: 1.75rem 1.5rem;
+    padding: 1rem 1.5rem;
     border-right: none;
     border-bottom: 1px solid $border-gray;
 

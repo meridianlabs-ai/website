@@ -1,5 +1,5 @@
 - title: Inspect AI
-  tagline: Open-source framework for systematic evaluation of large language models, built by the UK AI Security Institute in collaboration with Meridian Labs.
+  tagline: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian.
   icon: cpu
   featured: true
   href: https://inspect.aisi.org.uk
@@ -23,6 +23,18 @@
     - text: PyPI
       icon: boxes
       href: https://pypi.org/project/inspect-scout/
+
+- title: Petri
+  tagline: Automated alignment auditing tool that orchestrates multi-turn interactions, built in collaboration with Anthropic and UK AISI.
+  icon: shield-check
+  featured: true
+  href: https://safety-research.github.io/petri/
+  secondary-links:
+    - text: GitHub
+      icon: github
+      href: https://github.com/safety-research/petri
+   
+
 
 - title: Inspect Flow
   tagline: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.

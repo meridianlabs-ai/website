@@ -13,10 +13,12 @@ const others = items.filter(item => !item.featured);
       <a href="<%= item.href %>" class="featured-project-link">Learn more &rarr;</a>
       <div class="project-badges">
         <% for (const link of item["secondary-links"]) { %>
+          <% if (link.icon === "github") { %>
           <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" class="project-badge">
             <i class="bi bi-<%= link.icon %>"></i>
             <%= link.text %>
           </a>
+          <% } %>
         <% } %>
       </div>
     </div>
