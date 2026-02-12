@@ -106,7 +106,7 @@ h2, h3, h4, h5, h6 {
   border-bottom-color: $accent-cyan-light;
 }
 
-.navbar .navbar-nav .nav-link:has(.bi-github) {
+.navbar .navbar-nav .nav-link:has(.bi) {
   border-bottom: none !important;
 
   &:hover, &:focus {
