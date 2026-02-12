@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,14 +32,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4388d49d0fd499e9159c2ad7d65e278d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d7b8e0e76f64f1b51388bae03502dca6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,6 +82,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title"><img src="./images/meridian-logo-white.svg" width="140"></span>
     </a>
@@ -148,11 +151,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for scientific breakthroughs, educational transformation, and technological advancement. However, as AI systems become more powerful, their dual-use nature becomes more apparent - the same capabilities that could advance medicine or cybersecurity could also lower barriers to developing harmful biological or chemical agents or conducting cyberattacks. This underscores the importance of understanding these systems thoroughly, as they can both create and help defend against potential threats.</p>
-<p>Organizations worldwide are grappling with these opportunities and risks as they make critical decisions about AI development and governance. To navigate these challenges, organizations are developing systematic approaches to evaluate AI models, with evaluation software and tools serving as essential enablers of this work. Government agencies, including those in the US and UK, have begun conducting <a href="https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6763fac97cd22a9484ac3c37_o1_uk_us_december_publication_final.pdf">joint evaluations of frontier AI models</a> prior to their release , demonstrating the growing importance of robust evaluation frameworks.</p>
-<p>Leading AI developers now routinely conduct extensive pre-release evaluations to measure capabilities and assess risks, as evidenced by detailed system cards from organizations like <a href="https://openai.com/index/openai-o1-system-card-text/">OpenAI</a> and <a href="https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf">Anthropic</a> . This practice has extended beyond industry, with civil society organizations and nonprofits increasingly engaging in independent evaluations - from RAND’s work on <a href="https://www.rand.org/content/dam/rand/pubs/conf_proceedings/CFA3400/CFA3429-1/RAND_CFA3429-1.pdf">evaluation methodologies</a> and <a href="https://www.rand.org/content/dam/rand/pubs/working_papers/WRA3700/WRA3797-1/RAND_WRA3797-1.pdf">benchmarking</a> to pre-deployment testing by organizations like <a href="https://metr.github.io/autonomy-evals-guide/openai-o1-preview-report/">METR</a> and <a href="https://www.apolloresearch.ai/research/scheming-reasoning-evaluations">Apollo Research</a>.</p>
-<p>Even as the investment in model evaluations grows, it remains difficult and time consuming to produce reliable, actionable insights. Without substantial platform investment or large technical overhead, results suffer from inconsistent metrics, limited reproducibility, difficulty sharing evaluations work, and gaps between theoretical measures and practical implications.</p>
-<p>Meridian Labs addresses these challenges by developing rigorous, empirically grounded evaluation frameworks and tools. We combine technical expertise with practical implementation guidance to help organizations conduct meaningful evaluations that directly inform their AI development and governance decisions.</p>
+<p>Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for innovation and scientific progress, while at the same time creating new security challenges and being difficult to understand deeply.</p>
+<p>Meridian Labs is a 501(c)(3) non-profit building an open source platform for understanding, evaluating, and testing AI models and agents. Our tools enable rigorous model testing and in-depth analysis of agent behavior.</p>
+<p>Leading AI developers now routinely conduct pre-release evaluations to measure capabilities and assess risks, as illustrated by the detailed system cards published by organizations like <a href="https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf">OpenAI</a>, <a href="https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf">Anthropic</a>, and <a href="https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf">Google</a>. In addition, model developers are collaborating on evaluations and security with government organizations like the <a href="https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation">US CAISI</a> and <a href="https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-developers-to-improve-model-security">UK AISI</a>, and a robust group of <a href="https://aievaluatorforum.org">indepenent third party evaluators</a> is developing.</p>
+<p>Our goal is to support this emerging ecosystem by creating a common platform shared by governments, academia, non-profits, and model developers. Our open-source software packages are in wide use across these organizations, and facilitate rigorous empirical work, deep insights, and cross-organizational collaboration.</p>
 
 
 
@@ -208,13 +210,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

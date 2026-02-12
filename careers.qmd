@@ -1,5 +1,6 @@
 ---
 title: Careers
+toc: false
 ---
 
 Meridian Labs is a 501(c)(3) non-profit building open source tools for AI research and evaluation, based in Boston, Massachusetts. All positions at Meridian Labs include:
