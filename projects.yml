@@ -34,8 +34,6 @@
       icon: github
       href: https://github.com/safety-research/petri
    
-
-
 - title: Inspect Flow
   tagline: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.
   icon: diagram-3
@@ -48,17 +46,6 @@
       icon: boxes
       href: https://pypi.org/project/inspect-flow/
 
-- title: Inspect VSCode
-  tagline: Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.
-  icon: code-square
-  href: https://inspect.aisi.org.uk/vscode.html
-  secondary-links:
-    - text: GitHub
-      icon: github
-      href: https://github.com/meridianlabs-ai/inspect-vscode
-    - text: Marketplace
-      icon: boxes
-      href: https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai
 
 - title: Inspect SWE
   tagline: Makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents for evaluation.
@@ -72,6 +59,19 @@
       icon: boxes
       href: https://pypi.org/project/inspect-swe/
 
+- title: Inspect Harbor
+  tagline: Interface to run [Harbor](https://harborframework.com/registry) tasks using Inspect AI. Includes over 40 agentic datasets including swebenchpro, terminal-bench-pro, and replicationbench.
+  icon: terminal
+  href: https://github.com/meridianlabs-ai/inspect_harbor
+  secondary-links:
+    - text: GitHub
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect_harbor
+    - text: PyPI
+      icon: boxes
+      href: https://pypi.org/project/inspect-harbor/
+
+
 - title: Inspect Viz
   tagline: Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results.
   icon: bar-chart-line
@@ -83,3 +83,15 @@
     - text: PyPI
       icon: boxes
       href: https://pypi.org/project/inspect-viz/
+
+- title: Inspect VSCode
+  tagline: Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.
+  icon: code-square
+  href: https://inspect.aisi.org.uk/vscode.html
+  secondary-links:
+    - text: GitHub
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect-vscode
+    - text: Marketplace
+      icon: boxes
+      href: https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai
