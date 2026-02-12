@@ -8,9 +8,9 @@
       text: github
       href: https://www.github.com/dragonstyle
   bio: |
-    Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems through comprehensive evaluation tools and research. Prior to founding Meridian, Charles was a Technology and Security Policy Fellow at the RAND Corporation, where he helped develop Inspect AI, an open-source platform for evaluating large language models, helping build frameworks and methodologies to improve AI evaluation infrastructure.<br/><br/>
+    Charles co-founded Meridian Labs in 2025 to advance the public understanding of AI systems through comprehensive evaluation tools and research. Prior to founding Meridian, Charles was a Technology and Security Policy Fellow at the RAND Corporation, where he helped develop Inspect AI, an open-source platform for evaluating large language models.<br/><br/>
 
-    Previously, Charles was Software Architect at Posit PBC, where he was a creator and maintainer of Quarto, a widely-adopted tool for scientific and technical communication. Before his work in open source software, Charles founded and led Lose It! as CEO for over a decade, growing the weight loss platform to 30 million users before its acquisition by EverydayHealth in 2022. Earlier in his career, Charles co-founded Onfolio (acquired by Microsoft in 2006), where he led engineering for Windows Live Writer, and served as Engineering Manager at Allaire/Macromedia, directing the ColdFusion MX team. He has founded and exited multiple companies to Macromedia, Microsoft, and EverydayHealth.
+    Previously, Charles was Software Architect at Posit PBC, where he was a creator of Quarto, an open source tool for scientific and technical communication. Before his work in open source, Charles founded and led Lose It! as CEO for over a decade, growing the platform to 30 million users. Earlier, he co-founded Onfolio (acquired by Microsoft) and served as Engineering Manager at Allaire/Macromedia.
 
 - name: Eric Patey
   role: Principal Engineer, Co-founder
@@ -65,5 +65,6 @@
       href: https://github.com/kaifronsdal
   bio: |
     Kai joined Meridian Labs in 2026 as a Research Engineer, where he works on advancing the state of automated alignment auditing and evaluations in collaboration with the UK AI Security Institute. 
+    Prior to joining Meridian, Kai was an Anthropic Fellow and MATS AI Safety Researcher, where he developed Petri, an open-source alignment auditing tool that enables diverse and rapid evaluations of model alignment. Petri has been widely adopted by researchers across multiple organizations and most frontier labs.<br/><br/>
     
-    Prior to joining Meridian, Kai was an Anthropic Fellow and MATS AI Safety Researcher, where he developed Petri, an open-source alignment auditing tool that enables diverse and rapid evaluations of model alignment. Petri has been widely adopted by researchers across multiple organizations and most frontier labs. Kai has conducted predeployment safety audits of frontier models and has been working on model evaluations for over two years, collaborating with researchers at Anthropic, Google DeepMind, OpenAI, and Stanford. He holds an MSc from Stanford University, where his research focused on AI safety and alignment.
+    Kai has conducted predeployment safety audits of frontier models and has been working on model evaluations for over two years, collaborating with researchers at Anthropic, Google DeepMind, OpenAI, and Stanford. He holds an MSc from Stanford University, where his research focused on AI safety and alignment.

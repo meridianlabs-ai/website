@@ -1,0 +1,11 @@
+---
+title: "About"
+---
+
+Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for innovation and scientific progress, while at the same time creating new security challenges and being difficult to understand deeply.
+
+Meridian Labs is a 501(c)(3) non-profit building an open source platform for understanding, evaluating, and testing AI models and agents. Our tools enable rigorous model testing and in-depth analysis of agent behavior.
+
+Leading AI developers now routinely conduct pre-release evaluations to measure capabilities and assess risks, as illustrated by the detailed system cards published by organizations like [OpenAI](https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf), [Anthropic](https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf), and [Google](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf). In addition, model developers are collaborating on evaluations and security with government organizations like the [US CAISI](https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation) and [UK AISI](https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-developers-to-improve-model-security), and a robust group of [indepenent third party evaluators](https://aievaluatorforum.org) is developing.
+
+Our goal is to support this emerging ecosystem by creating a common platform shared by governments, academia, non-profits, and model developers. Our open-source software packages are in wide use across these organizations, and facilitate rigorous empirical work, deep insights, and cross-organizational collaboration.

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mission</title>
+<title>Projects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,16 +30,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8a439c7ca4edb23b659e1519ab9ed1b9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-412f878e9045fb26ad636c9612e5bd00.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,22 +69,83 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-projects .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-tagline','listing-icon','listing-featured','listing-href','listing-secondary-links',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-title","listing-tagline","listing-icon","listing-featured","listing-href","listing-secondary-links"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-projects'] = new List('listing-projects', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <link rel="preload" href="./fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
 <link rel="preload" href="./fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="./fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin="">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><img src="./images/meridian-logo-white.svg" width="140"></span>
+    <span class="navbar-title"><img src="./images/meridian-logo-black.svg" width="140"></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,20 +155,20 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./mission.html" aria-current="page"> 
-<span class="menu-text">Mission</span></a>
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./careers.html"> 
-<span class="menu-text">Careers</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact</span></a>
+    <a class="nav-link" href="./careers.html"> 
+<span class="menu-text">Careers</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://x.com/meridianlabs_ai"> <i class="bi bi-twitter" role="img" aria-label="Twitter">
@@ -133,15 +196,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mission</h1>
+<h1 class="title">Projects</h1>
 </div>
 
 
@@ -158,24 +219,133 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for scientific breakthroughs, educational transformation, and technological advancement. However, as AI systems become more powerful, their dual-use nature becomes more apparent - the same capabilities that could advance medicine or cybersecurity could also lower barriers to developing harmful biological or chemical agents or conducting cyberattacks. This underscores the importance of understanding these systems thoroughly, as they can both create and help defend against potential threats.</p>
-<p>Organizations worldwide are grappling with these opportunities and risks as they make critical decisions about AI development and governance. To navigate these challenges, organizations are developing systematic approaches to evaluate AI models, with evaluation software and tools serving as essential enablers of this work. Government agencies, including those in the US and UK, have begun conducting <a href="https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6763fac97cd22a9484ac3c37_o1_uk_us_december_publication_final.pdf">joint evaluations of frontier AI models</a> prior to their release , demonstrating the growing importance of robust evaluation frameworks.</p>
-<p>Leading AI developers now routinely conduct extensive pre-release evaluations to measure capabilities and assess risks, as evidenced by detailed system cards from organizations like <a href="https://openai.com/index/openai-o1-system-card-text/">OpenAI</a> and <a href="https://assets.anthropic.com/m/61e7d27f8c8f5919/original/Claude-3-Model-Card.pdf">Anthropic</a> . This practice has extended beyond industry, with civil society organizations and nonprofits increasingly engaging in independent evaluations - from RAND’s work on <a href="https://www.rand.org/content/dam/rand/pubs/conf_proceedings/CFA3400/CFA3429-1/RAND_CFA3429-1.pdf">evaluation methodologies</a> and <a href="https://www.rand.org/content/dam/rand/pubs/working_papers/WRA3700/WRA3797-1/RAND_WRA3797-1.pdf">benchmarking</a> to pre-deployment testing by organizations like <a href="https://metr.github.io/autonomy-evals-guide/openai-o1-preview-report/">METR</a> and <a href="https://www.apolloresearch.ai/research/scheming-reasoning-evaluations">Apollo Research</a>.</p>
-<p>Even as the investment in model evaluations grows, it remains difficult and time consuming to produce reliable, actionable insights. Without substantial platform investment or large technical overhead, results suffer from inconsistent metrics, limited reproducibility, difficulty sharing evaluations work, and gaps between theoretical measures and practical implications.</p>
-<p>Meridian Labs addresses these challenges by developing rigorous, empirically grounded evaluation frameworks and tools. We combine technical expertise with practical implementation guidance to help organizations conduct meaningful evaluations that directly inform their AI development and governance decisions.</p>
+<div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
+<div class="projects-page-list">
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect AI</h3>
+    <p class="projects-page-tagline">Open-source framework for systematic evaluation of large language models, built by the UK AI Security Institute in collaboration with Meridian Labs.</p>
+    <div class="projects-page-links">
+      <a href="https://inspect.aisi.org.uk" class="projects-page-learn-more">Learn more →</a>
+      
+        <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+        <a href="https://pypi.org/project/inspect-ai/" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          PyPI
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect Scout</h3>
+    <p class="projects-page-tagline">In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning.</p>
+    <div class="projects-page-links">
+      <a href="https://meridianlabs-ai.github.io/inspect_scout/" class="projects-page-learn-more">Learn more →</a>
+      
+        <a href="https://github.com/meridianlabs-ai/inspect_scout" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+        <a href="https://pypi.org/project/inspect-scout/" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          PyPI
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect Flow</h3>
+    <p class="projects-page-tagline">Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.</p>
+    <div class="projects-page-links">
+      <a href="https://meridianlabs-ai.github.io/inspect_flow/" class="projects-page-learn-more">Learn more →</a>
+      
+        <a href="https://github.com/meridianlabs-ai/inspect_flow" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+        <a href="https://pypi.org/project/inspect-flow/" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          PyPI
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect VSCode</h3>
+    <p class="projects-page-tagline">Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.</p>
+    <div class="projects-page-links">
+      <a href="https://inspect.aisi.org.uk/vscode.html" class="projects-page-learn-more">Learn more →</a>
+      
+        <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+        <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          Marketplace
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect SWE</h3>
+    <p class="projects-page-tagline">Makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents for evaluation.</p>
+    <div class="projects-page-links">
+      <a href="https://meridianlabs-ai.github.io/inspect_swe/" class="projects-page-learn-more">Learn more →</a>
+      
+        <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+        <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          PyPI
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect Viz</h3>
+    <p class="projects-page-tagline">Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results.</p>
+    <div class="projects-page-links">
+      <a href="https://meridianlabs-ai.github.io/inspect_viz/" class="projects-page-learn-more">Learn more →</a>
+      
+        <a href="https://github.com/meridianlabs-ai/inspect_viz" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+        <a href="https://pypi.org/project/inspect-viz/" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          PyPI
+        </a>
+      
+    </div>
+  </div>
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+
 
 
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -218,13 +388,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -570,13 +741,13 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Meridian Labs is a 501(c)(3) non-profit</p>
+<p><span class="contact-org">Meridian Labs</span> · <span>A 501(c)(3) nonprofit</span><br>501 Boylston St, 10th Floor, Boston, MA 02116</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>© 2025 Meridian Labs</p>
+<p><a href="mailto:info@meridianlabs.ai">info@meridianlabs.ai</a></p>
 </div>
   </div>
 </footer>

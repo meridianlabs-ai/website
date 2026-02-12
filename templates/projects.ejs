@@ -1,21 +1,19 @@
 ```{=html}
-<div class="project-grid">
-<% for (const item of items) { %>
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-<%= item.icon %>"></i>
-      </div>
-      <div class="project-name">
-        <a href="<%= item.href %>"><%= item.title %></a>
-      </div>
-    </div>
-    <div class="project-tagline"><%= item.tagline %></div>
-    <div class="project-footer">
-      <a href="<%= item.href %>" class="project-learn-more">Learn more &rarr;</a>
+<%
+const featured = items.filter(item => item.featured);
+const others = items.filter(item => !item.featured);
+%>
+
+<div class="featured-projects">
+<% for (const item of featured) { %>
+  <div class="featured-project">
+    <h2 class="featured-project-name"><a href="<%= item.href %>"><%= item.title %></a></h2>
+    <p class="featured-project-tagline"><%= item.tagline %></p>
+    <div class="featured-project-links">
+      <a href="<%= item.href %>" class="featured-project-link">Learn more &rarr;</a>
       <div class="project-badges">
         <% for (const link of item["secondary-links"]) { %>
-          <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" class="project-badge" title="<%= link.text %>">
+          <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" class="project-badge">
             <i class="bi bi-<%= link.icon %>"></i>
             <%= link.text %>
           </a>

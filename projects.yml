@@ -12,8 +12,9 @@
       href: https://pypi.org/project/inspect-ai/
 
 - title: Inspect Scout
-  tagline: In-depth analysis of AI agent transcripts with high-performance parallel scanning and rich visualization of results.
+  tagline: In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning. 
   icon: search
+  featured: true
   href: https://meridianlabs-ai.github.io/inspect_scout/
   secondary-links:
     - text: GitHub

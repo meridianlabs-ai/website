@@ -4,14 +4,14 @@ project:
 
 website:
   navbar:
-    background: "#1E293B"
-    title: "<img src='/images/meridian-logo-white.svg' width='140'>"
+    background: light
+    title: "<img src='/images/meridian-logo-black.svg' width='140'>"
     right:
-      - mission.qmd
+      - projects.qmd
       - team.qmd
+      - text: About
+        href: about.qmd
       - careers.qmd
-      - href: contact.qmd
-        text: Contact
       - icon: twitter
         href: https://x.com/meridianlabs_ai
         aria-label: Twitter
@@ -21,14 +21,12 @@ website:
       - icon: github
         href: https://github.com/meridianlabs-ai
         aria-label: GitHub
-
-
   page-footer:
-    left: "Meridian Labs is a 501(c)(3) non-profit"
-    center: ""
-    right: "© 2025 Meridian Labs"
-    background: "#1E293B"
-    foreground: "#94A3B8"
+    left: |
+      <span class="contact-org">Meridian Labs</span> · <span>A 501(c)(3) nonprofit</span><br>501 Boylston St, 10th Floor, Boston, MA 02116
+    right: |
+      <a href="mailto:info@meridianlabs.ai">info@meridianlabs.ai</a>
+    background: "#F8FAFC"
   bread-crumbs: false
 
 format:
@@ -41,6 +39,7 @@ format:
       - text: |
           <link rel="preload" href="/fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin>
           <link rel="preload" href="/fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin>
+          <link rel="preload" href="/fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin>
     toc: true
     grid:
       sidebar-width: 350px

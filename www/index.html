@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,13 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8a439c7ca4edb23b659e1519ab9ed1b9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-412f878e9045fb26ad636c9612e5bd00.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -99,6 +100,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <link rel="preload" href="./fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
 <link rel="preload" href="./fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="./fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin="">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -114,7 +116,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -140,8 +142,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><img src="./images/meridian-logo-white.svg" width="140"></span>
+    <span class="navbar-title"><img src="./images/meridian-logo-black.svg" width="140"></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -151,20 +155,20 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./mission.html"> 
-<span class="menu-text">Mission</span></a>
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./careers.html"> 
-<span class="menu-text">Careers</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./contact.html"> 
-<span class="menu-text">Contact</span></a>
+    <a class="nav-link" href="./careers.html"> 
+<span class="menu-text">Careers</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://x.com/meridianlabs_ai"> <i class="bi bi-twitter" role="img" aria-label="Twitter">
@@ -198,37 +202,35 @@ window.Quarto = {
 
 
 <div class="hero">
-<section id="tools-for-frontier-ai-research-and-evaluation" class="level1 hero-inner">
-<h1>Tools for Frontier AI Research and Evaluation</h1>
+<section id="tools-for-ai-research-and-evaluation" class="level1 hero-inner">
+<h1>Tools for AI Research and Evaluation</h1>
 <div class="hero-subtext">
 <p>Meridian Labs is a 501(c)(3) non-profit building an open source platform for understanding, evaluating, and testing AI models and agents. Our tools enable rigorous model testing and in-depth analysis of agent behavior.</p>
 </div>
+<div class="cta-buttons">
+<a href="./projects.html" class="cta-button">Our Projects →</a>
+<a href="./about.html" class="cta-button">About Meridian →</a>
+</div>
 </section>
 </div>
-<div class="project-separator">
+<div class="projects-section">
 <div id="listing-projects" class="quarto-listing quarto-listing-container-custom">
-<div class="project-grid">
 
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-cpu"></i>
-      </div>
-      <div class="project-name">
-        <a href="https://inspect.aisi.org.uk">Inspect AI</a>
-      </div>
-    </div>
-    <div class="project-tagline">Open-source framework for systematic evaluation of large language models, built by the UK AI Security Institute in collaboration with Meridian Labs.</div>
-    <div class="project-footer">
-      <a href="https://inspect.aisi.org.uk" class="project-learn-more">Learn more →</a>
+<div class="featured-projects">
+
+  <div class="featured-project">
+    <h2 class="featured-project-name"><a href="https://inspect.aisi.org.uk">Inspect AI</a></h2>
+    <p class="featured-project-tagline">Open-source framework for systematic evaluation of large language models, built by the UK AI Security Institute in collaboration with Meridian Labs.</p>
+    <div class="featured-project-links">
+      <a href="https://inspect.aisi.org.uk" class="featured-project-link">Learn more →</a>
       <div class="project-badges">
         
-          <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
+          <a href="https://github.com/UKGovernmentBEIS/inspect_ai" target="_blank" rel="noopener noreferrer" class="project-badge">
             <i class="bi bi-github"></i>
             GitHub
           </a>
         
-          <a href="https://pypi.org/project/inspect-ai/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
+          <a href="https://pypi.org/project/inspect-ai/" target="_blank" rel="noopener noreferrer" class="project-badge">
             <i class="bi bi-boxes"></i>
             PyPI
           </a>
@@ -237,138 +239,19 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-search"></i>
-      </div>
-      <div class="project-name">
-        <a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout</a>
-      </div>
-    </div>
-    <div class="project-tagline">In-depth analysis of AI agent transcripts with high-performance parallel scanning and rich visualization of results.</div>
-    <div class="project-footer">
-      <a href="https://meridianlabs-ai.github.io/inspect_scout/" class="project-learn-more">Learn more →</a>
+  <div class="featured-project">
+    <h2 class="featured-project-name"><a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout</a></h2>
+    <p class="featured-project-tagline">In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning.</p>
+    <div class="featured-project-links">
+      <a href="https://meridianlabs-ai.github.io/inspect_scout/" class="featured-project-link">Learn more →</a>
       <div class="project-badges">
         
-          <a href="https://github.com/meridianlabs-ai/inspect_scout" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
+          <a href="https://github.com/meridianlabs-ai/inspect_scout" target="_blank" rel="noopener noreferrer" class="project-badge">
             <i class="bi bi-github"></i>
             GitHub
           </a>
         
-          <a href="https://pypi.org/project/inspect-scout/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
-            <i class="bi bi-boxes"></i>
-            PyPI
-          </a>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-diagram-3"></i>
-      </div>
-      <div class="project-name">
-        <a href="https://meridianlabs-ai.github.io/inspect_flow/">Inspect Flow</a>
-      </div>
-    </div>
-    <div class="project-tagline">Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.</div>
-    <div class="project-footer">
-      <a href="https://meridianlabs-ai.github.io/inspect_flow/" class="project-learn-more">Learn more →</a>
-      <div class="project-badges">
-        
-          <a href="https://github.com/meridianlabs-ai/inspect_flow" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
-            <i class="bi bi-github"></i>
-            GitHub
-          </a>
-        
-          <a href="https://pypi.org/project/inspect-flow/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
-            <i class="bi bi-boxes"></i>
-            PyPI
-          </a>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-code-square"></i>
-      </div>
-      <div class="project-name">
-        <a href="https://inspect.aisi.org.uk/vscode.html">Inspect VSCode</a>
-      </div>
-    </div>
-    <div class="project-tagline">Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.</div>
-    <div class="project-footer">
-      <a href="https://inspect.aisi.org.uk/vscode.html" class="project-learn-more">Learn more →</a>
-      <div class="project-badges">
-        
-          <a href="https://github.com/meridianlabs-ai/inspect-vscode" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
-            <i class="bi bi-github"></i>
-            GitHub
-          </a>
-        
-          <a href="https://marketplace.visualstudio.com/items?itemName=ukaisi.inspect-ai" target="_blank" rel="noopener noreferrer" class="project-badge" title="Marketplace">
-            <i class="bi bi-boxes"></i>
-            Marketplace
-          </a>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-terminal"></i>
-      </div>
-      <div class="project-name">
-        <a href="https://meridianlabs-ai.github.io/inspect_swe/">Inspect SWE</a>
-      </div>
-    </div>
-    <div class="project-tagline">Makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents for evaluation.</div>
-    <div class="project-footer">
-      <a href="https://meridianlabs-ai.github.io/inspect_swe/" class="project-learn-more">Learn more →</a>
-      <div class="project-badges">
-        
-          <a href="https://github.com/meridianlabs-ai/inspect_swe" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
-            <i class="bi bi-github"></i>
-            GitHub
-          </a>
-        
-          <a href="https://pypi.org/project/inspect-swe/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
-            <i class="bi bi-boxes"></i>
-            PyPI
-          </a>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-header">
-      <div class="project-icon">
-        <i class="bi bi-bar-chart-line"></i>
-      </div>
-      <div class="project-name">
-        <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz</a>
-      </div>
-    </div>
-    <div class="project-tagline">Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results.</div>
-    <div class="project-footer">
-      <a href="https://meridianlabs-ai.github.io/inspect_viz/" class="project-learn-more">Learn more →</a>
-      <div class="project-badges">
-        
-          <a href="https://github.com/meridianlabs-ai/inspect_viz" target="_blank" rel="noopener noreferrer" class="project-badge" title="GitHub">
-            <i class="bi bi-github"></i>
-            GitHub
-          </a>
-        
-          <a href="https://pypi.org/project/inspect-viz/" target="_blank" rel="noopener noreferrer" class="project-badge" title="PyPI">
+          <a href="https://pypi.org/project/inspect-scout/" target="_blank" rel="noopener noreferrer" class="project-badge">
             <i class="bi bi-boxes"></i>
             PyPI
           </a>
@@ -430,13 +313,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -782,13 +666,13 @@ window.Quarto = {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Meridian Labs is a 501(c)(3) non-profit</p>
+<p><span class="contact-org">Meridian Labs</span> · <span>A 501(c)(3) nonprofit</span><br>501 Boylston St, 10th Floor, Boston, MA 02116</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>© 2025 Meridian Labs</p>
+<p><a href="mailto:info@meridianlabs.ai">info@meridianlabs.ai</a></p>
 </div>
   </div>
 </footer>

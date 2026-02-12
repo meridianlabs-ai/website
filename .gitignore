@@ -1,3 +1,5 @@
 /.quarto/
 .DS_Store
 .playwright-mcp
+
+**/*.quarto_ipynb
