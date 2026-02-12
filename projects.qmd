@@ -1,0 +1,14 @@
+---
+title: Projects
+listing:
+    id: projects
+    template: templates/projects-page.ejs
+    contents: projects.yml
+toc: false
+anchor-sections: false
+page-layout: article
+---
+
+:::{#projects}
+
+:::

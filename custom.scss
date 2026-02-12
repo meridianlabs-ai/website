@@ -64,8 +64,8 @@ h2, h3, h4, h5, h6 {
 // Navbar
 // =====================
 .navbar {
-  background-color: $primary-dark !important;
-  border-bottom: none;
+  background-color: $cool-gray-50 !important;
+  border-bottom: 1px solid $border-gray;
   box-shadow: none;
   padding-top: 0.6em;
   padding-bottom: 0.6em;
@@ -83,7 +83,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .navbar-nav .nav-link {
-  color: #E2E8F0 !important;
+  color: $body-gray !important;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -96,21 +96,21 @@ h2, h3, h4, h5, h6 {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-  color: $accent-cyan-light !important;
-  border-bottom-color: $accent-cyan-light;
+  color: $accent-cyan !important;
+  border-bottom-color: $accent-cyan;
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-item .nav-link.active {
-  color: $accent-cyan-light !important;
-  border-bottom-color: $accent-cyan-light;
+  color: $accent-cyan !important;
+  border-bottom-color: $accent-cyan;
 }
 
 .navbar .navbar-nav .nav-link:has(.bi-github) {
   border-bottom: none !important;
 
   &:hover, &:focus {
-    color: #E2E8F0 !important;
+    color: $accent-cyan !important;
     border-bottom: none !important;
   }
 }
@@ -126,7 +126,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23E2E8F0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23475569' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar .navbar-toggler:focus {
@@ -134,12 +134,12 @@ h2, h3, h4, h5, h6 {
 }
 
 .navbar .aa-DetachedSearchButton {
-  color: #E2E8F0;
+  color: $body-gray;
   border: none;
   background: none;
 
   &:hover, &:focus {
-    color: $accent-cyan-light;
+    color: $accent-cyan;
   }
 }
 
@@ -160,18 +160,16 @@ body.quarto-light {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-top: -1px;
-  padding: 3rem 2rem !important;
+  padding: 5rem 2rem 1.5rem !important;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid $border-gray;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  min-height: 340px;
 }
 
 .navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
-  color: $cool-gray-50;
+  color: $body-gray;
 }
 
 // Sticky footer: dark background fills below short pages
@@ -191,66 +189,33 @@ body {
   background-color: $cool-gray-50;
 }
 
-// Shimmer animation for accent line
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
 .hero-inner {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem;
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 1;
 
   h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.6rem;
+    font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+    font-size: 3.2rem;
     font-weight: 700;
     text-transform: none;
     letter-spacing: -0.01em;
     color: $heading-slate;
     margin-top: 0;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
-  }
-
-  // Gradient accent line with shimmer
-  h1::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, $accent-cyan, $accent-blue, $accent-cyan);
-    background-size: 200% 100%;
-    animation: shimmer 3s ease-in-out infinite;
-    margin: 1.2rem auto 0;
-    border-radius: 2px;
+    line-height: 1.15;
   }
 
   .hero-subtext {
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 300;
     color: $body-gray;
     line-height: 1.8;
-    margin: 0 auto;
     opacity: 0.9;
-    text-align: left;
     max-width: 680px;
-  }
-
-  h2 {
-    color: $heading-slate;
-    font-size: 1.1em;
-    font-weight: 500;
-    margin-top: 2rem;
-    margin-bottom: 0;
-    padding-bottom: 0.8rem;
-    border-bottom: none;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
   }
 }
 
@@ -264,9 +229,9 @@ body {
 }
 
 // =====================
-// Project Separator & Cards
+// Projects Section
 // =====================
-.project-separator {
+.projects-section {
   padding: 0 !important;
   margin: 0 !important;
   width: 100vw;
@@ -292,136 +257,212 @@ body {
   padding-top: 0 !important;
 }
 
-
-.project-grid {
+// =====================
+// Featured Projects
+// =====================
+.featured-projects {
+  max-width: 900px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background-color: $border-gray;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid $border-gray;
 }
 
-.project {
-  background-color: #FFFFFF;
-  padding: 1.4rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  border-top: 2px solid rgba($accent-cyan, 0.35);
+.featured-project {
+  padding: 1rem 2rem 2rem;
+  border-right: 1px solid $border-gray;
 
-  &:hover {
-    background-color: $cool-gray-50;
+  &:last-child {
+    border-right: none;
   }
 }
 
-.project .project-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
-}
-
-.project .project-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba($accent-cyan, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-
-  .bi {
-    font-size: 1.1rem;
-    color: $accent-cyan-soft;
-  }
-}
-
-.project .project-name {
+.featured-project-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 1.05rem;
+  color: $heading-slate;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
 
   a {
-    text-decoration: none;
     color: $heading-slate;
+    text-decoration: none;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $accent-cyan-soft;
+      color: $accent-cyan;
     }
   }
 }
 
-.project .project-tagline {
-  font-size: 0.88rem;
+.featured-project-tagline {
+  font-size: 0.92rem;
+  font-weight: 300;
   color: $body-gray;
-  line-height: 1.6;
-  flex: 1;
-  margin-bottom: 0.8rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
 }
 
-.project .project-footer {
+.featured-project-links {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-top: auto;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-.project .project-learn-more {
-  font-size: 0.82rem;
+.featured-project-link {
+  font-size: 0.85rem;
   font-weight: 500;
-  color: $accent-cyan-soft;
+  color: $accent-cyan;
   text-decoration: none;
   transition: color 0.2s ease;
-  white-space: nowrap;
 
   &:hover {
-    color: $accent-blue;
-  }
-}
-
-.project .project-badges {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.project .project-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: $body-gray;
-  border: 1px solid $border-gray;
-  border-radius: 999px;
-  padding: 0.2rem 0.6rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap;
-
-  .bi {
-    font-size: 0.72rem;
-  }
-
-  &:hover {
-    background-color: $cool-gray-100;
-    border-color: $light-text;
-    color: $heading-slate;
+    color: $accent-cyan-light;
   }
 }
 
 // =====================
-// Team Cards
+// Projects Link (homepage)
+// =====================
+.projects-link {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  text-align: center;
+
+  a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $accent-cyan;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-cyan-light;
+    }
+  }
+}
+
+// =====================
+// Contact Section (homepage)
+// =====================
+.contact-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  border-top: 1px solid $border-gray;
+  padding: 2rem 2rem;
+  background-color: $cool-gray-50;
+}
+
+.contact-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contact-info {
+  font-size: 0.88rem;
+  color: $body-gray;
+  line-height: 1.7;
+}
+
+.contact-org {
+  font-weight: 700;
+  color: $heading-slate;
+  margin-bottom: 0.15rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: $accent-cyan;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-cyan-light;
+    }
+  }
+}
+
+// =====================
+// Projects Page
+// =====================
+.projects-page-list {
+  max-width: 720px;
+}
+
+.projects-page-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $border-gray;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.projects-page-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+
+  a {
+    color: $heading-slate;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-cyan;
+    }
+  }
+}
+
+.projects-page-tagline {
+  font-size: 0.92rem;
+  color: $body-gray;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.projects-page-links {
+  display: flex;
+  gap: 1.25rem;
+
+  a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: $accent-cyan;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $accent-cyan-light;
+    }
+  }
+}
+
+// =====================
+// Team Members
 // =====================
 .team-member {
-  background: $cool-gray-100;
-  border: 1px solid $border-gray;
-  border-radius: 8px;
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1.2em;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-left: 2px solid $accent-cyan;
+  padding: 0 0 0 1.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .team-member .team-title {
@@ -434,7 +475,7 @@ body {
 
 .team-member .team-name {
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 1.2em;
   color: $heading-slate;
 }
 
@@ -460,13 +501,14 @@ body {
 
 .team-member .team-links .bi:hover {
   opacity: 1;
-  color: $accent-cyan-soft;
+  color: $accent-cyan;
 }
 
 .team-member .team-bio {
   color: $body-gray;
-  font-size: 0.95em;
+  font-size: 0.92em;
   line-height: 1.7;
+  margin-top: 0.5rem;
 }
 
 // =====================
@@ -477,21 +519,46 @@ body {
   padding-top: 1.5rem;
 }
 
+// Narrow the content column for readability
+.col-body {
+  max-width: 720px;
+}
+
 #title-block-header {
-  margin-bottom: 1.5rem !important;
-  border-bottom: 3px solid rgba($accent-cyan, 0.35);
-  padding-bottom: 0.8rem;
+  margin-bottom: 2rem !important;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 #title-block-header.quarto-title-block.default .quarto-title .title {
-  margin-bottom: 0.5rem;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
   color: $heading-slate;
 }
 
 #quarto-document-content {
   margin-top: 0 !important;
+}
+
+// H2/H3 on content pages
+#quarto-document-content h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $heading-slate;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#quarto-document-content h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $heading-slate;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 // Body text links on content pages
@@ -510,42 +577,52 @@ body {
 // Contact Page (Jolla)
 // =====================
 .quarto-about-jolla {
-  background: $cool-gray-100;
-  border: 1px solid $border-gray;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 3rem 2rem;
+  box-shadow: none;
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 0 auto;
   height: fit-content;
 }
 
 .quarto-about-jolla h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
   color: $heading-slate;
+  border-bottom: none !important;
+}
+
+// Remove the decorative line under the title
+.quarto-about-jolla .about-entity hr {
+  display: none;
 }
 
 .quarto-about-jolla .about-link {
-  color: $accent-blue;
-}
+  color: $body-gray;
+  border: 1px solid $border-gray;
 
-.quarto-about-jolla .about-link:hover {
-  color: $accent-cyan-soft;
+  &:hover {
+    color: $accent-cyan;
+    border-color: $accent-cyan;
+  }
 }
 
 // =====================
 // Footer
 // =====================
 .nav-footer {
-  background-color: $primary-dark !important;
+  background-color: $cool-gray-50 !important;
   color: $light-text;
-  border-top: none;
+  border-top: 1px solid $border-gray;
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-top: 0 !important;
+  margin-top: 3rem !important;
+  padding: 1.5rem 2.5rem !important;
+  align-items: center;
 }
 
 .nav-footer a {
@@ -554,7 +631,7 @@ body {
 }
 
 .nav-footer a:hover {
-  color: $accent-cyan-light;
+  color: $accent-cyan;
 }
 
 .nav-footer .nav-footer-center {
@@ -584,24 +661,16 @@ body {
 // Mobile Responsive
 // =====================
 @media (max-width: 992px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .hero-inner h1 {
-    font-size: 2.35rem;  
-    
-  }
-
-  .hero-inner .hero-subtext {
-    font-size: 1rem;
+    font-size: 2.6rem;
   }
 
 }
 
 @media (max-width: 768px) {
   .hero-inner h1 {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+    text-wrap: wrap;
   }
 
   .hero-inner .hero-subtext {
@@ -609,29 +678,38 @@ body {
   }
 
   .hero {
-    padding: 1rem 1.5rem 2.5rem !important;
+    padding: 3rem 1.5rem 2.5rem !important;
   }
 
-  .project-separator {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .project-grid {
+  .featured-projects {
     grid-template-columns: 1fr;
   }
 
-  .project, .team-member {
-    padding: 1rem;
+  .featured-project {
+    padding: 1.75rem 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid $border-gray;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
-  .project .project-footer {
+  .featured-project-name {
+    font-size: 1.3rem;
+  }
+
+  .contact-inner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
-  .project .project-badges {
-    justify-content: flex-start;
+  .projects-page-entry {
+    padding: 1rem 0;
+  }
+
+  .team-member {
+    padding: 0 0 0 1rem;
   }
 }

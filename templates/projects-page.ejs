@@ -1,0 +1,16 @@
+```{=html}
+<div class="projects-page-list">
+<% for (const item of items) { %>
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name"><a href="<%= item.href %>"><%= item.title %></a></h3>
+    <p class="projects-page-tagline"><%= item.tagline %></p>
+    <div class="projects-page-links">
+      <a href="<%= item.href %>">Learn more &rarr;</a>
+      <% for (const link of item["secondary-links"]) { %>
+        <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer"><%= link.text %></a>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```

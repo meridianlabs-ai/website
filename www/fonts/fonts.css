@@ -1,16 +1,9 @@
 @font-face {
-  font-family: 'Orbitron';
-  font-style: normal;
-  font-weight: 600;
-  font-display: block;
-  src: url('orbitron-600.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Orbitron';
+  font-family: 'Roboto Condensed';
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: url('orbitron-700.ttf') format('truetype');
+  src: url('roboto-condensed-700.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Roboto';

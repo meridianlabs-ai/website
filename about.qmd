@@ -1,5 +1,5 @@
 ---
-title: "Mission"
+title: "About"
 ---
 
 Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for innovation and scientific progress, while at the same time creating new security challenges and being difficult to understand deeply.
