@@ -598,11 +598,18 @@ h3.projects-page-name {
 }
 
 #quarto-document-content h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: $heading-slate;
+  font-size: 1.1rem;
+  font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+}
+
+// Body text on content pages
+#quarto-document-content p,
+#quarto-document-content li {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 // Body text links on content pages
