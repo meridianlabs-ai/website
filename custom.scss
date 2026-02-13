@@ -451,7 +451,7 @@ h3.projects-page-name {
   font-family: Roboto, sans-serif;
   font-size: 1.1rem !important;
   font-weight: 500 !important;
-  color: $body-gray;
+  color: $body-gray !important;
   margin-bottom: 0.4rem;
   display: flex;
   align-items: center;
@@ -516,9 +516,10 @@ h3.projects-page-name {
 }
 
 .team-member .team-name {
-  font-weight: 700;
-  font-size: 1.2em;
-  color: $heading-slate;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: $body-gray;
 }
 
 .team-member .team-role {
@@ -548,7 +549,8 @@ h3.projects-page-name {
 
 .team-member .team-bio {
   color: $body-gray;
-  font-size: 0.92em;
+  font-size: 0.92rem;
+  font-weight: 300;
   line-height: 1.7;
   margin-top: 0.5rem;
 }

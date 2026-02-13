@@ -1,6 +1,6 @@
 ---
 title: Team
-toc-title: Team Members
+toc: false
 listing:
     id: listing
     contents: team.yml
