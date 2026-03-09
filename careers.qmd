@@ -13,14 +13,4 @@ Meridian Labs has built or contributed to many important open source packages us
 
 ## Open Positions
 
-### [Senior Front-End Engineer](/careers/senior-fe.qmd)
-
-Build the interfaces that help AI researchers make sense of model behavior. You'll ship production features in TypeScript and React, own significant portions of our UI, and engage directly with our open source community. 5+ years experience required.
-
-### [Principal Front-End Engineer](/careers/principal-fe.qmd)
-
-Design and build the interfaces that help AI researchers make sense of model behavior. You'll ship production features in TypeScript and React, own significant portions of our UI, and engage directly with our open source community. 10+ years experience required.
-
-### [Principal Full-Stack Engineer](/careers/principal-fs.qmd)
-
-Design and build features that help AI researchers interact with and understand model behavior throughout our stack. You'll own major systems and shape how researchers interact with evaluation data. 10+ years experience required.
+We don't currently have open positions, but we're always looking for talented engineers to join our team. If you're interested in joining Meridian Labs, please reach out to us at [jobs@meridianlabs.org](mailto:jobs@meridianlabs.org). In your email, please include your resume, a Github URL and LinkedIn URL (if available), and a brief summary of why you'd like to join Meridian Labs.
