@@ -82,3 +82,17 @@
     Prior to joining Meridian, Kai was an Anthropic Fellow and MATS AI Safety Researcher, where he developed Petri, an open-source alignment auditing tool that enables diverse and rapid evaluations of model alignment. Petri has been widely adopted by researchers across multiple organizations and most frontier labs.<br/><br/>
     
     Kai has conducted predeployment safety audits of frontier models and has been working on model evaluations for over two years, collaborating with researchers at Anthropic, Google DeepMind, OpenAI, and Stanford. He holds an MSc from Stanford University, where his research focused on AI safety and alignment.
+
+- name: Matthew Brandly
+  role: Principal Engineer
+  links:
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/in/⭐%EF%B8%8F-matthew-brandly-34024a40/
+    - icon: github
+      text: github
+      href: https://github.com/brandly
+  bio: |
+    Matthew joined Meridian Labs in 2026 as a Principal Engineer. Prior to joining Meridian, Matthew was a Senior Software Engineer at Sonos, where he spent five years building web applications with React, TypeScript, and Node.js.<br/><br/>
+    
+    Previously, Matthew built API clients, data visualization tools, and helped design a query language for time series data at Sentenai. Before that, he built the Farmhand IoT platform from the ground up as Lead Software Engineer at Freight Farms, and co-founded Fetchnotes, a note-taking app.
