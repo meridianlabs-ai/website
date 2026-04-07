@@ -60,7 +60,7 @@
       href: https://github.com/meridianlabs-ai/inspect_swe
 
 - title: Inspect Harbor
-  tagline: Interface to run [Harbor](https://harborframework.com/registry) tasks using Inspect AI. Includes over 40 agentic datasets including swebenchpro, terminal-bench-pro, and replicationbench.
+  tagline: Interface to run Harbor tasks using Inspect AI. Includes over 40 agentic datasets including swebenchpro, terminal-bench-pro, and replicationbench.
   icon: terminal
   href: https://github.com/meridianlabs-ai/inspect_harbor
   secondary-links:
