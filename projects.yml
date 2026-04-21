@@ -24,15 +24,18 @@
       icon: github
       href: https://github.com/meridianlabs-ai/inspect_scout
 
-- title: Petri
-  tagline: Automated alignment auditing tool that orchestrates multi-turn interactions, built in collaboration with Anthropic and UK AISI.
+- title: Inspect Petri
+  tagline: Automated alignment auditing tool that orchestrates multi-turn interactions, built in collaboration with UK AISI.
   icon: shield-check
   featured: true
-  href: https://safety-research.github.io/petri/
+  href: https://meridianlabs-ai.github.io/inspect_petri/
   secondary-links:
+    - text: PyPI
+      icon: boxes
+      href: https://pypi.org/project/inspect-petri/
     - text: GitHub
       icon: github
-      href: https://github.com/safety-research/petri
+      href: https://github.com/meridianlabs-ai/inspect_petri
    
 - title: Inspect Flow
   tagline: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.
