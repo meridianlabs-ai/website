@@ -37,6 +37,20 @@
       icon: github
       href: https://github.com/meridianlabs-ai/inspect_petri
    
+
+- title: Petri Bloom
+  tagline: Framework for generating behavioral evaluations of frontier AI models.
+  icon: shield-check
+  href: https://meridianlabs-ai.github.io/petri_bloom/
+  secondary-links:
+    - text: PyPI
+      icon: boxes
+      href: https://pypi.org/project/petri-bloom/
+    - text: GitHub
+      icon: github
+      href: https://github.com/meridianlabs-ai/petri_bloom
+   
+
 - title: Inspect Flow
   tagline: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.
   icon: diagram-3
