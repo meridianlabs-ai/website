@@ -1,5 +1,6 @@
 - title: Inspect AI
-  tagline: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian.
+  tagline: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian. 
+  description: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian. Inspect can be used for a broad range of evaluations that measure coding, agentic tasks, reasoning, knowledge, behavior, and multi-modal understanding. 
   icon: cpu
   featured: true
   href: https://inspect.aisi.org.uk
@@ -13,6 +14,7 @@
 
 - title: Inspect Scout
   tagline: In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning. 
+  description: In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning. Detect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.
   icon: search
   featured: true
   href: https://meridianlabs-ai.github.io/inspect_scout/
@@ -25,7 +27,8 @@
       href: https://github.com/meridianlabs-ai/inspect_scout
 
 - title: Inspect Petri
-  tagline: Automated alignment auditing tool that orchestrates multi-turn interactions, built in collaboration with UK AISI.
+  tagline: Alignment auditing agent for probing language model behavior, built in collaboration with UK AISI.
+  description: Alignment auditing agent for probing language model behavior, built in collaboration with UK AISI. Rapidly test concrete alignment hypotheses end-to-end by generating realistic audit scenarios and orchestrating multi-turn audits.
   icon: shield-check
   featured: true
   href: https://meridianlabs-ai.github.io/inspect_petri/
@@ -40,6 +43,7 @@
 
 - title: Petri Bloom
   tagline: Framework for generating behavioral evaluations of frontier AI models.
+  description: Framework for generating behavioral evaluations of frontier AI models. Given a “seed” configuration describing the target behavior and evaluation parameters, Bloom produces diverse test scenarios, runs conversations with the target model, and scores the results.
   icon: shield-check
   href: https://meridianlabs-ai.github.io/petri_bloom/
   secondary-links:
@@ -53,6 +57,7 @@
 
 - title: Inspect Flow
   tagline: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.
+  description: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability. Inspect Flow is designed for researchers and engineers running systematic AI evaluations who need to scale beyond ad-hoc scripts.
   icon: diagram-3
   href: https://meridianlabs-ai.github.io/inspect_flow/
   secondary-links:
@@ -65,7 +70,8 @@
 
 
 - title: Inspect SWE
-  tagline: Makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents for evaluation.
+  tagline: Software engineering agents for Inspect AI. 
+  description: Software engineering agents for Inspect AI. Use popular coding agents like Claude Code, Codex CLI, Gemini CLI, and Mini SWE Agent and standard Inspect agents for any evaluation.
   icon: terminal
   href: https://meridianlabs-ai.github.io/inspect_swe/
   secondary-links:
@@ -77,7 +83,8 @@
       href: https://github.com/meridianlabs-ai/inspect_swe
 
 - title: Inspect Harbor
-  tagline: Interface to run Harbor tasks using Inspect AI. Includes over 40 agentic datasets including swebenchpro, terminal-bench-pro, and replicationbench.
+  tagline: Interface to run Harbor tasks using Inspect AI.
+  description: Interface to run Harbor tasks using Inspect AI. Includes over 80 agentic datasets including SWE-bench Pro, Terminal Bench 2.0, ReplicationBench, Finance Agent, and more.
   icon: terminal
   href: https://github.com/meridianlabs-ai/inspect_harbor
   secondary-links:
@@ -89,8 +96,25 @@
       href: https://github.com/meridianlabs-ai/inspect_harbor
 
 
+- title: Inspect Sandboxes
+  tagline: Daytona and Modal sandbox providers for Inspect AI.
+  description: Daytona and Modal sandbox providers for Inspect AI. Use scalable cloud infrastructe to run hundreds of evaluation tasks in parallel.
+  icon: terminal
+  href: https://github.com/meridianlabs-ai/inspect_sandboxes
+  secondary-links:
+    - text: PyPI
+      icon: boxes
+      href: https://pypi.org/project/inspect-sandboxes/
+    - text: GitHub
+      icon: github
+      href: https://github.com/meridianlabs-ai/inspect_sandboxes
+
+
+
+
 - title: Inspect Viz
   tagline: Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results.
+  description: Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results. Use built-in views for comparing models, tasks, and evaluation factors or create custom interactive plots.
   icon: bar-chart-line
   href: https://meridianlabs-ai.github.io/inspect_viz/
   secondary-links:
@@ -103,6 +127,7 @@
 
 - title: Inspect VSCode
   tagline: Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.
+  description: Visual Studio Code extension for productive use of Inspect AI and Inspect Scout. Features integrated log and scan viewing and debugging tools for tasks and scanners.
   icon: code-square
   href: https://inspect.aisi.org.uk/vscode.html
   secondary-links:

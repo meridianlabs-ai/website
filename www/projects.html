@@ -65,9 +65,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-tagline','listing-icon','listing-featured','listing-href','listing-secondary-links',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-title','listing-tagline','listing-description','listing-icon','listing-featured','listing-href','listing-secondary-links',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-title","listing-tagline","listing-icon","listing-featured","listing-href","listing-secondary-links"],
+      searchColumns: ["listing-title","listing-tagline","listing-description","listing-icon","listing-featured","listing-href","listing-secondary-links"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -224,7 +224,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian.</p>
+    <p class="projects-page-tagline">Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian. Inspect can be used for a broad range of evaluations that measure coding, agentic tasks, reasoning, knowledge, behavior, and multi-modal understanding.</p>
     <div class="projects-page-links">
       <a href="https://inspect.aisi.org.uk" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -243,7 +243,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning.</p>
+    <p class="projects-page-tagline">In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning. Detect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.</p>
     <div class="projects-page-links">
       <a href="https://meridianlabs-ai.github.io/inspect_scout/" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -262,7 +262,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Automated alignment auditing tool that orchestrates multi-turn interactions, built in collaboration with UK AISI.</p>
+    <p class="projects-page-tagline">Alignment auditing agent for probing language model behavior, built in collaboration with UK AISI. Rapidly test concrete alignment hypotheses end-to-end by generating realistic audit scenarios and orchestrating multi-turn audits.</p>
     <div class="projects-page-links">
       <a href="https://meridianlabs-ai.github.io/inspect_petri/" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -281,7 +281,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Framework for generating behavioral evaluations of frontier AI models.</p>
+    <p class="projects-page-tagline">Framework for generating behavioral evaluations of frontier AI models. Given a “seed” configuration describing the target behavior and evaluation parameters, Bloom produces diverse test scenarios, runs conversations with the target model, and scores the results.</p>
     <div class="projects-page-links">
       <a href="https://meridianlabs-ai.github.io/petri_bloom/" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -300,7 +300,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.</p>
+    <p class="projects-page-tagline">Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability. Inspect Flow is designed for researchers and engineers running systematic AI evaluations who need to scale beyond ad-hoc scripts.</p>
     <div class="projects-page-links">
       <a href="https://meridianlabs-ai.github.io/inspect_flow/" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -319,7 +319,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Makes software engineering agents like Claude Code and Codex CLI available as standard Inspect Agents for evaluation.</p>
+    <p class="projects-page-tagline">Software engineering agents for Inspect AI. Use popular coding agents like Claude Code, Codex CLI, Gemini CLI, and Mini SWE Agent and standard Inspect agents for any evaluation.</p>
     <div class="projects-page-links">
       <a href="https://meridianlabs-ai.github.io/inspect_swe/" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -338,9 +338,28 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Interface to run Harbor tasks using Inspect AI. Includes over 40 agentic datasets including swebenchpro, terminal-bench-pro, and replicationbench.</p>
+    <p class="projects-page-tagline">Interface to run Harbor tasks using Inspect AI. Includes over 80 agentic datasets including SWE-bench Pro, Terminal Bench 2.0, ReplicationBench, Finance Agent, and more.</p>
     <div class="projects-page-links">
       <a href="https://github.com/meridianlabs-ai/inspect_harbor" class="projects-page-learn-more">Learn more →</a>
+    </div>
+  </div>
+
+  <div class="projects-page-entry">
+    <h3 class="projects-page-name">Inspect Sandboxes      
+        <a href="https://pypi.org/project/inspect-sandboxes/" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-boxes"></i>
+          PyPI
+        </a>
+      
+        <a href="https://github.com/meridianlabs-ai/inspect_sandboxes" target="_blank" rel="noopener noreferrer" class="project-badge">
+          <i class="bi bi-github"></i>
+          GitHub
+        </a>
+      
+</h3>
+    <p class="projects-page-tagline">Daytona and Modal sandbox providers for Inspect AI. Use scalable cloud infrastructe to run hundreds of evaluation tasks in parallel.</p>
+    <div class="projects-page-links">
+      <a href="https://github.com/meridianlabs-ai/inspect_sandboxes" class="projects-page-learn-more">Learn more →</a>
     </div>
   </div>
 
@@ -357,7 +376,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results.</p>
+    <p class="projects-page-tagline">Data visualization library for creating high-quality interactive visualizations from Inspect AI evaluation results. Use built-in views for comparing models, tasks, and evaluation factors or create custom interactive plots.</p>
     <div class="projects-page-links">
       <a href="https://meridianlabs-ai.github.io/inspect_viz/" class="projects-page-learn-more">Learn more →</a>
     </div>
@@ -376,7 +395,7 @@ window.Quarto = {
         </a>
       
 </h3>
-    <p class="projects-page-tagline">Visual Studio Code extension for productive use of Inspect AI with an integrated log viewer, task browser, and debugging tools.</p>
+    <p class="projects-page-tagline">Visual Studio Code extension for productive use of Inspect AI and Inspect Scout. Features integrated log and scan viewing and debugging tools for tasks and scanners.</p>
     <div class="projects-page-links">
       <a href="https://inspect.aisi.org.uk/vscode.html" class="projects-page-learn-more">Learn more →</a>
     </div>
