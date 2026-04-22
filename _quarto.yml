@@ -10,9 +10,9 @@ website:
     right:
       - projects.qmd
       - team.qmd
+      - careers.qmd
       - text: About
         href: about.qmd
-      - careers.qmd
       - icon: twitter
         href: https://x.com/meridianlabs_ai
         aria-label: Twitter

@@ -68,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,12 +93,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./careers.html"> 
 <span class="menu-text">Careers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://x.com/meridianlabs_ai"> <i class="bi bi-twitter" role="img" aria-label="Twitter">
@@ -126,9 +126,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -151,12 +149,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for innovation and scientific progress, while at the same time creating new security challenges and being difficult to understand deeply.</p>
-<p>Meridian Labs is a 501(c)(3) non-profit building an open source platform for understanding, evaluating, and testing AI models and agents. Our tools enable rigorous model testing and in-depth analysis of agent behavior.</p>
-<p>Leading AI developers now routinely conduct pre-release evaluations to measure capabilities and assess risks, as illustrated by the detailed system cards published by organizations like <a href="https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf">OpenAI</a>, <a href="https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf">Anthropic</a>, and <a href="https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf">Google</a>. In addition, model developers are collaborating on evaluations and security with government organizations like the <a href="https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation">US CAISI</a> and <a href="https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-developers-to-improve-model-security">UK AISI</a>, and a robust group of <a href="https://aievaluatorforum.org">indepenent third party evaluators</a> is developing.</p>
-<p>Our goal is to support this emerging ecosystem by creating a common platform shared by governments, academia, non-profits, and model developers. Our open-source software packages are in wide use across these organizations, and facilitate rigorous empirical work, deep insights, and cross-organizational collaboration.</p>
+<p>Meridian Labs is a 501(c)(3) non-profit building open source tools for testing, evaluating, and researching frontier AI models. Our goal is to support work on AI safety, alignment and security by creating a common platform shared by governments, non-profits, academia, and model developers. Our tools enable rigorous model testing and in-depth analysis of agent behavior and alignment.</p>
+<p>The core of our open-source offerings is <a href="https://inspect.aisi.org.uk">Inspect AI</a>, an evaluation framework developed at the UK AISI in collaboration with Meridian’s founding team. Inspect AI is now the standard evaluation framework for many government organizations including UK AISI, US CAISI, EU AI Office, Japan AISI, Korea AISI, and others. It is also the standard framework for a wide variety of NGOs including METR, Apollo, Epoch, HAL, SecureBio, Redwood, and RAND.</p>
+<section id="our-work" class="level2">
+<h2 class="anchored" data-anchor-id="our-work">Our Work</h2>
+<p>Meridian works on a wide variety of open source projects, including:</p>
+<ol type="1">
+<li><p><a href="https://inspect.aisi.org.uk">Inspect AI</a> frontier AI evaluation framework which provides researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors.</p></li>
+<li><p><a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout</a>, a framework for analysis and monitoring of AI agents (both in the lab and in production). Scout is in wide use at UK AISI, US CAISI, METR, and Apollo, and expect it to be an important technical foundation for AI alignment and monitoring.</p></li>
+<li><p><a href="https://github.com/meridianlabs-ai/inspect_petri">Insect Petri</a>, an automated alignment auditing tool that orchestrates multi-turn interactions between auditor and target models (note this was originally developed at Anthropic and is being transitioned to Meridian).</p></li>
+<li><p><a href="https://meridianlabs-ai.github.io/inspect_flow/">Inspect Flow</a>, a configuration and workflow management tool for AI evaluations that enables systematic experimentation and running large scale evaluation sets (e.g.&nbsp;for auditing / pre-deployment testing). Currently in use at UK AISI and US CAISI.</p></li>
+</ol>
+<p>Many of our current users also do work in the adjacent fields of alignment, control, and mechanistic interpretability. Inspect AI is often used as part of these workflows (for example, <a href="https://control-arena.aisi.org.uk">ControlArena</a> from UK AISI, <a href="https://www.linuxarena.ai">LinuxArena</a> from Redwood, and the <a href="https://inspect.aisi.org.uk/providers.html#transformer-lens">TransformerLens</a> and <a href="https://inspect.aisi.org.uk/providers.html#nnterp">nnterp</a> Inspect model providers for interpretability).</p>
+</section>
+<section id="goals-and-plan" class="level2">
+<h2 class="anchored" data-anchor-id="goals-and-plan">Goals and Plan</h2>
+<p>Our goal is to create open source software that makes leading edge AI testing and evaluation tools broadly available. Future plans include:</p>
+<ul>
+<li><p>Evolving our current projects in response to user needs and the evolving ecosystem, maintaining a strong and up to date foundation for evaluating and understanding models.</p></li>
+<li><p>Providing an avenue for AI Safety Institutes, research organizations, and safety teams at leading labs to transfer selected pieces of their work into more broadly available open source projects.</p></li>
+</ul>
+<p>Projects in this vein are likely to include automated alignment auditing, control frameworks, interpretability tools, and means of facilitating privacy-preserving analysis of language model interactions.</p>
+<p>We also believe that automated workflows for evaluations, monitoring, and alignment research will become increasingly important, and our tools will be designed and built for use by humans and models alike.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

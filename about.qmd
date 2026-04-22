@@ -1,11 +1,34 @@
 ---
 title: "About"
+toc: false
 ---
 
-Frontier AI research and development is accelerating, with new capabilities emerging at a breakneck pace. These systems offer unprecedented opportunities for innovation and scientific progress, while at the same time creating new security challenges and being difficult to understand deeply.
+Meridian Labs is a 501(c)(3) non-profit building open source tools for testing, evaluating, and researching frontier AI models. Our goal is to support work on AI safety, alignment and security by creating a common platform shared by governments, non-profits, academia, and model developers. Our tools enable rigorous model testing and in-depth analysis of agent behavior and alignment.
 
-Meridian Labs is a 501(c)(3) non-profit building an open source platform for understanding, evaluating, and testing AI models and agents. Our tools enable rigorous model testing and in-depth analysis of agent behavior.
+The core of our open-source offerings is [Inspect AI](https://inspect.aisi.org.uk), an evaluation framework developed at the UK AISI in collaboration with Meridian's founding team. Inspect AI is now the standard evaluation framework for many government organizations including UK AISI, US CAISI, EU AI Office, Japan AISI, Korea AISI, and others. It is also the standard framework for a wide variety of NGOs including METR, Apollo, Epoch, HAL, SecureBio, Redwood, and RAND.
 
-Leading AI developers now routinely conduct pre-release evaluations to measure capabilities and assess risks, as illustrated by the detailed system cards published by organizations like [OpenAI](https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf), [Anthropic](https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf), and [Google](https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf). In addition, model developers are collaborating on evaluations and security with government organizations like the [US CAISI](https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation) and [UK AISI](https://www.aisi.gov.uk/blog/how-were-working-with-frontier-ai-developers-to-improve-model-security), and a robust group of [indepenent third party evaluators](https://aievaluatorforum.org) is developing.
+## Our Work
 
-Our goal is to support this emerging ecosystem by creating a common platform shared by governments, academia, non-profits, and model developers. Our open-source software packages are in wide use across these organizations, and facilitate rigorous empirical work, deep insights, and cross-organizational collaboration.
+Meridian works on a wide variety of open source projects, including:
+
+1. [Inspect AI](https://inspect.aisi.org.uk) frontier AI evaluation framework which provides researchers, developers, and policy makers with the tools to conduct rigorous, repeatable assessments of AI capabilities and behaviors.
+
+2. [Inspect Scout](https://meridianlabs-ai.github.io/inspect_scout/), a framework for analysis and monitoring of AI agents (both in the lab and in production). Scout is in wide use at UK AISI, US CAISI, METR, and Apollo, and expect it to be an important technical foundation for AI alignment and monitoring.
+
+3. [Insect Petri](https://github.com/meridianlabs-ai/inspect_petri), an automated alignment auditing tool that orchestrates multi-turn interactions between auditor and target models (note this was originally developed at Anthropic and is being transitioned to Meridian).
+
+4. [Inspect Flow](https://meridianlabs-ai.github.io/inspect_flow/), a configuration and workflow management tool for AI evaluations that enables systematic experimentation and running large scale evaluation sets (e.g. for auditing / pre-deployment testing). Currently in use at UK AISI and US CAISI.
+
+Many of our current users also do work in the adjacent fields of alignment, control, and mechanistic interpretability. Inspect AI is often used as part of these workflows (for example, [ControlArena](https://control-arena.aisi.org.uk) from UK AISI, [LinuxArena](https://www.linuxarena.ai) from Redwood, and the [TransformerLens](https://inspect.aisi.org.uk/providers.html#transformer-lens) and [nnterp](https://inspect.aisi.org.uk/providers.html#nnterp) Inspect model providers for interpretability).
+
+## Goals and Plan
+
+Our goal is to create open source software that makes leading edge AI testing and evaluation tools broadly available. Future plans include:
+
+- Evolving our current projects in response to user needs and the evolving ecosystem, maintaining a strong and up to date foundation for evaluating and understanding models.
+
+- Providing an avenue for AI Safety Institutes, research organizations, and safety teams at leading labs to transfer selected pieces of their work into more broadly available open source projects.
+
+Projects in this vein are likely to include automated alignment auditing, control frameworks, interpretability tools, and means of facilitating privacy-preserving analysis of language model interactions.
+
+We also believe that automated workflows for evaluations, monitoring, and alignment research will become increasingly important, and our tools will be designed and built for use by humans and models alike.
