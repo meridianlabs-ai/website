@@ -27,7 +27,7 @@
       href: https://github.com/meridianlabs-ai/inspect_scout
 
 - title: Inspect Petri
-  tagline: Alignment auditing agent for probing language model behavior, built in collaboration with UK AISI.
+  tagline: Automated multi-turn agent for alignment auditing of language models. Built in collaboration with the UK AISI.
   description: Alignment auditing agent for probing language model behavior, built in collaboration with UK AISI. Rapidly test concrete alignment hypotheses end-to-end by generating realistic audit scenarios and orchestrating multi-turn audits.
   icon: shield-check
   featured: true

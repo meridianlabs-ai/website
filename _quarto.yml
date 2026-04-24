@@ -3,6 +3,9 @@ project:
   output-dir: www
 
 website:
+  title: "Meridian Labs"
+  site-url: https://meridianlabs.ai
+  description: "Open source tools for AI research and evaluation"
   search: false
   navbar:
     background: light
@@ -11,6 +14,8 @@ website:
       - projects.qmd
       - team.qmd
       - careers.qmd
+      - text: Blog
+        href: blog/index.qmd
       - text: About
         href: about.qmd
       - icon: twitter
@@ -22,6 +27,8 @@ website:
       - icon: github
         href: https://github.com/meridianlabs-ai
         aria-label: GitHub
+      - icon: rss
+        href: /blog/index.xml
   page-footer:
     left: |
       <span class="contact-org">Meridian Labs</span> · <span>A 501(c)(3) nonprofit</span><br>501 Boylston St, 10th Floor, Boston, MA 02116

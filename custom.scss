@@ -78,6 +78,10 @@ h2, h3, h4, h5, h6 {
   }
 }
 
+.quarto-banner .navbar {
+  background-color: #E2E8F0 !important;
+}
+
 .navbar .navbar-brand img {
   width: 140px;
 }
@@ -104,7 +108,8 @@ h2, h3, h4, h5, h6 {
 
 .navbar .navbar-nav .nav-link:has(.bi-github),
 .navbar .navbar-nav .nav-link:has(.bi-twitter),
-.navbar .navbar-nav .nav-link:has(.bi-linkedin) {
+.navbar .navbar-nav .nav-link:has(.bi-linkedin),
+.navbar .navbar-nav .nav-link:has(.bi-rss) {
   font-size: 0.75rem;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
@@ -768,5 +773,42 @@ h3.projects-page-name {
 
   .team-member {
     padding: 0 0 0 1rem;
+  }
+}
+
+// =====================
+// Blog listing
+// =====================
+#title-block-header:has(.quarto-title-banner) {
+  margin-bottom: 1rem !important;
+}
+
+.quarto-listing-default .quarto-post {
+  .listing-title a {
+    color: $heading-slate;
+    font-weight: 500;
+  }
+
+  .listing-description, .listing-description a {
+    color: $body-gray !important;
+  }
+
+  .listing-item-img-placeholder {
+    display: none;
+  }
+
+  h3.listing-title {
+    margin-top: 0 !important;
+  }
+
+  .metadata {
+    margin-top: -2px !important;
+    padding-top: 0;
+
+    .listing-date,
+    .listing-author {
+      color: $light-text;
+      font-size: 0.875rem;
+    }
   }
 }

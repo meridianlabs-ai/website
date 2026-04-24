@@ -1,0 +1,11 @@
+---
+title: Meridian Labs Blog
+subtitle: Updates on our open source tools for AI research and evaluation.
+listing:
+  type: default
+  sort: "date desc"
+  feed: true
+toc: false
+page-layout: article
+---
+
