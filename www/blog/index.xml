@@ -10,7 +10,39 @@
 <atom:link href="https://meridianlabs.ai/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Open source tools for AI research and evaluation</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Sun, 07 Sep 2025 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 25 Feb 2026 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Transcript Analysis with Inspect Scout</title>
+  <dc:creator>J.J. Allaire</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/inspect-scout/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout</a>, a tool for in-depth analysis of AI agent transcripts. With Scout, you can easily:</p>
+<ul>
+<li>Detect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.</li>
+<li>Analyze transcripts from Inspect, Arize Phoenix, LangSmith, Logfire, MLFLow, W&amp;B Weave, Claude Code, or custom sources via the capture and import APIs.</li>
+<li>Develop scanners interactively, exploring transcripts and scan results visually in Scout View.</li>
+<li>Validate scanner accuracy against human-labeled examples.</li>
+<li>Handle complex scanning requirements like multi-agent transcripts, compaction, and context-window chunking.</li>
+<li>Scale to thousands of transcripts with parallel processing, batching, and fault tolerance.</li>
+</ul>
+<p><a href="https://meridianlabs-ai.github.io/inspect_scout/images/view-result.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://meridianlabs-ai.github.io/inspect_scout/images/view-result.png" class="border img-fluid"></a></p>
+<p>Scout also includes a validation framework for measuring scanner accuracy against human-labeled examples, so you can iteratively refine your scanners with confidence.</p>
+<p><a href="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" class="border img-fluid"></a></p>
+<p>We’re especially appreciative of the feedback we received from UK AISI, US CAISI, METR, Apollo, and many others during Scout’s development. Their paper on <a href="https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/699f3a9b918419fe89c8c740_Seven_simple_steps_forlog_analysis_in_AI_systems_corrected.pdf">Seven Simple Steps for Log Analysis in AI Systems</a> goes in depth on best practices for transcript analysis including many practical examples.</p>
+<p>Get started with the <a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout documentation</a>.</p>
+
+
+
+ ]]></description>
+  <guid>https://meridianlabs.ai/blog/posts/inspect-scout/</guid>
+  <pubDate>Wed, 25 Feb 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" medium="image" type="image/png"/>
+</item>
 <item>
   <title>Announcing Inspect Viz</title>
   <dc:creator>J.J. Allaire</dc:creator>

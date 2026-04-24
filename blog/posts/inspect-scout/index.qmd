@@ -1,0 +1,27 @@
+---
+title: "Transcript Analysis with Inspect Scout"
+description: "A tool for in-depth analysis of AI agent transcripts, with LLM-based and pattern-based scanners for detecting issues beyond simple success/failure metrics."
+author: "J.J. Allaire"
+date: "2026-02-25"
+image: https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png
+lightbox: true
+---
+
+We're excited to announce [Inspect Scout](https://meridianlabs-ai.github.io/inspect_scout/), a tool for in-depth analysis of AI agent transcripts. With Scout, you can easily:
+
+- Detect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.
+- Analyze transcripts from Inspect, Arize Phoenix, LangSmith, Logfire, MLFLow, W&B Weave, Claude Code, or custom sources via the capture and import APIs.
+- Develop scanners interactively, exploring transcripts and scan results visually in Scout View.
+- Validate scanner accuracy against human-labeled examples.
+- Handle complex scanning requirements like multi-agent transcripts, compaction, and context-window chunking.
+- Scale to thousands of transcripts with parallel processing, batching, and fault tolerance.
+
+![](https://meridianlabs-ai.github.io/inspect_scout/images/view-result.png){.border}
+
+Scout also includes a validation framework for measuring scanner accuracy against human-labeled examples, so you can iteratively refine your scanners with confidence.
+
+![](https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png){.border}
+
+We're especially appreciative of the feedback we received from UK AISI, US CAISI, METR, Apollo, and many others during Scout's development. Their paper on [Seven Simple Steps for Log Analysis in AI Systems](https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/699f3a9b918419fe89c8c740_Seven_simple_steps_forlog_analysis_in_AI_systems_corrected.pdf) goes in depth on best practices for transcript analysis including many practical examples.
+
+Get started with the [Inspect Scout documentation](https://meridianlabs-ai.github.io/inspect_scout/).

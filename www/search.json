@@ -60,7 +60,7 @@
     "href": "blog/index.html",
     "title": "Meridian Labs Blog",
     "section": "",
-    "text": "Announcing Inspect Viz\n\n\nA new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.\n\n\n\n\n\nSep 7, 2025\n\n\nJ.J. Allaire\n\n\n\n\n\nNo matching items"
+    "text": "Transcript Analysis with Inspect Scout\n\n\nA tool for in-depth analysis of AI agent transcripts, with LLM-based and pattern-based scanners for detecting issues beyond simple success/failure metrics.\n\n\n\n\n\nFeb 25, 2026\n\n\nJ.J. Allaire\n\n\n\n\n\n\n\n\n\n\n\n\nAnnouncing Inspect Viz\n\n\nA new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.\n\n\n\n\n\nSep 7, 2025\n\n\nJ.J. Allaire\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "careers/principal-fe.html",
@@ -89,5 +89,12 @@
     "title": "About",
     "section": "Goals and Plan",
     "text": "Goals and Plan\nOur goal is to create open source software that makes leading edge AI testing and evaluation tools broadly available. Future plans include:\n\nEvolving our current projects in response to user needs and the evolving ecosystem, maintaining a strong and up to date foundation for evaluating and understanding models.\nProviding an avenue for AI Safety Institutes, research organizations, and safety teams at leading labs to transfer selected pieces of their work into more broadly available open source projects.\n\nProjects in this vein are likely to include automated alignment auditing, control frameworks, interpretability tools, and means of facilitating privacy-preserving analysis of language model interactions.\nWe also believe that automated workflows for evaluations, monitoring, and alignment research will become increasingly important, and our tools will be designed and built for use by humans and models alike."
+  },
+  {
+    "objectID": "blog/posts/inspect-scout/index.html",
+    "href": "blog/posts/inspect-scout/index.html",
+    "title": "Transcript Analysis with Inspect Scout",
+    "section": "",
+    "text": "We’re excited to announce Inspect Scout, a tool for in-depth analysis of AI agent transcripts. With Scout, you can easily:\n\nDetect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.\nAnalyze transcripts from Inspect, Arize Phoenix, LangSmith, Logfire, MLFLow, W&B Weave, Claude Code, or custom sources via the capture and import APIs.\nDevelop scanners interactively, exploring transcripts and scan results visually in Scout View.\nValidate scanner accuracy against human-labeled examples.\nHandle complex scanning requirements like multi-agent transcripts, compaction, and context-window chunking.\nScale to thousands of transcripts with parallel processing, batching, and fault tolerance.\n\n\nScout also includes a validation framework for measuring scanner accuracy against human-labeled examples, so you can iteratively refine your scanners with confidence.\n\nWe’re especially appreciative of the feedback we received from UK AISI, US CAISI, METR, Apollo, and many others during Scout’s development. Their paper on Seven Simple Steps for Log Analysis in AI Systems goes in depth on best practices for transcript analysis including many practical examples.\nGet started with the Inspect Scout documentation."
   }
 ]
