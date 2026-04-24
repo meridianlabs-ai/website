@@ -1,0 +1,71 @@
+---
+title: "Introducing Inspect Flow"
+description: "A workflow layer for Inspect that makes it easier to run evals at scale with declarative configs, matrix sweeps, and automatic log reuse."
+author: "Alexandra Abbas"
+date: "2026-03-04"
+image: https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png
+---
+
+[Inspect Flow](https://meridianlabs-ai.github.io/inspect_flow/) is the workflow layer for Inspect that makes it easier to run evals at scale.
+
+- **Scaling experiments:** Run many tasks × models × params without writing orchestration scripts.
+- **Avoid re-running work:** Reuse logs from the Flow Store and only run what's missing.
+- **Clean configs:** Define eval workflows declaratively instead of ad-hoc Python scripts.
+- **Systematic sweeps:** Built-in matrix patterns for exploring tasks, models, and params.
+
+Define a simple workflow with a list of tasks:
+
+```python
+from inspect_flow import FlowSpec, FlowTask
+
+FlowSpec(
+    log_dir="logs",
+    tasks=[
+        FlowTask(
+            name="inspect_evals/gpqa_diamond",
+            model="openai/gpt-4o",
+        ),
+        FlowTask(
+            name="inspect_evals/mmlu_0_shot",
+            model="openai/gpt-4o",
+        ),
+    ],
+)
+```
+
+Then run:
+
+```bash
+flow run config.py
+```
+
+![](https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png){.border}
+
+For more complex experiments, use matrix patterns to systematically sweep across tasks, models, and parameters:
+
+```python
+FlowSpec(
+    log_dir="logs",
+    tasks=tasks_matrix(
+        task=[
+            "inspect_evals/gpqa_diamond",
+            "inspect_evals/mmlu_pro",
+        ],
+        model=models_matrix(
+            model=[
+                "openai/gpt-5",
+                "openai/gpt-5-mini",
+            ],
+            config=configs_matrix(
+                reasoning_effort=["low", "medium", "high"],
+            ),
+        ),
+    ),
+)
+# → produces 12 evaluations
+#   2 tasks × 2 models × 3 reasoning levels
+```
+
+Flow expands the task/model/config matrix, reuses logs from the Flow Store, and only runs what's missing.
+
+Get started with the [Inspect Flow documentation](https://meridianlabs-ai.github.io/inspect_flow/).

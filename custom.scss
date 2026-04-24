@@ -798,9 +798,8 @@ h3.projects-page-name {
   }
 
   .thumbnail img {
-    max-height: 100px;
-    width: auto !important;
-    object-fit: contain;
+    height: 100px;
+    object-fit: cover;
   }
 
   h3.listing-title {
