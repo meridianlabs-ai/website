@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Meridian Labs">
-<meta name="dcterms.date" content="2026-04-23">
-<meta name="description" content="Introducing the Meridian Labs blog — updates on our open source tools for AI research and evaluation.">
+<meta name="author" content="J.J. Allaire">
+<meta name="dcterms.date" content="2025-09-07">
+<meta name="description" content="A new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.">
 
-<title>Welcome to the Meridian Labs Blog – Meridian Labs</title>
+<title>Announcing Inspect Viz – Meridian Labs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-968bae80ceb4f615e0c7b1a5fcc9bfed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-e72911f1df5bf9394750fad9df7067e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -144,10 +144,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome to the Meridian Labs Blog</h1>
+      <h1 class="title">Announcing Inspect Viz</h1>
                   <div>
         <div class="description">
-          Introducing the Meridian Labs blog — updates on our open source tools for AI research and evaluation.
+          A new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.
         </div>
       </div>
                 </div>
@@ -159,14 +159,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Meridian Labs </p>
+               <p>J.J. Allaire </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 23, 2026</p>
+        <p class="date">September 7, 2025</p>
       </div>
     </div>
     
@@ -187,8 +187,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>We’re excited to launch the Meridian Labs blog. Here we’ll share updates on our open source tools for AI research and evaluation, insights from our work on model testing and agent behavior analysis, and perspectives on the evolving landscape of AI safety and evaluation.</p>
-<p>Stay tuned for posts about <a href="https://inspect.ai">Inspect AI</a>, our platform for evaluating large language models, and our growing suite of tools for understanding AI systems.</p>
+<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz</a>, a new data visualization framework for Inspect evals. Inspect Viz includes a variety of pre-built plots that provide commonly used views of eval data, making it easier to explore and communicate results from your evaluations.</p>
+<p>Whether you need to visualize accuracy across tasks, compare model performance, or drill into specific evaluation runs, Inspect Viz provides ready-to-use components that work seamlessly with the Inspect ecosystem. Here are a few examples:</p>
+<p>Track how model scores evolve over time across models and providers:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/images/scores_timeline_gpqa.png" class="border img-fluid"></p>
+<p>Break down evaluation scores by individual task to identify strengths and weaknesses:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" class="border img-fluid"></p>
+<p>Compare performance across models at a glance:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-model_files/placeholder/641e3e25e0133dc2.png" class="border img-fluid"></p>
+<p>Use heatmaps to spot patterns across tasks and models simultaneously:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-heatmap_files/placeholder/97559e02f53807b9.png" class="border img-fluid"></p>
+<p>These are just a few of the views available out of the box and you can easily build your own custom visualizations on top of the framework. Get started with the <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz documentation</a>.</p>
 
 
 

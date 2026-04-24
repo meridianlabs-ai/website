@@ -28,11 +28,11 @@
     "text": "Meridian Labs is building an open source platform for the research and evaluation of large language models. We’re looking for a Senior Front-End Engineer to help build the interfaces that researchers use to interact with complex evaluation data through tools like Inspect Viewer and Inspect Viz.\nYou’ll help build the products that AI researchers use to make sense of model behavior—turning dense evaluation results into clear, actionable insights. This role combines front-end expertise with product sensibility and direct engagement with our user community.\n\nResponsibilities\n\nBuild and ship production features in Inspect’s front-end applications using TypeScript and React\nOwn significant portions of our UI codebase and make sound technical decisions\nCollaborate with internal engineers and gather feedback from external users to inform product direction\nDesign compelling, usable interfaces for technically sophisticated users\nParticipate in our open source community—reviewing PRs and engaging contributors\nCommunicate progress and decisions to leadership and stakeholders\n\n\n\nMinimum Qualifications\n\n5+ years of software engineering experience\n3+ years building production web applications with TypeScript and React\nExperience owning and shipping significant front-end features\nTrack record of executing projects with multiple stakeholders\nStrong interpersonal skills and collaborative mindset\nBachelor’s degree in CS or related field (or equivalent experience)\n\n\n\nPreferred Qualifications\n\nExperience with Python and comfort contributing to backend systems\nBackground in data visualization or complex UI for technical users\nExperience with open source communities\nFamiliarity with AI safety, model evaluation, or ML operations\n\n\n\nLocation\nMeridian Labs is based in Boston, MA. We prefer in-person or hybrid work.\n\n\nCompensation\n$150,000 – $225,000 with benefits, commensurate with experience.\n\n\nApplying\nTo apply, please email the following to jobs@meridianlabs.ai:\n\nYour resume\nLinkedIn URL (if available)\nGitHub URL (if available)\nA brief summary of why you’re interested in joining Meridian Labs"
   },
   {
-    "objectID": "blog/posts/sample-post/index.html",
-    "href": "blog/posts/sample-post/index.html",
-    "title": "Welcome to the Meridian Labs Blog",
+    "objectID": "blog/posts/inspect-viz/index.html",
+    "href": "blog/posts/inspect-viz/index.html",
+    "title": "Announcing Inspect Viz",
     "section": "",
-    "text": "We’re excited to launch the Meridian Labs blog. Here we’ll share updates on our open source tools for AI research and evaluation, insights from our work on model testing and agent behavior analysis, and perspectives on the evolving landscape of AI safety and evaluation.\nStay tuned for posts about Inspect AI, our platform for evaluating large language models, and our growing suite of tools for understanding AI systems."
+    "text": "We’re excited to announce Inspect Viz, a new data visualization framework for Inspect evals. Inspect Viz includes a variety of pre-built plots that provide commonly used views of eval data, making it easier to explore and communicate results from your evaluations.\nWhether you need to visualize accuracy across tasks, compare model performance, or drill into specific evaluation runs, Inspect Viz provides ready-to-use components that work seamlessly with the Inspect ecosystem. Here are a few examples:\nTrack how model scores evolve over time across models and providers:\n\nBreak down evaluation scores by individual task to identify strengths and weaknesses:\n\nCompare performance across models at a glance:\n\nUse heatmaps to spot patterns across tasks and models simultaneously:\n\nThese are just a few of the views available out of the box and you can easily build your own custom visualizations on top of the framework. Get started with the Inspect Viz documentation."
   },
   {
     "objectID": "projects.html",
@@ -60,7 +60,7 @@
     "href": "blog/index.html",
     "title": "Meridian Labs Blog",
     "section": "",
-    "text": "Welcome to the Meridian Labs Blog\n\n\nIntroducing the Meridian Labs blog — updates on our open source tools for AI research and evaluation.\n\n\n\n\n\nApr 23, 2026\n\n\nMeridian Labs\n\n\n\n\n\nNo matching items"
+    "text": "Announcing Inspect Viz\n\n\nA new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.\n\n\n\n\n\nSep 7, 2025\n\n\nJ.J. Allaire\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "careers/principal-fe.html",

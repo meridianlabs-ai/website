@@ -565,7 +565,7 @@ h3.projects-page-name {
 // =====================
 #quarto-content.page-layout-article,
 #quarto-content.page-layout-full {
-  padding-top: 1.5rem;
+  padding-top: 0.5rem;
 }
 
 // Narrow the content column for readability
@@ -795,6 +795,12 @@ h3.projects-page-name {
 
   .listing-item-img-placeholder {
     display: none;
+  }
+
+  .thumbnail img {
+    max-height: 100px;
+    width: auto !important;
+    object-fit: contain;
   }
 
   h3.listing-title {

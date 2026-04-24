@@ -10,25 +10,35 @@
 <atom:link href="https://meridianlabs.ai/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Open source tools for AI research and evaluation</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Thu, 23 Apr 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 07 Sep 2025 04:00:00 GMT</lastBuildDate>
 <item>
-  <title>Welcome to the Meridian Labs Blog</title>
-  <dc:creator>Meridian Labs</dc:creator>
-  <link>https://meridianlabs.ai/blog/posts/sample-post/</link>
+  <title>Announcing Inspect Viz</title>
+  <dc:creator>J.J. Allaire</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/inspect-viz/</link>
   <description><![CDATA[ 
 
 
 
 
 
-<p>We’re excited to launch the Meridian Labs blog. Here we’ll share updates on our open source tools for AI research and evaluation, insights from our work on model testing and agent behavior analysis, and perspectives on the evolving landscape of AI safety and evaluation.</p>
-<p>Stay tuned for posts about <a href="https://inspect.ai">Inspect AI</a>, our platform for evaluating large language models, and our growing suite of tools for understanding AI systems.</p>
+<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz</a>, a new data visualization framework for Inspect evals. Inspect Viz includes a variety of pre-built plots that provide commonly used views of eval data, making it easier to explore and communicate results from your evaluations.</p>
+<p>Whether you need to visualize accuracy across tasks, compare model performance, or drill into specific evaluation runs, Inspect Viz provides ready-to-use components that work seamlessly with the Inspect ecosystem. Here are a few examples:</p>
+<p>Track how model scores evolve over time across models and providers:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/images/scores_timeline_gpqa.png" class="border img-fluid"></p>
+<p>Break down evaluation scores by individual task to identify strengths and weaknesses:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" class="border img-fluid"></p>
+<p>Compare performance across models at a glance:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-model_files/placeholder/641e3e25e0133dc2.png" class="border img-fluid"></p>
+<p>Use heatmaps to spot patterns across tasks and models simultaneously:</p>
+<p><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-heatmap_files/placeholder/97559e02f53807b9.png" class="border img-fluid"></p>
+<p>These are just a few of the views available out of the box and you can easily build your own custom visualizations on top of the framework. Get started with the <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz documentation</a>.</p>
 
 
 
  ]]></description>
-  <guid>https://meridianlabs.ai/blog/posts/sample-post/</guid>
-  <pubDate>Thu, 23 Apr 2026 04:00:00 GMT</pubDate>
+  <guid>https://meridianlabs.ai/blog/posts/inspect-viz/</guid>
+  <pubDate>Sun, 07 Sep 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" medium="image" type="image/png"/>
 </item>
 </channel>
 </rss>

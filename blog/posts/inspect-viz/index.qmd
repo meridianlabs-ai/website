@@ -1,0 +1,30 @@
+---
+title: "Announcing Inspect Viz"
+description: "A new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data."
+author: "J.J. Allaire"
+date: "2025-09-07"
+image: https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png
+---
+
+We're excited to announce [Inspect Viz](https://meridianlabs-ai.github.io/inspect_viz/), a new data visualization framework for Inspect evals. Inspect Viz includes a variety of pre-built plots that provide commonly used views of eval data, making it easier to explore and communicate results from your evaluations.
+
+Whether you need to visualize accuracy across tasks, compare model performance, or drill into specific evaluation runs, Inspect Viz provides ready-to-use components that work seamlessly with the Inspect ecosystem. Here are a few examples:
+
+Track how model scores evolve over time across models and providers:
+
+![](https://meridianlabs-ai.github.io/inspect_viz/images/scores_timeline_gpqa.png){.border}
+
+Break down evaluation scores by individual task to identify strengths and weaknesses:
+
+![](https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png){.border}
+
+Compare performance across models at a glance:
+
+![](https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-model_files/placeholder/641e3e25e0133dc2.png){.border}
+
+Use heatmaps to spot patterns across tasks and models simultaneously:
+
+![](https://meridianlabs-ai.github.io/inspect_viz/view-scores-heatmap_files/placeholder/97559e02f53807b9.png){.border}
+
+
+These are just a few of the views available out of the box and you can easily build your own custom visualizations on top of the framework. Get started with the [Inspect Viz documentation](https://meridianlabs-ai.github.io/inspect_viz/).
