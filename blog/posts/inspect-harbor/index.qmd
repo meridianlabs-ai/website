@@ -1,0 +1,12 @@
+---
+title: "Announcing Inspect Harbor"
+description: "A new package that makes 80+ Harbor task implementations available to run directly in Inspect, bridging Harbor's containerized agent evaluations with Inspect's workflow."
+author: "Alexandra Abbas"
+date: "2026-02-12"
+---
+
+[Harbor](https://harborframework.com) is a framework for evaluating AI agents in sandboxed, containerized environments. Its [registry](https://registry.harborframework.com) hosts a growing collection of popular benchmarks including SWE-Bench, Terminal-Bench, LawBench, MedAgentBench, Finance Agent, and ReplicationBench, making it a go-to resource for teams that need rigorous, reproducible agent evaluations.
+
+We're excited to share [Inspect Harbor](https://meridianlabs-ai.github.io/inspect_harbor/), a new package that brings 80+ [Harbor task implementations](https://inspect.aisi.org.uk/evals/#/?source=harbor) directly into Inspect. This means you can run Harbor's extensive library of containerized agent evaluations using Inspect's workflow, tooling, and agent integrations without needing to set up Harbor separately. You can:
+
+Check out the [documentation](https://meridianlabs-ai.github.io/inspect_harbor/) and the full [listing of Harbor evals](https://inspect.aisi.org.uk/evals/#/?source=harbor) available in Inspect.
