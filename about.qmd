@@ -1,6 +1,5 @@
 ---
 title: "About"
-toc: false
 ---
 
 Meridian Labs is a 501(c)(3) non-profit building open source tools for testing, evaluating, and researching frontier AI models. Our goal is to support work on AI safety, alignment and security by creating a common platform shared by governments, non-profits, academia, and model developers. Our tools enable rigorous model testing and in-depth analysis of agent behavior and alignment.

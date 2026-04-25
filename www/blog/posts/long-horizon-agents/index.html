@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="J.J. Allaire">
+<meta name="dcterms.date" content="2026-04-24">
+<meta name="description" content="New tools for long-horizon agents including compaction, skills, plans, memory, checkpointing, and native bridges for Claude Code and Codex CLI.">
 
-<title>Careers – Meridian Labs</title>
+<title>Long-Horizon Agents – Meridian Labs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,22 +26,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8828ab39ebbfad15cd703dff56256639.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-8828ab39ebbfad15cd703dff56256639.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -54,9 +95,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="preload" href="./fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
-<link rel="preload" href="./fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
-<link rel="preload" href="./fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin="">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #E2E8F0;
+      }
+</style>
+<link rel="preload" href="../../../fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="../../../fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="../../../fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin="">
 <!-- Privacy-friendly analytics by Plausible -->
 <script async="" src="https://plausible.io/js/pa-vbRSUDSNBruuHoY-j0cf4.js"></script>
 <script>
@@ -65,18 +112,18 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
 
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="../../../fonts/fonts.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><img src="./images/meridian-logo-black.svg" width="140"></span>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title"><img src="../../../images/meridian-logo-black.svg" width="140"></span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -85,23 +132,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
+    <a class="nav-link" href="../../../team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./careers.html" aria-current="page"> 
+    <a class="nav-link" href="../../../careers.html"> 
 <span class="menu-text">Careers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -120,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -132,55 +179,161 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Long-Horizon Agents</h1>
+                  <div>
+        <div class="description">
+          New tools for long-horizon agents including compaction, skills, plans, memory, checkpointing, and native bridges for Claude Code and Codex CLI.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>J.J. Allaire </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 24, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#inspect-swe" id="toc-inspect-swe" class="nav-link active" data-scroll-target="#inspect-swe">Inspect SWE</a></li>
+  <li><a href="#timelines" id="toc-timelines" class="nav-link" data-scroll-target="#timelines">Timelines</a></li>
+  <li><a href="#compaction" id="toc-compaction" class="nav-link" data-scroll-target="#compaction">Compaction</a></li>
+  <li><a href="#deep-agents" id="toc-deep-agents" class="nav-link" data-scroll-target="#deep-agents">Deep Agents</a></li>
+  <li><a href="#checkpointing" id="toc-checkpointing" class="nav-link" data-scroll-target="#checkpointing">Checkpointing</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Careers</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<p>Meridian Labs is a 501(c)(3) non-profit building open source tools for AI research and evaluation, based in Boston, Massachusetts. All positions at Meridian Labs include:</p>
+<p>As AI agents take on increasingly complex long-horizon tasks, evaluation frameworks are also scaling up. This includes supporting more sophisticated agent scaffolds, running tasks that consume hundreds of millions of tokens, and visualization of multi-agent trajectories.</p>
+<p>Over the past few months we’ve added many features to address these new requirements. This post rounds up this work as well as looks ahead to some new features, including a new multi-agent orchestrator and the ability to checkpoint and resume long running samples.</p>
+<section id="inspect-swe" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-swe">Inspect SWE</h2>
+<p>The&nbsp;<a href="https://meridianlabs-ai.github.io/inspect_swe/">inspect_swe</a>&nbsp;package makes software engineering agents like&nbsp;<a href="https://meridianlabs-ai.github.io/inspect_swe/claude_code.html">Claude Code</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/codex_cli.html">Codex CLI</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/gemini_cli.html">Gemini CLI</a>, and <a href="https://meridianlabs-ai.github.io/inspect_swe/mini_swe_agent.html">Mini SWE Agent</a> available as standard Inspect agents. For example, here we use the&nbsp;<code>claude_code()</code> agent as the solver in an Inspect task:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai <span class="im">import</span> Task, task</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai.dataset <span class="im">import</span> json_dataset</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai.scorer <span class="im">import</span> model_graded_qa</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_swe <span class="im">import</span> claude_code</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">@task</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> system_explorer() <span class="op">-&gt;</span> Task:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Task(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        dataset<span class="op">=</span>json_dataset(<span class="st">"dataset.json"</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        solver<span class="op">=</span>claude_code(),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        scorer<span class="op">=</span>model_graded_qa(),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        sandbox<span class="op">=</span><span class="st">"docker"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Inspect SWE agents are implemented using the Inspect <a href="https://inspect.aisi.org.uk/agent-bridge.html#sandbox-bridge">Sandbox Agent Bridge</a>.</p>
+<p>Agents run inside the sample sandbox and their model API calls are proxied back to Inspect. This means that you can use any model with Inspect SWE agents, and that features like token or time limits and log transcripts work as normal with the agents.</p>
+</section>
+<section id="timelines" class="level2">
+<h2 class="anchored" data-anchor-id="timelines">Timelines</h2>
+<p>Increasingly, agent scaffolds are utilizing multiple agents to parallelize work and keep context windows coherent. The transcripts created by multi-agent architectures are, however, much harder to read as they aren’t just a simple message history. To address this, we introduce timelines, which automatically detect sub-agents in a transcript and provide a clean view of the main agent trajectory and its calls to sub-agents:</p>
+<p><a href="timelines.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="timelines.png" class="border img-fluid"></a></p>
+<p>Drill into any sub-agent to view its trajectory:</p>
+<p><a href="timelines-agent.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="timelines-agent.png" class="border img-fluid"></a></p>
+</section>
+<section id="compaction" class="level2">
+<h2 class="anchored" data-anchor-id="compaction">Compaction</h2>
+<p><a href="https://inspect.aisi.org.uk/compaction.html">Compaction</a> enables you to automatically manage conversation context as it grows, helping you optimize costs and stay within context window limits for long-running agents. Several compaction strategies are available:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionauto">CompactionAuto</a></td>
+<td>Automatic compaction: tries native first, falls back to summary.</td>
+</tr>
+<tr class="even">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionnative">CompactionNative</a></td>
+<td>Use provider-specific native compaction API (OpenAI and Anthropic only).</td>
+</tr>
+<tr class="odd">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionsummary">CompactionSummary</a></td>
+<td>Compact by having a model create a summary of the message history.</td>
+</tr>
+<tr class="even">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionedit">CompactionEdit</a></td>
+<td>Compact by editing the message history to remove content (e.g.&nbsp;tool call results and reasoning).</td>
+</tr>
+<tr class="odd">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactiontrim">CompactionTrim</a></td>
+<td>Compact by trimming the message history to preserve a percentage of the input.</td>
+</tr>
+</tbody>
+</table>
+<p>Compaction is built-in to the <a href="https://inspect.aisi.org.uk/react-agent.html">ReAct Agent</a>&nbsp;and the <a href="https://inspect.aisi.org.uk/agent-bridge.html#agent-bridge">Agent Bridge</a>&nbsp;and can also be added to custom agents. Here are some examples of using compaction with the <a href="https://inspect.aisi.org.uk/reference/inspect_ai.agent.html#react">react()</a>&nbsp;agent:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai.agent <span class="im">import</span> react</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai.model <span class="im">import</span> (</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    CompactionAuto, CompactionEdit, CompactionNative</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai.tool <span class="im">import</span> bash, text_editor</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># automatic compaction (recommended default)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>react(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    tools<span class="op">=</span>[bash(), text_editor()],</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    compaction<span class="op">=</span>CompactionAuto()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># edit compaction</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>react(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    tools<span class="op">=</span>[bash(), text_editor()],</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    compaction<span class="op">=</span>CompactionEdit(keep_tool_uses<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Compaction can also make use of the&nbsp;<a href="https://inspect.aisi.org.uk/compaction.html#memory-tool">memory()</a>&nbsp;tool to offload important context to files prior to compaction.</p>
+</section>
+<section id="deep-agents" class="level2">
+<h2 class="anchored" data-anchor-id="deep-agents">Deep Agents</h2>
+<p>We’ve recently introduced several built-in tools that help agents manage complex tasks over many steps:</p>
 <ul>
-<li>Competitive salary</li>
-<li>Benefits including health insurance, dental, and vision</li>
-<li>Flexible time off policy</li>
+<li><p><a href="https://inspect.aisi.org.uk/tools-standard.html#sec-skill">skill()</a> — Implements the new <a href="https://agentskills.io/home">agent skills standard</a>, giving agents access to structured capabilities.</p></li>
+<li><p><a href="https://inspect.aisi.org.uk/tools-standard.html#sec-update-plan">update_plan()</a> — Provides a todo-list that helps agents track and update plans across many steps.</p></li>
+<li><p><a href="https://inspect.aisi.org.uk/tools-standard.html#sec-memory">memory()</a> — Enables agents to store and retrieve information across a long conversation.</p></li>
 </ul>
-<p>Meridian Labs has built or contributed to many important open source packages used by governments, labs, and researchers to better measure and understand AI systems. Join us to contribute to our efforts to support the responsible development of AI technology.</p>
-<section id="open-positions" class="level2">
-<h2 class="anchored" data-anchor-id="open-positions">Open Positions</h2>
-<section id="senior-front-end-engineer" class="level3">
-<h3 class="anchored" data-anchor-id="senior-front-end-engineer"><a href="./careers/senior-fe.html">Senior Front-End Engineer</a></h3>
-<p>Build the interfaces that help AI researchers make sense of model behavior. You’ll ship production features in TypeScript and React, own significant portions of our UI, and engage directly with our open source community. 5+ years experience required.</p>
+<p>All of these work with the built-in <a href="https://inspect.aisi.org.uk/react-agent.html">react()</a> agent and can also be integrated into custom agents.</p>
+<p>Looking ahead, we’re designing a new <code>deepagent()</code> which is a higher-level agent that bundles the patterns we see in production agents like Claude Code and Codex CLI into a unified Inspect primitive. Deep agents will include pre-built subagent types for common patterns — <code>research()</code> for read-only information gathering, <code>plan()</code> for structured planning, and <code>general()</code> for exploratory work with full tool access.</p>
+<p>We’ve published an <a href="https://github.com/UKGovernmentBEIS/inspect_ai/issues/3768">RFC for deep agents</a> and would love your feedback on the design!</p>
 </section>
-<section id="principal-front-end-engineer" class="level3">
-<h3 class="anchored" data-anchor-id="principal-front-end-engineer"><a href="./careers/principal-fe.html">Principal Front-End Engineer</a></h3>
-<p>Design and build the interfaces that help AI researchers make sense of model behavior. You’ll ship production features in TypeScript and React, own significant portions of our UI, and engage directly with our open source community. 10+ years experience required.</p>
-</section>
-<section id="principal-full-stack-engineer" class="level3">
-<h3 class="anchored" data-anchor-id="principal-full-stack-engineer"><a href="./careers/principal-fs.html">Principal Full-Stack Engineer</a></h3>
-<p>Design and build features that help AI researchers interact with and understand model behavior throughout our stack. You’ll own major systems and shape how researchers interact with evaluation data. 10+ years experience required.</p>
+<section id="checkpointing" class="level2">
+<h2 class="anchored" data-anchor-id="checkpointing">Checkpointing</h2>
+<p>As evaluations grow longer (sometimes running for days or even weeks), a single infrastructure failure can throw away enormous amounts of agent work. Checkpointing will enable agents to save their progress at regular intervals and resume from the last saved point rather than restarting from scratch.</p>
+<p>Checkpointing captures the state required for agent resumption, including conversation history, sandbox filesystem state, and the sample’s data store. Resumption will integrate transparently with Inspect’s existing retry machinery. After a crash, <code>inspect eval-set</code> and <code>inspect eval-retry</code> will automatically resume incomplete samples from their latest checkpoint.</p>
+<p>We’ve published an <a href="https://github.com/UKGovernmentBEIS/inspect_ai/issues/3769">RFC for checkpointing</a>. If you’re running long-horizon evaluations we’d love to hear your feedback.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -598,6 +751,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
