@@ -8,5 +8,3 @@ listing:
 toc: false
 page-layout: article
 ---
-
-

@@ -183,7 +183,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
 
 <p><a href="https://harborframework.com">Harbor</a> is a framework for evaluating AI agents in sandboxed, containerized environments. Its <a href="https://registry.harborframework.com">registry</a> hosts a growing collection of popular benchmarks including SWE-Bench, Terminal-Bench, LawBench, MedAgentBench, Finance Agent, and ReplicationBench, making it a go-to resource for teams that need rigorous, reproducible agent evaluations.</p>
-<p>We’re excited to share <a href="https://meridianlabs-ai.github.io/inspect_harbor/">Inspect Harbor</a>, a new package that brings 80+ <a href="https://inspect.aisi.org.uk/evals/#/?source=harbor">Harbor task implementations</a> directly into Inspect. This means you can run Harbor’s extensive library of containerized agent evaluations using Inspect’s workflow, tooling, and agent integrations without needing to set up Harbor separately. You can:</p>
+<p>We’re excited to share <a href="https://meridianlabs-ai.github.io/inspect_harbor/">Inspect Harbor</a>, a new package that brings 80+ <a href="https://inspect.aisi.org.uk/evals/#/?source=harbor">Harbor task implementations</a> directly into Inspect. This means you can run Harbor’s extensive library of containerized agent evaluations using Inspect’s workflow, tooling, and agent integrations without needing to set up Harbor separately.</p>
 <p>Check out the <a href="https://meridianlabs-ai.github.io/inspect_harbor/">documentation</a> and the full <a href="https://inspect.aisi.org.uk/evals/#/?source=harbor">listing of Harbor evals</a> available in Inspect.</p>
 
 
@@ -191,6 +191,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-harbor/</guid>
   <pubDate>Thu, 12 Feb 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs.ai/blog/posts/inspect-harbor/cover.png" medium="image" type="image/png" height="47" width="144"/>
 </item>
 <item>
   <title>Announcing Inspect Viz</title>

@@ -1,8 +1,9 @@
 ---
 title: "Harbor Tasks for Inspect"
-description: "A new package that makes 80+ Harbor benchmarks available to run directly in Inspect."
+description: "A new package that makes 80+ Harbor benchmarks including SWE-Bench, Terminal-Bench, LawBench, and more available to run directly in Inspect."
 author: "Alexandra Abbas"
 date: "2026-02-12"
+image: cover.png
 ---
 
 [Harbor](https://harborframework.com) is a framework for evaluating AI agents in sandboxed, containerized environments. Its [registry](https://registry.harborframework.com) hosts a growing collection of popular benchmarks including SWE-Bench, Terminal-Bench, LawBench, MedAgentBench, Finance Agent, and ReplicationBench, making it a go-to resource for teams that need rigorous, reproducible agent evaluations.
