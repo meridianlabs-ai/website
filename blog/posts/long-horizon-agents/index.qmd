@@ -1,6 +1,6 @@
 ---
 title: "Long-Horizon Agents"
-description: "New tools for long-horizon agents including compaction, skills, plans, memory, checkpointing, and native bridges for Claude Code and Codex CLI."
+description: "New tools for long-horizon agents including compaction, skills, plans, memory, checkpointing, and bridges for Claude Code and Codex CLI."
 author: "J.J. Allaire"
 date: "2026-04-24"
 image: timelines.png
