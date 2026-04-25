@@ -65,9 +65,9 @@
   {
     "objectID": "blog/posts/inspect-harbor/index.html",
     "href": "blog/posts/inspect-harbor/index.html",
-    "title": "Announcing Inspect Harbor",
+    "title": "Harbor Tasks for Inspect",
     "section": "",
-    "text": "Harbor is a framework for evaluating AI agents in sandboxed, containerized environments. Its registry hosts a growing collection of popular benchmarks including SWE-Bench, Terminal-Bench, LawBench, MedAgentBench, Finance Agent, and ReplicationBench, making it a go-to resource for teams that need rigorous, reproducible agent evaluations.\nWe’re excited to share Inspect Harbor, a new package that brings 80+ Harbor task implementations directly into Inspect. This means you can run Harbor’s extensive library of containerized agent evaluations using Inspect’s workflow, tooling, and agent integrations without needing to set up Harbor separately. You can:\nCheck out the documentation and the full listing of Harbor evals available in Inspect."
+    "text": "Harbor is a framework for evaluating AI agents in sandboxed, containerized environments. Its registry hosts a growing collection of popular benchmarks including SWE-Bench, Terminal-Bench, LawBench, MedAgentBench, Finance Agent, and ReplicationBench, making it a go-to resource for teams that need rigorous, reproducible agent evaluations.\nWe’re excited to share Inspect Harbor, a new package that brings 80+ Harbor task implementations directly into Inspect. This means you can run Harbor’s extensive library of containerized agent evaluations using Inspect’s workflow, tooling, and agent integrations without needing to set up Harbor separately.\nCheck out the documentation and the full listing of Harbor evals available in Inspect."
   },
   {
     "objectID": "blog/posts/inspect-flow/index.html",
@@ -81,7 +81,7 @@
     "href": "blog/index.html",
     "title": "Meridian Labs Blog",
     "section": "",
-    "text": "Introducing Inspect Flow\n\n\nA workflow layer for Inspect that makes it easier to run evals at scale with declarative configs, matrix sweeps, and automatic log reuse.\n\n\n\n\n\nMar 4, 2026\n\n\nAlexandra Abbas\n\n\n\n\n\n\n\n\n\n\n\n\nTranscript Analysis with Inspect Scout\n\n\nA tool for in-depth analysis of AI agent transcripts, with LLM-based and pattern-based scanners for detecting issues beyond simple success/failure metrics.\n\n\n\n\n\nFeb 25, 2026\n\n\nJ.J. Allaire\n\n\n\n\n\n\n\n\n\n\n\n\nAnnouncing Inspect Harbor\n\n\nA new package that makes 80+ Harbor task implementations available to run directly in Inspect, bridging Harbor’s containerized agent evaluations with Inspect’s workflow.\n\n\n\n\n\nFeb 12, 2026\n\n\nAlexandra Abbas\n\n\n\n\n\n\n\n\n\n\n\n\nAnnouncing Inspect Viz\n\n\nA new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.\n\n\n\n\n\nSep 7, 2025\n\n\nJ.J. Allaire\n\n\n\n\n\nNo matching items"
+    "text": "Introducing Inspect Flow\n\n\nA workflow layer for Inspect that makes it easier to run evals at scale with declarative configs, matrix sweeps, and automatic log reuse.\n\n\n\n\n\nMar 4, 2026\n\n\nAlexandra Abbas\n\n\n\n\n\n\n\n\n\n\n\n\nTranscript Analysis with Inspect Scout\n\n\nA tool for in-depth analysis of AI agent transcripts, with LLM-based and pattern-based scanners for detecting issues beyond simple success/failure metrics.\n\n\n\n\n\nFeb 25, 2026\n\n\nJ.J. Allaire\n\n\n\n\n\n\n\n\n\n\n\n\nHarbor Tasks for Inspect\n\n\nA new package that makes 80+ Harbor benchmarks available to run directly in Inspect.\n\n\n\n\n\nFeb 12, 2026\n\n\nAlexandra Abbas\n\n\n\n\n\n\n\n\n\n\n\n\nAnnouncing Inspect Viz\n\n\nA new data visualization framework for Inspect evals, featuring pre-built plots for commonly used views of evaluation data.\n\n\n\n\n\nSep 7, 2025\n\n\nJ.J. Allaire\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "careers/principal-fe.html",
