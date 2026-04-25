@@ -1,6 +1,6 @@
 ---
 title: Meridian Labs Blog
-subtitle: Updates on our open source tools for AI research and evaluation.
+subtitle: Open source tools for evaluating, testing, and understanding frontier AI models.
 listing:
   type: default
   sort: "date desc"
