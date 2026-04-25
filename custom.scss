@@ -825,3 +825,35 @@ h3.projects-page-name {
     }
   }
 }
+
+// =====================
+// Blog Subscribe (MailerLite)
+// =====================
+
+.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+  background-color: transparent !important;
+
+  .ml-form-embedContent {
+    h4 {
+      font-size: 0.9rem !important;
+      font-weight: 600 !important;
+      margin-bottom: 0.25rem !important;
+    }
+    p {
+      font-size: 0.8rem !important;
+      color: $light-text !important;
+    }
+  }
+
+  .ml-form-formContent input.form-control {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+}
+
+#mlb2-40408679.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+  background-color: $border-gray !important;
+  color: $body-gray !important;
+  font-size: 0.8rem !important;
+  padding: 0.4rem 1rem !important;
+}

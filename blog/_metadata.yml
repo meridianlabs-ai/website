@@ -1,3 +1,45 @@
 toc: false
 title-block-banner: "#E2E8F0"
 lightbox: true
+include-in-header: 
+  text: |
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2292952');
+    </script>
+    <!-- End MailerLite Universal -->
+margin-header: |
+   <div class="ml-embedded" data-form="EEhNC4"></div>
+   <script>
+   new MutationObserver(function(m, o) {
+     var btn = document.querySelector('.ml-form-embedSubmit button');
+     if (btn) {
+       btn.style.setProperty('background-color', '#E2E8F0', 'important');
+       btn.style.setProperty('color', '#475569', 'important');
+       var wrapper = document.querySelector('.ml-form-embedWrapper');
+       if (wrapper) wrapper.style.setProperty('background-color', 'transparent', 'important');
+       var input = document.querySelector('.ml-form-formContent input.form-control');
+       if (input) {
+         input.style.setProperty('font-size', '0.8rem', 'important');
+         input.style.setProperty('padding', '0.3rem 0.5rem', 'important');
+         input.style.setProperty('margin-top', '0', 'important');
+       }
+       var formBody = document.querySelector('.ml-form-embedBody');
+       if (formBody) formBody.style.setProperty('padding', '0', 'important');
+       var content = document.querySelector('.ml-form-embedContent');
+       if (content) content.style.setProperty('margin-bottom', '6px', 'important');
+       var formContent = document.querySelector('.ml-form-formContent');
+       if (formContent) formContent.style.setProperty('margin-bottom', '10px', 'important');
+       var submit = document.querySelector('.ml-form-embedSubmit');
+       if (submit) submit.style.setProperty('margin-top', '0', 'important');
+       btn.style.setProperty('padding-top', '0.3rem', 'important');
+       btn.style.setProperty('padding-bottom', '0.3rem', 'important');
+       o.disconnect();
+     }
+   }).observe(document.body, {childList: true, subtree: true});
+   </script>
+
