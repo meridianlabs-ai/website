@@ -14,7 +14,6 @@
   {
     "listing": "/blog/index.html",
     "items": [
-      "/blog/posts/long-horizon-agents/index.html",
       "/blog/posts/inspect-flow/index.html",
       "/blog/posts/inspect-scout/index.html",
       "/blog/posts/inspect-harbor/index.html",
