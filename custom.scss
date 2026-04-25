@@ -790,19 +790,6 @@ h3.projects-page-name {
   margin-bottom: 1rem !important;
 }
 
-body:not(:has(.quarto-listing)) #title-block-header {
-  background-color: #E2E8F0;
-
-  .quarto-title-banner {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .quarto-title-meta {
-    padding: 0.5rem 0 1.25rem;
-    margin-top: 0;
-  }
-}
 
 .quarto-listing-default .quarto-post {
   .listing-title a {
