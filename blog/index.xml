@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Meridian Labs</title>
+<link>https://meridianlabs.ai/blog/</link>
+<atom:link href="https://meridianlabs.ai/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description>Open source tools for AI research and evaluation</description>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Sun, 26 Apr 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Long-Horizon Agents</title>
+  <dc:creator>J.J. Allaire</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/long-horizon-agents/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>As agents take on increasingly complex long-horizon tasks, evaluation frameworks are scaling up to match. This post covers some recent work in this area, including <code>deepagent()</code>, a new batteries-included agent for long-horizon tasks and Inspect SWE which brings Claude Code, and Codex CLI agents into Inspect. We also cover new infrastructure for multi-agent timelines, context window compaction, and checkpointing for long-running evaluations.</p>
+<section id="deep-agents" class="level2">
+<h2 class="anchored" data-anchor-id="deep-agents">Deep Agents</h2>
+<p><a href="https://inspect.aisi.org.uk/deepagent.html"><code>deepagent()</code></a> is a batteries-included agent designed for complex, long-horizon tasks. It extends <code>react()</code> with four key capabilities: subagent delegation, persistent memory, structured planning, and an opinionated system prompt tuned for autonomous execution.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Task, task</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.agent <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> deepagent</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.dataset <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> json_dataset</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.scorer <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> includes</span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.tool <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> bash, text_editor</span>
+<span id="cb1-6"></span>
+<span id="cb1-7"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@task</span></span>
+<span id="cb1-8"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> ctf_challenge():</span>
+<span id="cb1-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Task(</span>
+<span id="cb1-10">        dataset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>json_dataset(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ctf_challenge.json"</span>),</span>
+<span id="cb1-11">        solver<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>deepagent(</span>
+<span id="cb1-12">            tools<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[bash(), text_editor()],</span>
+<span id="cb1-13">            web_search<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span></span>
+<span id="cb1-14">        ),</span>
+<span id="cb1-15">        scorer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>includes(),</span>
+<span id="cb1-16">        sandbox<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"docker"</span>,</span>
+<span id="cb1-17">    )</span></code></pre></div></div>
+<p>Deep agents can delegate work to specialized subagents with independent context windows — only summaries return to the parent, preventing context degradation over long trajectories:</p>
+<ul>
+<li><code>research()</code> — Read-only information gathering with no side effects.</li>
+<li><code>plan()</code> — Structured task decomposition without tool execution.</li>
+<li><code>general()</code> — Full autonomous execution with the parent’s tools.</li>
+</ul>
+<p>The agent also includes a <code>memory()</code> tool for offloading important context to persistent storage (surviving compaction events), <code>todo_write()</code> for structured planning and progress tracking, and support for <a href="https://inspect.aisi.org.uk/tools-standard.html#sec-skill">skills</a> — packaged capabilities that agents can discover and use.</p>
+<p>See the <a href="https://inspect.aisi.org.uk/deepagent.html">deep agent documentation</a> for the full details. Note that <code>deepagent()</code> is designed for tasks that benefit from planning, decomposition, and persistent memory. For many benchmarks including more difficult ones like Cybench or Terminal Bench 2.0, <code>react()</code> performs equally well, so always measure against a baseline.</p>
+</section>
+<section id="inspect-swe" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-swe">Inspect SWE</h2>
+<p>The <a href="https://meridianlabs-ai.github.io/inspect_swe/">inspect_swe</a> package makes software engineering agents like <a href="https://meridianlabs-ai.github.io/inspect_swe/claude_code.html">Claude Code</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/codex_cli.html">Codex CLI</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/gemini_cli.html">Gemini CLI</a>, and <a href="https://meridianlabs-ai.github.io/inspect_swe/mini_swe_agent.html">Mini SWE Agent</a> available as standard Inspect agents. For example, here we use the <code>claude_code()</code> agent as the solver in an Inspect task:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Task, task</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.dataset <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> json_dataset</span>
+<span id="cb2-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.scorer <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> model_graded_qa</span>
+<span id="cb2-4"></span>
+<span id="cb2-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_swe <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> claude_code</span>
+<span id="cb2-6"></span>
+<span id="cb2-7"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@task</span></span>
+<span id="cb2-8"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> system_explorer() <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Task:</span>
+<span id="cb2-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Task(</span>
+<span id="cb2-10">        dataset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>json_dataset(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dataset.json"</span>),</span>
+<span id="cb2-11">        solver<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>claude_code(),</span>
+<span id="cb2-12">        scorer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>model_graded_qa(),</span>
+<span id="cb2-13">        sandbox<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"docker"</span>,</span>
+<span id="cb2-14">    )</span></code></pre></div></div>
+<p>Inspect SWE agents are implemented using the Inspect <a href="https://inspect.aisi.org.uk/agent-bridge.html#sandbox-bridge">Sandbox Agent Bridge</a>. Agents run inside the sample sandbox and their model API calls are proxied back to Inspect, so you can use any model with any agent, and features like token limits, time limits, and log transcripts work as normal.</p>
+<p>Recent additions to Inspect SWE include:</p>
+<ul>
+<li><strong>Centaur mode</strong> — Human-in-the-loop mode where a human operator can observe and intervene.</li>
+<li><strong>Skills support</strong> — Agents can discover and use packaged skill definitions for structured capabilities.</li>
+<li><strong>Gemini CLI and Mini SWE Agent</strong> — New agent bridges alongside the existing Claude Code and Codex CLI.</li>
+<li><strong>Improved Kubernetes reliability</strong> — Use <code>exec_remote()</code> for more robust execution on k8s clusters.</li>
+</ul>
+</section>
+<section id="timelines" class="level2">
+<h2 class="anchored" data-anchor-id="timelines">Timelines</h2>
+<p>Increasingly, agent scaffolds are utilizing multiple agents to parallelize work and keep context windows coherent. The transcripts created by multi-agent architectures are, however, much harder to read as they aren’t just a simple message history. To address this, we introduce timelines, which automatically detect sub-agents in a transcript and provide a clean view of the main agent trajectory and its calls to sub-agents:</p>
+<p><a href="timelines.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://meridianlabs.ai/blog/posts/long-horizon-agents/timelines.png" class="border img-fluid"></a></p>
+<p>Drill into any sub-agent to view its trajectory:</p>
+<p><a href="timelines-agent.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://meridianlabs.ai/blog/posts/long-horizon-agents/timelines-agent.png" class="border img-fluid"></a></p>
+</section>
+<section id="compaction" class="level2">
+<h2 class="anchored" data-anchor-id="compaction">Compaction</h2>
+<p><a href="https://inspect.aisi.org.uk/compaction.html">Compaction</a> enables you to automatically manage conversation context as it grows, helping you optimize costs and stay within context window limits for long-running agents. Several compaction strategies are available:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionauto">CompactionAuto</a></td>
+<td>Automatic compaction: tries native first, falls back to summary.</td>
+</tr>
+<tr class="even">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionnative">CompactionNative</a></td>
+<td>Use provider-specific native compaction API (OpenAI and Anthropic only).</td>
+</tr>
+<tr class="odd">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionsummary">CompactionSummary</a></td>
+<td>Compact by having a model create a summary of the message history.</td>
+</tr>
+<tr class="even">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionedit">CompactionEdit</a></td>
+<td>Compact by editing the message history to remove content (e.g.&nbsp;tool call results and reasoning).</td>
+</tr>
+<tr class="odd">
+<td><a href="https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactiontrim">CompactionTrim</a></td>
+<td>Compact by trimming the message history to preserve a percentage of the input.</td>
+</tr>
+</tbody>
+</table>
+<p>Compaction is built-in to the <a href="https://inspect.aisi.org.uk/react-agent.html">ReAct Agent</a>, <a href="https://inspect.aisi.org.uk/deepagent.html">Deep Agent</a>, and the <a href="https://inspect.aisi.org.uk/agent-bridge.html#agent-bridge">Agent Bridge</a> and can also be added to custom agents. Here are some examples of using compaction with the <a href="https://inspect.aisi.org.uk/reference/inspect_ai.agent.html#react">react()</a> agent:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.agent <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> react</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> (</span>
+<span id="cb3-3">    CompactionAuto, CompactionEdit, CompactionNative</span>
+<span id="cb3-4">)</span>
+<span id="cb3-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.tool <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> bash, text_editor</span>
+<span id="cb3-6"></span>
+<span id="cb3-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># automatic compaction (recommended default)</span></span>
+<span id="cb3-8">react(</span>
+<span id="cb3-9">    tools<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[bash(), text_editor()],</span>
+<span id="cb3-10">    compaction<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>CompactionAuto()</span>
+<span id="cb3-11">)</span>
+<span id="cb3-12"></span>
+<span id="cb3-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># edit compaction</span></span>
+<span id="cb3-14">react(</span>
+<span id="cb3-15">    tools<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[bash(), text_editor()],</span>
+<span id="cb3-16">    compaction<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>CompactionEdit(keep_tool_uses<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb3-17">)</span></code></pre></div></div>
+<p>Compaction can also make use of the <a href="https://inspect.aisi.org.uk/compaction.html#memory-tool">memory()</a> tool to offload important context to files prior to compaction.</p>
+</section>
+<section id="checkpointing" class="level2">
+<h2 class="anchored" data-anchor-id="checkpointing">Checkpointing</h2>
+<p>As evaluations grow longer (sometimes running for days or even weeks), a single infrastructure failure can throw away enormous amounts of agent work. We are currently working on a checkpointing feature that will enable agents to save their progress at regular intervals and resume from the last saved point rather than restarting from scratch.</p>
+<p>Checkpointing captures the state required for agent resumption, including conversation history, sandbox filesystem state, and the sample’s data store. Resumption will integrate transparently with Inspect’s existing retry machinery. After a crash, <code>inspect eval-set</code> and <code>inspect eval-retry</code> will automatically resume incomplete samples from their latest checkpoint.</p>
+<p>We’ve published an <a href="https://github.com/UKGovernmentBEIS/inspect_ai/issues/3769">RFC for checkpointing</a>. If you’re running long-horizon evaluations we’d love to hear your feedback.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://meridianlabs.ai/blog/posts/long-horizon-agents/</guid>
+  <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs.ai/blog/posts/long-horizon-agents/timelines.png" medium="image" type="image/png" height="80" width="144"/>
+</item>
+<item>
+  <title>Introducing Inspect Flow</title>
+  <dc:creator>Alexandra Abbas</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/inspect-flow/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="https://meridianlabs-ai.github.io/inspect_flow/">Inspect Flow</a> is the workflow layer for Inspect that makes it easier to run evals at scale.</p>
+<ul>
+<li><strong>Scaling experiments:</strong> Run many tasks × models × params without writing orchestration scripts.</li>
+<li><strong>Avoid re-running work:</strong> Reuse logs from the Flow Store and only run what’s missing.</li>
+<li><strong>Clean configs:</strong> Define eval workflows declaratively instead of ad-hoc Python scripts.</li>
+<li><strong>Systematic sweeps:</strong> Built-in matrix patterns for exploring tasks, models, and params.</li>
+</ul>
+<p>Define a simple workflow with a list of tasks:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_flow <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> FlowSpec, FlowTask</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">FlowSpec(</span>
+<span id="cb1-4">    log_dir<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"logs"</span>,</span>
+<span id="cb1-5">    tasks<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[</span>
+<span id="cb1-6">        FlowTask(</span>
+<span id="cb1-7">            name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"inspect_evals/gpqa_diamond"</span>,</span>
+<span id="cb1-8">            model<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"openai/gpt-4o"</span>,</span>
+<span id="cb1-9">        ),</span>
+<span id="cb1-10">        FlowTask(</span>
+<span id="cb1-11">            name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"inspect_evals/mmlu_0_shot"</span>,</span>
+<span id="cb1-12">            model<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"openai/gpt-4o"</span>,</span>
+<span id="cb1-13">        ),</span>
+<span id="cb1-14">    ],</span>
+<span id="cb1-15">)</span></code></pre></div></div>
+<p>Then run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">flow</span> run config.py</span></code></pre></div></div>
+<p><a href="https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png" class="border img-fluid"></a></p>
+<p>For more complex experiments, use matrix patterns to systematically sweep across tasks, models, and parameters:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">FlowSpec(</span>
+<span id="cb3-2">    log_dir<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"logs"</span>,</span>
+<span id="cb3-3">    tasks<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>tasks_matrix(</span>
+<span id="cb3-4">        task<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[</span>
+<span id="cb3-5">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"inspect_evals/gpqa_diamond"</span>,</span>
+<span id="cb3-6">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"inspect_evals/mmlu_pro"</span>,</span>
+<span id="cb3-7">        ],</span>
+<span id="cb3-8">        model<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>models_matrix(</span>
+<span id="cb3-9">            model<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[</span>
+<span id="cb3-10">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"openai/gpt-5"</span>,</span>
+<span id="cb3-11">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"openai/gpt-5-mini"</span>,</span>
+<span id="cb3-12">            ],</span>
+<span id="cb3-13">            config<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>configs_matrix(</span>
+<span id="cb3-14">                reasoning_effort<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"low"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"medium"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"high"</span>],</span>
+<span id="cb3-15">            ),</span>
+<span id="cb3-16">        ),</span>
+<span id="cb3-17">    ),</span>
+<span id="cb3-18">)</span>
+<span id="cb3-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># → produces 12 evaluations</span></span>
+<span id="cb3-20"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span></code></pre></div></div>
+<p>Flow expands the task/model/config matrix, reuses logs from the Flow Store, and only runs what’s missing.</p>
+<p>Get started with the <a href="https://meridianlabs-ai.github.io/inspect_flow/">Inspect Flow documentation</a>.</p>
+
+
+
+ ]]></description>
+  <guid>https://meridianlabs.ai/blog/posts/inspect-flow/</guid>
+  <pubDate>Wed, 04 Mar 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Transcript Analysis with Inspect Scout</title>
+  <dc:creator>J.J. Allaire</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/inspect-scout/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout</a>, a tool for in-depth analysis of AI agent transcripts. With Scout, you can easily:</p>
+<ul>
+<li>Detect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.</li>
+<li>Analyze transcripts from Inspect, Arize Phoenix, LangSmith, Logfire, MLFLow, W&amp;B Weave, Claude Code, or custom sources via the capture and import APIs.</li>
+<li>Develop scanners interactively, exploring transcripts and scan results visually in Scout View.</li>
+<li>Validate scanner accuracy against human-labeled examples.</li>
+<li>Handle complex scanning requirements like multi-agent transcripts, compaction, and context-window chunking.</li>
+<li>Scale to thousands of transcripts with parallel processing, batching, and fault tolerance.</li>
+</ul>
+<p><a href="https://meridianlabs-ai.github.io/inspect_scout/images/view-result.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://meridianlabs-ai.github.io/inspect_scout/images/view-result.png" class="border img-fluid"></a></p>
+<p>Scout also includes a validation framework for measuring scanner accuracy against human-labeled examples, so you can iteratively refine your scanners with confidence.</p>
+<p><a href="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" class="border img-fluid"></a></p>
+<p>We’re especially appreciative of the feedback we received from UK AISI, US CAISI, METR, Apollo, and many others during Scout’s development. Their paper on <a href="https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/699f3a9b918419fe89c8c740_Seven_simple_steps_forlog_analysis_in_AI_systems_corrected.pdf">Seven Simple Steps for Log Analysis in AI Systems</a> goes in depth on best practices for transcript analysis including many practical examples.</p>
+<p>Get started with the <a href="https://meridianlabs-ai.github.io/inspect_scout/">Inspect Scout documentation</a>.</p>
+
+
+
+ ]]></description>
+  <guid>https://meridianlabs.ai/blog/posts/inspect-scout/</guid>
+  <pubDate>Wed, 25 Feb 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Harbor Tasks for Inspect</title>
+  <dc:creator>Alexandra Abbas</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/inspect-harbor/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="https://harborframework.com">Harbor</a> is a framework for evaluating AI agents in sandboxed, containerized environments. Its <a href="https://registry.harborframework.com">registry</a> hosts a growing collection of popular benchmarks including SWE-Bench, Terminal-Bench, LawBench, MedAgentBench, Finance Agent, and ReplicationBench, making it a go-to resource for teams that need rigorous, reproducible agent evaluations.</p>
+<p>We’re excited to share <a href="https://meridianlabs-ai.github.io/inspect_harbor/">Inspect Harbor</a>, a new package that brings 80+ <a href="https://inspect.aisi.org.uk/evals/#/?source=harbor">Harbor task implementations</a> directly into Inspect. This means you can run Harbor’s extensive library of containerized agent evaluations using Inspect’s workflow, tooling, and agent integrations without needing to set up Harbor separately.</p>
+<p>Check out the <a href="https://meridianlabs-ai.github.io/inspect_harbor/">documentation</a> and the full <a href="https://inspect.aisi.org.uk/evals/#/?source=harbor">listing of Harbor evals</a> available in Inspect.</p>
+
+
+
+ ]]></description>
+  <guid>https://meridianlabs.ai/blog/posts/inspect-harbor/</guid>
+  <pubDate>Thu, 12 Feb 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs.ai/blog/posts/inspect-harbor/cover.png" medium="image" type="image/png" height="47" width="144"/>
+</item>
+<item>
+  <title>Announcing Inspect Viz</title>
+  <dc:creator>J.J. Allaire</dc:creator>
+  <link>https://meridianlabs.ai/blog/posts/inspect-viz/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz</a>, a new data visualization framework for Inspect evals. Inspect Viz includes a variety of pre-built plots that provide commonly used views of eval data, making it easier to explore and communicate results from your evaluations.</p>
+<p>Whether you need to visualize accuracy across tasks, compare model performance, or drill into specific evaluation runs, Inspect Viz provides ready-to-use components that work seamlessly with the Inspect ecosystem. Here are a few examples:</p>
+<p>Track how model scores evolve over time across models and providers:</p>
+<p><a href="https://meridianlabs-ai.github.io/inspect_viz/images/scores_timeline_gpqa.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://meridianlabs-ai.github.io/inspect_viz/images/scores_timeline_gpqa.png" class="border img-fluid"></a></p>
+<p>Break down evaluation scores by individual task to identify strengths and weaknesses:</p>
+<p><a href="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" class="border img-fluid"></a></p>
+<p>Compare performance across models at a glance:</p>
+<p><a href="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-model_files/placeholder/641e3e25e0133dc2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-model_files/placeholder/641e3e25e0133dc2.png" class="border img-fluid"></a></p>
+<p>Use heatmaps to spot patterns across tasks and models simultaneously:</p>
+<p><a href="https://meridianlabs-ai.github.io/inspect_viz/view-scores-heatmap_files/placeholder/97559e02f53807b9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="https://meridianlabs-ai.github.io/inspect_viz/view-scores-heatmap_files/placeholder/97559e02f53807b9.png" class="border img-fluid"></a></p>
+<p>These are just a few of the views available out of the box and you can easily build your own custom visualizations on top of the framework. Get started with the <a href="https://meridianlabs-ai.github.io/inspect_viz/">Inspect Viz documentation</a>.</p>
+
+
+
+ ]]></description>
+  <guid>https://meridianlabs.ai/blog/posts/inspect-viz/</guid>
+  <pubDate>Sun, 07 Sep 2025 04:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" medium="image" type="image/png"/>
+</item>
+</channel>
+</rss>
