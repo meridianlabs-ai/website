@@ -7,4 +7,3 @@ listing:
   feed: true
 page-layout: article
 ---
-

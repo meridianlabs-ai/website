@@ -10,7 +10,7 @@
 <atom:link href="https://meridianlabs.ai/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Open source tools for AI research and evaluation</description>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Fri, 24 Apr 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 26 Apr 2026 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Long-Horizon Agents</title>
   <dc:creator>J.J. Allaire</dc:creator>
@@ -21,11 +21,10 @@
 
 
 
-<p>As AI agents take on increasingly complex long-horizon tasks, evaluation frameworks are also scaling up. This includes supporting more sophisticated agent scaffolds, running tasks that consume hundreds of millions of tokens, and visualization of multi-agent trajectories.</p>
-<p>Over the past few months we’ve added many features to address these new requirements. This post rounds up this work as well as looks ahead to some new features, including a new multi-agent orchestrator and the ability to checkpoint and resume long running samples.</p>
-<section id="inspect-swe" class="level2">
-<h2 class="anchored" data-anchor-id="inspect-swe">Inspect SWE</h2>
-<p>The&nbsp;<a href="https://meridianlabs-ai.github.io/inspect_swe/">inspect_swe</a>&nbsp;package makes software engineering agents like&nbsp;<a href="https://meridianlabs-ai.github.io/inspect_swe/claude_code.html">Claude Code</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/codex_cli.html">Codex CLI</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/gemini_cli.html">Gemini CLI</a>, and <a href="https://meridianlabs-ai.github.io/inspect_swe/mini_swe_agent.html">Mini SWE Agent</a> available as standard Inspect agents. For example, here we use the&nbsp;<code>claude_code()</code> agent as the solver in an Inspect task:</p>
+<p>As agents take on increasingly complex long-horizon tasks, evaluation frameworks are scaling up to match. This post covers some recent work in this area, including <code>deepagent()</code>, a new batteries-included agent for long-horizon tasks and Inspect SWE which brings Claude Code, and Codex CLI agents into Inspect. We also cover new infrastructure for multi-agent timelines, context window compaction, and checkpointing for long-running evaluations.</p>
+<section id="deep-agents" class="level2">
+<h2 class="anchored" data-anchor-id="deep-agents">Deep Agents</h2>
+<p><a href="https://inspect.aisi.org.uk/deepagent.html"><code>deepagent()</code></a> is a batteries-included agent designed for complex, long-horizon tasks. It extends <code>react()</code> with four key capabilities: subagent delegation, persistent memory, structured planning, and an opinionated system prompt tuned for autonomous execution.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> inspect_ai <span class="im" style="color: #00769E;
@@ -33,20 +32,24 @@ background-color: null;
 font-style: inherit;">import</span> Task, task</span>
 <span id="cb1-2"><span class="im" style="color: #00769E;
 background-color: null;
+font-style: inherit;">from</span> inspect_ai.agent <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> deepagent</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
 font-style: inherit;">from</span> inspect_ai.dataset <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> json_dataset</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
+<span id="cb1-4"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> inspect_ai.scorer <span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">import</span> model_graded_qa</span>
-<span id="cb1-4"></span>
+font-style: inherit;">import</span> includes</span>
 <span id="cb1-5"><span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">from</span> inspect_swe <span class="im" style="color: #00769E;
+font-style: inherit;">from</span> inspect_ai.tool <span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">import</span> claude_code</span>
+font-style: inherit;">import</span> bash, text_editor</span>
 <span id="cb1-6"></span>
 <span id="cb1-7"><span class="at" style="color: #657422;
 background-color: null;
@@ -54,9 +57,7 @@ font-style: inherit;">@task</span></span>
 <span id="cb1-8"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">def</span> system_explorer() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> Task:</span>
+font-style: inherit;">def</span> ctf_challenge():</span>
 <span id="cb1-9">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -65,21 +66,100 @@ font-style: inherit;">return</span> Task(</span>
 background-color: null;
 font-style: inherit;">=</span>json_dataset(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"dataset.json"</span>),</span>
+font-style: inherit;">"ctf_challenge.json"</span>),</span>
 <span id="cb1-11">        solver<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span>claude_code(),</span>
-<span id="cb1-12">        scorer<span class="op" style="color: #5E5E5E;
+font-style: inherit;">=</span>deepagent(</span>
+<span id="cb1-12">            tools<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span>model_graded_qa(),</span>
-<span id="cb1-13">        sandbox<span class="op" style="color: #5E5E5E;
+font-style: inherit;">=</span>[bash(), text_editor()],</span>
+<span id="cb1-13">            web_search<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span></span>
+<span id="cb1-14">        ),</span>
+<span id="cb1-15">        scorer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>includes(),</span>
+<span id="cb1-16">        sandbox<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"docker"</span>,</span>
-<span id="cb1-14">    )</span></code></pre></div></div>
-<p>Inspect SWE agents are implemented using the Inspect <a href="https://inspect.aisi.org.uk/agent-bridge.html#sandbox-bridge">Sandbox Agent Bridge</a>.</p>
-<p>Agents run inside the sample sandbox and their model API calls are proxied back to Inspect. This means that you can use any model with Inspect SWE agents, and that features like token or time limits and log transcripts work as normal with the agents.</p>
+<span id="cb1-17">    )</span></code></pre></div></div>
+<p>Deep agents can delegate work to specialized subagents with independent context windows — only summaries return to the parent, preventing context degradation over long trajectories:</p>
+<ul>
+<li><code>research()</code> — Read-only information gathering with no side effects.</li>
+<li><code>plan()</code> — Structured task decomposition without tool execution.</li>
+<li><code>general()</code> — Full autonomous execution with the parent’s tools.</li>
+</ul>
+<p>The agent also includes a <code>memory()</code> tool for offloading important context to persistent storage (surviving compaction events), <code>todo_write()</code> for structured planning and progress tracking, and support for <a href="https://inspect.aisi.org.uk/tools-standard.html#sec-skill">skills</a> — packaged capabilities that agents can discover and use.</p>
+<p>See the <a href="https://inspect.aisi.org.uk/deepagent.html">deep agent documentation</a> for the full details. Note that <code>deepagent()</code> is designed for tasks that benefit from planning, decomposition, and persistent memory. For many benchmarks including more difficult ones like Cybench or Terminal Bench 2.0, <code>react()</code> performs equally well, so always measure against a baseline.</p>
+</section>
+<section id="inspect-swe" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-swe">Inspect SWE</h2>
+<p>The <a href="https://meridianlabs-ai.github.io/inspect_swe/">inspect_swe</a> package makes software engineering agents like <a href="https://meridianlabs-ai.github.io/inspect_swe/claude_code.html">Claude Code</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/codex_cli.html">Codex CLI</a>, <a href="https://meridianlabs-ai.github.io/inspect_swe/gemini_cli.html">Gemini CLI</a>, and <a href="https://meridianlabs-ai.github.io/inspect_swe/mini_swe_agent.html">Mini SWE Agent</a> available as standard Inspect agents. For example, here we use the <code>claude_code()</code> agent as the solver in an Inspect task:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Task, task</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.dataset <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> json_dataset</span>
+<span id="cb2-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_ai.scorer <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> model_graded_qa</span>
+<span id="cb2-4"></span>
+<span id="cb2-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> inspect_swe <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> claude_code</span>
+<span id="cb2-6"></span>
+<span id="cb2-7"><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@task</span></span>
+<span id="cb2-8"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> system_explorer() <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Task:</span>
+<span id="cb2-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Task(</span>
+<span id="cb2-10">        dataset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>json_dataset(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dataset.json"</span>),</span>
+<span id="cb2-11">        solver<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>claude_code(),</span>
+<span id="cb2-12">        scorer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>model_graded_qa(),</span>
+<span id="cb2-13">        sandbox<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"docker"</span>,</span>
+<span id="cb2-14">    )</span></code></pre></div></div>
+<p>Inspect SWE agents are implemented using the Inspect <a href="https://inspect.aisi.org.uk/agent-bridge.html#sandbox-bridge">Sandbox Agent Bridge</a>. Agents run inside the sample sandbox and their model API calls are proxied back to Inspect, so you can use any model with any agent, and features like token limits, time limits, and log transcripts work as normal.</p>
+<p>Recent additions to Inspect SWE include:</p>
+<ul>
+<li><strong>Centaur mode</strong> — Human-in-the-loop mode where a human operator can observe and intervene.</li>
+<li><strong>Skills support</strong> — Agents can discover and use packaged skill definitions for structured capabilities.</li>
+<li><strong>Gemini CLI and Mini SWE Agent</strong> — New agent bridges alongside the existing Claude Code and Codex CLI.</li>
+<li><strong>Improved Kubernetes reliability</strong> — Use <code>exec_remote()</code> for more robust execution on k8s clusters.</li>
+</ul>
 </section>
 <section id="timelines" class="level2">
 <h2 class="anchored" data-anchor-id="timelines">Timelines</h2>
@@ -119,69 +199,57 @@ font-style: inherit;">"docker"</span>,</span>
 </tr>
 </tbody>
 </table>
-<p>Compaction is built-in to the <a href="https://inspect.aisi.org.uk/react-agent.html">ReAct Agent</a>&nbsp;and the <a href="https://inspect.aisi.org.uk/agent-bridge.html#agent-bridge">Agent Bridge</a>&nbsp;and can also be added to custom agents. Here are some examples of using compaction with the <a href="https://inspect.aisi.org.uk/reference/inspect_ai.agent.html#react">react()</a>&nbsp;agent:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+<p>Compaction is built-in to the <a href="https://inspect.aisi.org.uk/react-agent.html">ReAct Agent</a>, <a href="https://inspect.aisi.org.uk/deepagent.html">Deep Agent</a>, and the <a href="https://inspect.aisi.org.uk/agent-bridge.html#agent-bridge">Agent Bridge</a> and can also be added to custom agents. Here are some examples of using compaction with the <a href="https://inspect.aisi.org.uk/reference/inspect_ai.agent.html#react">react()</a> agent:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> inspect_ai.agent <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> react</span>
-<span id="cb2-2"><span class="im" style="color: #00769E;
+<span id="cb3-2"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> inspect_ai.model <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> (</span>
-<span id="cb2-3">    CompactionAuto, CompactionEdit, CompactionNative</span>
-<span id="cb2-4">)</span>
-<span id="cb2-5"><span class="im" style="color: #00769E;
+<span id="cb3-3">    CompactionAuto, CompactionEdit, CompactionNative</span>
+<span id="cb3-4">)</span>
+<span id="cb3-5"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> inspect_ai.tool <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> bash, text_editor</span>
-<span id="cb2-6"></span>
-<span id="cb2-7"><span class="co" style="color: #5E5E5E;
+<span id="cb3-6"></span>
+<span id="cb3-7"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># automatic compaction (recommended default)</span></span>
-<span id="cb2-8">react(</span>
-<span id="cb2-9">    tools<span class="op" style="color: #5E5E5E;
+<span id="cb3-8">react(</span>
+<span id="cb3-9">    tools<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[bash(), text_editor()],</span>
-<span id="cb2-10">    compaction<span class="op" style="color: #5E5E5E;
+<span id="cb3-10">    compaction<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>CompactionAuto()</span>
-<span id="cb2-11">)</span>
-<span id="cb2-12"></span>
-<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+<span id="cb3-11">)</span>
+<span id="cb3-12"></span>
+<span id="cb3-13"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># edit compaction</span></span>
-<span id="cb2-14">react(</span>
-<span id="cb2-15">    tools<span class="op" style="color: #5E5E5E;
+<span id="cb3-14">react(</span>
+<span id="cb3-15">    tools<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[bash(), text_editor()],</span>
-<span id="cb2-16">    compaction<span class="op" style="color: #5E5E5E;
+<span id="cb3-16">    compaction<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>CompactionEdit(keep_tool_uses<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>)</span>
-<span id="cb2-17">)</span></code></pre></div></div>
-<p>Compaction can also make use of the&nbsp;<a href="https://inspect.aisi.org.uk/compaction.html#memory-tool">memory()</a>&nbsp;tool to offload important context to files prior to compaction.</p>
-</section>
-<section id="deep-agents" class="level2">
-<h2 class="anchored" data-anchor-id="deep-agents">Deep Agents</h2>
-<p>We’ve recently introduced several built-in tools that help agents manage complex tasks over many steps:</p>
-<ul>
-<li><p><a href="https://inspect.aisi.org.uk/tools-standard.html#sec-skill">skill()</a> — Implements the new <a href="https://agentskills.io/home">agent skills standard</a>, giving agents access to structured capabilities.</p></li>
-<li><p><a href="https://inspect.aisi.org.uk/tools-standard.html#sec-update-plan">update_plan()</a> — Provides a todo-list that helps agents track and update plans across many steps.</p></li>
-<li><p><a href="https://inspect.aisi.org.uk/tools-standard.html#sec-memory">memory()</a> — Enables agents to store and retrieve information across a long conversation.</p></li>
-</ul>
-<p>All of these work with the built-in <a href="https://inspect.aisi.org.uk/react-agent.html">react()</a> agent and can also be integrated into custom agents.</p>
-<p>Looking ahead, we’re designing a new <code>deepagent()</code> which is a higher-level agent that bundles the patterns we see in production agents like Claude Code and Codex CLI into a unified Inspect primitive. Deep agents will include pre-built subagent types for common patterns — <code>research()</code> for read-only information gathering, <code>plan()</code> for structured planning, and <code>general()</code> for exploratory work with full tool access.</p>
-<p>We’ve published an <a href="https://github.com/UKGovernmentBEIS/inspect_ai/issues/3768">RFC for deep agents</a> and would love your feedback on the design!</p>
+<span id="cb3-17">)</span></code></pre></div></div>
+<p>Compaction can also make use of the <a href="https://inspect.aisi.org.uk/compaction.html#memory-tool">memory()</a> tool to offload important context to files prior to compaction.</p>
 </section>
 <section id="checkpointing" class="level2">
 <h2 class="anchored" data-anchor-id="checkpointing">Checkpointing</h2>
-<p>As evaluations grow longer (sometimes running for days or even weeks), a single infrastructure failure can throw away enormous amounts of agent work. Checkpointing will enable agents to save their progress at regular intervals and resume from the last saved point rather than restarting from scratch.</p>
+<p>As evaluations grow longer (sometimes running for days or even weeks), a single infrastructure failure can throw away enormous amounts of agent work. We are currently working on a checkpointing feature that will enable agents to save their progress at regular intervals and resume from the last saved point rather than restarting from scratch.</p>
 <p>Checkpointing captures the state required for agent resumption, including conversation history, sandbox filesystem state, and the sample’s data store. Resumption will integrate transparently with Inspect’s existing retry machinery. After a crash, <code>inspect eval-set</code> and <code>inspect eval-retry</code> will automatically resume incomplete samples from their latest checkpoint.</p>
 <p>We’ve published an <a href="https://github.com/UKGovernmentBEIS/inspect_ai/issues/3769">RFC for checkpointing</a>. If you’re running long-horizon evaluations we’d love to hear your feedback.</p>
 
@@ -190,7 +258,7 @@ font-style: inherit;">3</span>)</span>
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/long-horizon-agents/</guid>
-  <pubDate>Fri, 24 Apr 2026 04:00:00 GMT</pubDate>
+  <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs.ai/blog/posts/long-horizon-agents/timelines.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 <item>

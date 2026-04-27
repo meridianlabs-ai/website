@@ -609,6 +609,10 @@ h3.projects-page-name {
   border-bottom: none;
 }
 
+#quarto-document-content > section:first-of-type > h2 {
+  margin-top: 1.25rem;
+}
+
 #quarto-document-content h3 {
   font-size: 1.1rem;
   font-weight: 500;

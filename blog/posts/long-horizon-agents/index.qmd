@@ -1,21 +1,53 @@
 ---
 title: "Long-Horizon Agents"
-description: "New tools for long-horizon agents including compaction, skills, plans, memory, checkpointing, and bridges for Claude Code and Codex CLI."
+description: "New tools for long-horizon agents including deep agents, timelines, compaction, checkpointing, and bridges for Claude Code and Codex CLI."
 author: "J.J. Allaire"
-date: "2026-04-24"
+date: "2026-04-26"
 image: timelines.png
 toc: true
 ---
 
-As AI agents take on increasingly complex long-horizon tasks, evaluation frameworks are also scaling up. This includes supporting more sophisticated agent scaffolds, running tasks that consume hundreds of millions of tokens, and visualization of multi-agent trajectories.
+As agents take on increasingly complex long-horizon tasks, evaluation frameworks are scaling up to match. This post covers some recent work in this area, including [`deepagent()`](#deep-agents), a new batteries-included agent for long-horizon tasks and [Inspect SWE](#inspect-swe) which brings Claude Code, and Codex CLI agents into Inspect. We also cover new infrastructure for [multi-agent timelines](#timelines), context window [compaction](#compaction), and [checkpointing](#checkpointing) for long-running evaluations.
 
-Over the past few months we've added many features to address these new requirements. This post rounds up this work as well as looks ahead to some new features, including a new multi-agent orchestrator and the ability to checkpoint and resume long running samples.
+## Deep Agents
+
+[`deepagent()`](https://inspect.aisi.org.uk/deepagent.html) is a batteries-included agent designed for complex, long-horizon tasks. It extends `react()` with four key capabilities: subagent delegation, persistent memory, structured planning, and an opinionated system prompt tuned for autonomous execution.
+
+```python
+from inspect_ai import Task, task
+from inspect_ai.agent import deepagent
+from inspect_ai.dataset import json_dataset
+from inspect_ai.scorer import includes
+from inspect_ai.tool import bash, text_editor
+
+@task
+def ctf_challenge():
+    return Task(
+        dataset=json_dataset("ctf_challenge.json"),
+        solver=deepagent(
+            tools=[bash(), text_editor()],
+            web_search=True
+        ),
+        scorer=includes(),
+        sandbox="docker",
+    )
+```
+
+Deep agents can delegate work to specialized subagents with independent context windows — only summaries return to the parent, preventing context degradation over long trajectories:
+
+- `research()` — Read-only information gathering with no side effects.
+- `plan()` — Structured task decomposition without tool execution.
+- `general()` — Full autonomous execution with the parent's tools.
+
+The agent also includes a `memory()` tool for offloading important context to persistent storage (surviving compaction events), `todo_write()` for structured planning and progress tracking, and support for [skills](https://inspect.aisi.org.uk/tools-standard.html#sec-skill) — packaged capabilities that agents can discover and use.
+
+See the [deep agent documentation](https://inspect.aisi.org.uk/deepagent.html) for the full details. Note that `deepagent()` is designed for tasks that benefit from planning, decomposition, and persistent memory. For many benchmarks including more difficult ones like Cybench or Terminal Bench 2.0, `react()` performs equally well, so always measure against a baseline.
 
 ## Inspect SWE
 
-The [inspect_swe](https://meridianlabs-ai.github.io/inspect_swe/) package makes software engineering agents like [Claude Code](https://meridianlabs-ai.github.io/inspect_swe/claude_code.html), [Codex CLI](https://meridianlabs-ai.github.io/inspect_swe/codex_cli.html), [Gemini CLI](https://meridianlabs-ai.github.io/inspect_swe/gemini_cli.html), and [Mini SWE Agent](https://meridianlabs-ai.github.io/inspect_swe/mini_swe_agent.html) available as standard Inspect agents. For example, here we use the `claude_code()` agent as the solver in an Inspect task:
+The [inspect_swe](https://meridianlabs-ai.github.io/inspect_swe/) package makes software engineering agents like [Claude Code](https://meridianlabs-ai.github.io/inspect_swe/claude_code.html), [Codex CLI](https://meridianlabs-ai.github.io/inspect_swe/codex_cli.html), [Gemini CLI](https://meridianlabs-ai.github.io/inspect_swe/gemini_cli.html), and [Mini SWE Agent](https://meridianlabs-ai.github.io/inspect_swe/mini_swe_agent.html) available as standard Inspect agents. For example, here we use the `claude_code()` agent as the solver in an Inspect task:
 
-``` python
+```python
 from inspect_ai import Task, task
 from inspect_ai.dataset import json_dataset
 from inspect_ai.scorer import model_graded_qa
@@ -32,9 +64,14 @@ def system_explorer() -> Task:
     )
 ```
 
-Inspect SWE agents are implemented using the Inspect [Sandbox Agent Bridge](https://inspect.aisi.org.uk/agent-bridge.html#sandbox-bridge).
+Inspect SWE agents are implemented using the Inspect [Sandbox Agent Bridge](https://inspect.aisi.org.uk/agent-bridge.html#sandbox-bridge). Agents run inside the sample sandbox and their model API calls are proxied back to Inspect, so you can use any model with any agent, and features like token limits, time limits, and log transcripts work as normal.
 
-Agents run inside the sample sandbox and their model API calls are proxied back to Inspect. This means that you can use any model with Inspect SWE agents, and that features like token or time limits and log transcripts work as normal with the agents.
+Recent additions to Inspect SWE include:
+
+- **Centaur mode** — Human-in-the-loop mode where a human operator can observe and intervene.
+- **Skills support** — Agents can discover and use packaged skill definitions for structured capabilities.
+- **Gemini CLI and Mini SWE Agent** — New agent bridges alongside the existing Claude Code and Codex CLI.
+- **Improved Kubernetes reliability** — Use `exec_remote()` for more robust execution on k8s clusters.
 
 ## Timelines
 
@@ -55,14 +92,14 @@ Drill into any sub-agent to view its trajectory:
 | [CompactionAuto](https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionauto) | Automatic compaction: tries native first, falls back to summary. |
 | [CompactionNative](https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionnative) | Use provider-specific native compaction API (OpenAI and Anthropic only). |
 | [CompactionSummary](https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionsummary) | Compact by having a model create a summary of the message history. |
-| [CompactionEdit](https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionedit) | Compact by editing the message history to remove content (e.g. tool call results and reasoning). |
+| [CompactionEdit](https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactionedit) | Compact by editing the message history to remove content (e.g. tool call results and reasoning). |
 | [CompactionTrim](https://inspect.aisi.org.uk/reference/inspect_ai.model.html#compactiontrim) | Compact by trimming the message history to preserve a percentage of the input. |
 
 : {tbl-colwidths=[40,60]}
 
-Compaction is built-in to the [ReAct Agent](https://inspect.aisi.org.uk/react-agent.html) and the [Agent Bridge](https://inspect.aisi.org.uk/agent-bridge.html#agent-bridge) and can also be added to custom agents. Here are some examples of using compaction with the [react()](https://inspect.aisi.org.uk/reference/inspect_ai.agent.html#react) agent:
+Compaction is built-in to the [ReAct Agent](https://inspect.aisi.org.uk/react-agent.html), [Deep Agent](https://inspect.aisi.org.uk/deepagent.html), and the [Agent Bridge](https://inspect.aisi.org.uk/agent-bridge.html#agent-bridge) and can also be added to custom agents. Here are some examples of using compaction with the [react()](https://inspect.aisi.org.uk/reference/inspect_ai.agent.html#react) agent:
 
-``` python
+```python
 from inspect_ai.agent import react
 from inspect_ai.model import (
     CompactionAuto, CompactionEdit, CompactionNative
@@ -82,27 +119,11 @@ react(
 )
 ```
 
-Compaction can also make use of the [memory()](https://inspect.aisi.org.uk/compaction.html#memory-tool) tool to offload important context to files prior to compaction.
-
-## Deep Agents
-
-We've recently introduced several built-in tools that help agents manage complex tasks over many steps:
-
-- [skill()](https://inspect.aisi.org.uk/tools-standard.html#sec-skill) — Implements the new [agent skills standard](https://agentskills.io/home), giving agents access to structured capabilities.
-
-- [update_plan()](https://inspect.aisi.org.uk/tools-standard.html#sec-update-plan) — Provides a todo-list that helps agents track and update plans across many steps.
-
-- [memory()](https://inspect.aisi.org.uk/tools-standard.html#sec-memory) — Enables agents to store and retrieve information across a long conversation.
-
-All of these work with the built-in [react()](https://inspect.aisi.org.uk/react-agent.html) agent and can also be integrated into custom agents.
-
-Looking ahead, we're designing a new `deepagent()` which is a higher-level agent that bundles the patterns we see in production agents like Claude Code and Codex CLI into a unified Inspect primitive. Deep agents will include pre-built subagent types for common patterns — `research()` for read-only information gathering, `plan()` for structured planning, and `general()` for exploratory work with full tool access. 
-
-We've published an [RFC for deep agents](https://github.com/UKGovernmentBEIS/inspect_ai/issues/3768) and would love your feedback on the design!
+Compaction can also make use of the [memory()](https://inspect.aisi.org.uk/compaction.html#memory-tool) tool to offload important context to files prior to compaction.
 
 ## Checkpointing
 
-As evaluations grow longer (sometimes running for days or even weeks), a single infrastructure failure can throw away enormous amounts of agent work. Checkpointing will enable agents to save their progress at regular intervals and resume from the last saved point rather than restarting from scratch.
+As evaluations grow longer (sometimes running for days or even weeks), a single infrastructure failure can throw away enormous amounts of agent work. We are currently working on a checkpointing feature that will enable agents to save their progress at regular intervals and resume from the last saved point rather than restarting from scratch.
 
 Checkpointing captures the state required for agent resumption, including conversation history, sandbox filesystem state, and the sample's data store. Resumption will integrate transparently with Inspect's existing retry machinery. After a crash, `inspect eval-set` and `inspect eval-retry` will automatically resume incomplete samples from their latest checkpoint.
 
