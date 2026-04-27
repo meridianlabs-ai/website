@@ -1,6 +1,6 @@
 ---
 title: "Transcript Analysis with Inspect Scout"
-description: "A tool for in-depth analysis of AI agent transcripts, with LLM-based and pattern-based scanners for detecting issues beyond simple success/failure metrics."
+description: "A tool for in-depth analysis of AI agent transcripts, with LLM-based and pattern-based scanners for detecting issues beyond simple metrics."
 author: "J.J. Allaire"
 date: "2026-02-25"
 image: https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png

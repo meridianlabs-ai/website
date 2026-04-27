@@ -1,6 +1,6 @@
 ---
 title: "Harbor Tasks for Inspect"
-description: "A new package that makes 80+ Harbor benchmarks including SWE-Bench, Terminal-Bench, LawBench, and more available to run directly in Inspect."
+description: "A new package that makes 80+ Harbor benchmarks including SWE-Bench Pro, Terminal-Bench, and more available to run in Inspect."
 author: "Alexandra Abbas"
 date: "2026-02-12"
 image: cover.png
