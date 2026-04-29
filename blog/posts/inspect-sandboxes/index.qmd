@@ -3,6 +3,7 @@ title: "Cloud Sandboxes for Inspect"
 description: "A new package adding managed cloud sandbox providers (Daytona and Modal) to Inspect, so you can run evals at scale without provisioning your own infrastructure."
 author: "Alexandra Abbas"
 date: "2026-04-29"
+image: cover.png
 ---
 
 We're excited to announce [Inspect Sandboxes](https://meridianlabs-ai.github.io/inspect_sandboxes/), a new package that adds managed cloud sandbox providers — [Daytona](https://www.daytona.io/) and [Modal](https://modal.com) — to [Inspect AI](https://inspect.aisi.org.uk/). Each sample runs in a fresh remote sandbox while the Inspect process runs locally; you don't need a Docker daemon on your machine or a cluster of your own.
