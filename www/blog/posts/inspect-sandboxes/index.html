@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexandra Abbas">
+<meta name="dcterms.date" content="2026-04-29">
+<meta name="description" content="A new package adding managed cloud sandbox providers (Daytona and Modal) to Inspect, so you can run evals at scale without provisioning your own infrastructure.">
 
-<title>Meridian Labs</title>
+<title>Cloud Sandboxes for Inspect – Meridian Labs</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,21 +26,57 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-215ea42de631ff1cdcb2964e618cd1c6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-215ea42de631ff1cdcb2964e618cd1c6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -53,29 +92,57 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link rel="preload" href="./fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
-<link rel="preload" href="./fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
-<link rel="preload" href="./fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin="">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #E2E8F0;
+      }
+</style>
+<link rel="preload" href="../../../fonts/roboto-700.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="../../../fonts/roboto-400.ttf" as="font" type="font/truetype" crossorigin="">
+<link rel="preload" href="../../../fonts/roboto-condensed-700.ttf" as="font" type="font/truetype" crossorigin="">
 <!-- Privacy-friendly analytics by Plausible -->
 <script async="" src="https://plausible.io/js/pa-vbRSUDSNBruuHoY-j0cf4.js"></script>
 <script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2292952');
+</script>
+<!-- End MailerLite Universal -->
+<style>
+#title-block-header {
+  background-color: #E2E8F0;
+}
+#title-block-header .quarto-title-banner {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+#title-block-header .quarto-title-meta {
+  padding: 0.5rem 0 1.25rem;
+  margin-top: 0;
+}
+</style>
 
 
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="../../../fonts/fonts.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><img src="./images/meridian-logo-black.svg" width="140"></span>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title"><img src="../../../images/meridian-logo-black.svg" width="140"></span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -84,23 +151,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./team.html"> 
+    <a class="nav-link" href="../../../team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./careers.html"> 
+    <a class="nav-link" href="../../../careers.html"> 
 <span class="menu-text">Careers</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -119,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -131,44 +198,149 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Cloud Sandboxes for Inspect</h1>
+                  <div>
+        <div class="description">
+          A new package adding managed cloud sandbox providers (Daytona and Modal) to Inspect, so you can run evals at scale without provisioning your own infrastructure.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Alexandra Abbas </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 29, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<div class="ml-embedded" data-form="EEhNC4">
+
+</div>
+<script>
+new MutationObserver(function(m, o) {
+  var btn = document.querySelector('.ml-form-embedSubmit button');
+  if (btn) {
+    btn.style.setProperty('background-color', '#E2E8F0', 'important');
+    btn.style.setProperty('color', '#475569', 'important');
+    var wrapper = document.querySelector('.ml-form-embedWrapper');
+    if (wrapper) wrapper.style.setProperty('background-color', 'transparent', 'important');
+    var input = document.querySelector('.ml-form-formContent input.form-control');
+    if (input) {
+      input.style.setProperty('font-size', '0.8rem', 'important');
+      input.style.setProperty('padding', '0.3rem 0.5rem', 'important');
+      input.style.setProperty('margin-top', '0', 'important');
+    }
+    var formBody = document.querySelector('.ml-form-embedBody');
+    if (formBody) formBody.style.setProperty('padding', '0', 'important');
+    var content = document.querySelector('.ml-form-embedContent');
+    if (content) content.style.setProperty('margin-bottom', '6px', 'important');
+    var formContent = document.querySelector('.ml-form-formContent');
+    if (formContent) formContent.style.setProperty('margin-bottom', '10px', 'important');
+    var submit = document.querySelector('.ml-form-embedSubmit');
+    if (submit) submit.style.setProperty('margin-top', '0', 'important');
+    btn.style.setProperty('padding-top', '0.3rem', 'important');
+    btn.style.setProperty('padding-bottom', '0.3rem', 'important');
+    o.disconnect();
+  }
+}).observe(document.body, {childList: true, subtree: true});
+</script>
+</div></div>
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="images/meridian-icon-black.svg" class="about-image
-  round " style="height: 140px; width: 140px;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Meridian Labs</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>a 501(c)(3) nonprofit.<br><br> 501 Boylston St<br> 10th Floor<br> Boston, MA<br> 02116<br></p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.github.com/meridianlabs-ai" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">github</span>
-  </a>
-  <a href="mailto:info@meridianlabs.ai" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">info</span>
-  </a>
-  <a href="https://www.linkedin.com/company/meridian-research-labs/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">linkedin</span>
-  </a>
+
+
+
+<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_sandboxes/">Inspect Sandboxes</a>, a new package that adds managed cloud sandbox providers — <a href="https://www.daytona.io/">Daytona</a> and <a href="https://modal.com">Modal</a> — to <a href="https://inspect.aisi.org.uk/">Inspect AI</a>. Each sample runs in a fresh remote sandbox while the Inspect process runs locally; you don’t need a Docker daemon on your machine or a cluster of your own.</p>
+<section id="background-sandboxing-in-inspect" class="level2">
+<h2 class="anchored" data-anchor-id="background-sandboxing-in-inspect">Background: sandboxing in Inspect</h2>
+<p><a href="https://inspect.aisi.org.uk/sandboxing.html">Sandboxes</a> are how Inspect runs untrusted tool code — shell commands, Python, file edits, network calls — for each sample in an isolated environment. They’re essential for agent evals, where the model is interacting with a real system rather than just emitting text.</p>
+<p>Inspect ships with built-in <code>docker</code> and <code>local</code> providers, and the ecosystem adds three more:</p>
+<ul>
+<li><a href="https://k8s-sandbox.aisi.org.uk/"><code>k8s</code></a> — sandboxes on a Kubernetes cluster, with Cilium network policies and gVisor isolation.</li>
+<li><a href="https://github.com/UKGovernmentBEIS/inspect_ec2_sandbox"><code>ec2</code></a> — sandboxes on AWS EC2 instances, with VPC, S3, IAM, and AMI plumbing.</li>
+<li><a href="https://github.com/UKGovernmentBEIS/inspect_proxmox_sandbox"><code>proxmox</code></a> — VMs on a Proxmox hypervisor, with SDN networking.</li>
+</ul>
+<p>These are powerful, but each comes with infrastructure to run yourself: a Kubernetes cluster, an AWS account configured the right way, or a Proxmox host.</p>
+</section>
+<section id="a-managed-alternative" class="level2">
+<h2 class="anchored" data-anchor-id="a-managed-alternative">A managed alternative</h2>
+<p>Over the last year, a wave of dedicated sandbox-provider companies has emerged. The driver is RL: as labs scale RL training, they need tens of thousands of containerized environments running in parallel. SemiAnalysis covers the dynamic in detail in <a href="https://newsletter.semianalysis.com/p/rl-environments-and-rl-for-science">RL Environments and RL for Science</a>, noting that Anthropic is “requiring vendors to adhere to specific sandbox frameworks in most domains” to manage the resulting vendor sprawl.</p>
+<p><a href="https://harborframework.com">Harbor</a> is one of those frameworks, and we recently shipped <a href="https://meridianlabs.ai/blog/posts/inspect-harbor/">Inspect Harbor</a> to make 80+ Harbor benchmarks runnable in Inspect. Harbor itself targets Daytona and Modal as execution backends — the same managed sandbox infrastructure that powers RL training environments is what eval workloads need: spin up containers on demand, scale to hundreds or thousands of concurrent samples, no cluster to babysit.</p>
+<p><code>inspect-sandboxes</code> plugs that infrastructure directly into Inspect:</p>
+<ul>
+<li><strong><code>daytona</code></strong> — runs each sample on a managed Daytona sandbox. Supports single-container and multi-service compose files.</li>
+<li><strong><code>modal</code></strong> — runs each sample on a serverless Modal sandbox. Single-container only.</li>
+</ul>
+<p>Pick one and point a task at it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai <span class="im">import</span> Task, <span class="bu">eval</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> inspect_ai.solver <span class="im">import</span> generate</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>task <span class="op">=</span> Task(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    dataset<span class="op">=</span>[...],</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    solver<span class="op">=</span>[generate()],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    sandbox<span class="op">=</span><span class="st">"modal"</span>,  <span class="co"># or "daytona"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span>(task)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A <code>Dockerfile</code> or <code>compose.yaml</code> next to your task is auto-detected, or you can pass one explicitly: <code>sandbox=("daytona", "path/to/compose.yaml")</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Multi-service compose on Daytona">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Multi-service compose on Daytona
 </div>
 </div>
- <!-- /main -->
+<div class="callout-body-container callout-body">
+<p>Some agent benchmarks need more than a single container — a database, a victim service to attack, a verifier endpoint, or a tool runtime alongside the agent. A compose file with two or more services automatically runs in Docker-in-Docker on Daytona, and each service is exposed as a separate <code>SandboxEnvironment</code>. For example, <a href="https://meridianlabs-ai.github.io/inspect_harbor/registry/kumo_1_0.html">KUMO</a> — a multi-step reasoning benchmark available through Inspect Harbor — runs the agent alongside a separate verifier server it submits answers to.</p>
+</div>
+</div>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install inspect-sandboxes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>See the <a href="https://meridianlabs-ai.github.io/inspect_sandboxes/">docs</a> for full configuration, including GPU selection, resource limits, network policies, and credentials.</p>
+<p><a href="https://github.com/UKGovernmentBEIS/inspect_evals">Inspect Evals</a> and <a href="https://meridianlabs-ai.github.io/inspect_harbor/">Inspect Harbor</a> bring a deep catalog of benchmarks; <code>inspect-sandboxes</code> brings the managed infrastructure to run them at scale.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

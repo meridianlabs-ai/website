@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/projects.html",
+    "listing": "/index.html",
     "items": []
   },
   {
@@ -8,12 +8,13 @@
     "items": []
   },
   {
-    "listing": "/index.html",
+    "listing": "/projects.html",
     "items": []
   },
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/inspect-sandboxes/index.html",
       "/blog/posts/long-horizon-agents/index.html",
       "/blog/posts/inspect-flow/index.html",
       "/blog/posts/inspect-scout/index.html",
