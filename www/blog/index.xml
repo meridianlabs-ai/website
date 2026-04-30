@@ -9,8 +9,8 @@
 <link>https://meridianlabs.ai/blog/</link>
 <atom:link href="https://meridianlabs.ai/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Open source tools for AI research and evaluation</description>
-<generator>quarto-1.9.37</generator>
-<lastBuildDate>Wed, 29 Apr 2026 23:00:00 GMT</lastBuildDate>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Thu, 30 Apr 2026 04:00:00 GMT</lastBuildDate>
 <item>
   <title>Cloud Sandboxes for Inspect</title>
   <dc:creator>Alexandra Abbas</dc:creator>
@@ -94,7 +94,7 @@ font-style: inherit;">eval</span>(task)</span></code></pre></div></div>
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-sandboxes/</guid>
-  <pubDate>Wed, 29 Apr 2026 23:00:00 GMT</pubDate>
+  <pubDate>Thu, 30 Apr 2026 04:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs.ai/blog/posts/inspect-sandboxes/cover.png" medium="image" type="image/png" height="57" width="144"/>
 </item>
 <item>
@@ -344,7 +344,7 @@ font-style: inherit;">3</span>)</span>
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/long-horizon-agents/</guid>
-  <pubDate>Sat, 25 Apr 2026 23:00:00 GMT</pubDate>
+  <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs.ai/blog/posts/long-horizon-agents/timelines.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 <item>
@@ -473,7 +473,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-flow/</guid>
-  <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+  <pubDate>Wed, 04 Mar 2026 05:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png" medium="image" type="image/png"/>
 </item>
 <item>
@@ -505,7 +505,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-scout/</guid>
-  <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+  <pubDate>Wed, 25 Feb 2026 05:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" medium="image" type="image/png"/>
 </item>
 <item>
@@ -526,7 +526,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-harbor/</guid>
-  <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
+  <pubDate>Thu, 12 Feb 2026 05:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs.ai/blog/posts/inspect-harbor/cover.png" medium="image" type="image/png" height="47" width="144"/>
 </item>
 <item>
@@ -555,7 +555,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-viz/</guid>
-  <pubDate>Sat, 06 Sep 2025 23:00:00 GMT</pubDate>
+  <pubDate>Sun, 07 Sep 2025 04:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" medium="image" type="image/png"/>
 </item>
 </channel>
