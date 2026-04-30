@@ -7,7 +7,10 @@ const others = items.filter(item => !item.featured);
 <div class="featured-projects">
 <% for (const item of featured) { %>
   <div class="featured-project">
-    <h2 class="featured-project-name"><a href="<%= item.href %>"><%= item.title %></a></h2>
+    <h2 class="featured-project-name">
+      <% if (item.logo) { %><img class="featured-project-logo" src="/<%= item.logo %>" alt="" /><% } %>
+      <a href="<%= item.href %>"><%= item.title %></a>
+    </h2>
     <p class="featured-project-tagline"><%= item.tagline %></p>
     <div class="featured-project-links">
       <a href="<%= item.href %>" class="featured-project-link">Learn more &rarr;</a>

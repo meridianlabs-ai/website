@@ -1,7 +1,8 @@
 - title: Inspect AI
-  tagline: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian. 
-  description: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian. Inspect can be used for a broad range of evaluations that measure coding, agentic tasks, reasoning, knowledge, behavior, and multi-modal understanding. 
+  tagline: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian.
+  description: Framework for systematic evaluation of large language models, built by the UK AISI in collaboration with Meridian. Inspect can be used for a broad range of evaluations that measure coding, agentic tasks, reasoning, knowledge, behavior, and multi-modal understanding.
   icon: cpu
+  logo: images/inspect.svg
   featured: true
   href: https://inspect.aisi.org.uk
   secondary-links:
@@ -13,9 +14,10 @@
       href: https://github.com/UKGovernmentBEIS/inspect_ai
 
 - title: Inspect Scout
-  tagline: In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning. 
+  tagline: In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning.
   description: In-depth analysis of AI agent transcripts with rich visualization of results and high-performance parallel scanning. Detect issues like misconfigured environments, refusals, and evaluation awareness using LLM-based or pattern-based scanners.
   icon: search
+  logo: images/scout.svg
   featured: true
   href: https://meridianlabs-ai.github.io/inspect_scout/
   secondary-links:
@@ -30,6 +32,7 @@
   tagline: Automated multi-turn agent for alignment auditing of language models. Built in collaboration with the UK AISI.
   description: Alignment auditing agent for probing language model behavior, built in collaboration with UK AISI. Rapidly test concrete alignment hypotheses end-to-end by generating realistic audit scenarios and orchestrating multi-turn audits.
   icon: shield-check
+  logo: images/petri.svg
   featured: true
   href: https://meridianlabs-ai.github.io/inspect_petri/
   secondary-links:
@@ -45,6 +48,7 @@
   tagline: Framework for generating behavioral evaluations of frontier AI models.
   description: Framework for generating behavioral evaluations of frontier AI models. Given a “seed” configuration describing the target behavior and evaluation parameters, Bloom produces diverse test scenarios, runs conversations with the target model, and scores the results.
   icon: shield-check
+  logo: images/bloom.svg
   href: https://meridianlabs-ai.github.io/petri_bloom/
   secondary-links:
     - text: PyPI
@@ -59,6 +63,7 @@
   tagline: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability.
   description: Workflow orchestration for Inspect AI that enables running evaluations at scale with repeatability and maintainability. Inspect Flow is designed for researchers and engineers running systematic AI evaluations who need to scale beyond ad-hoc scripts.
   icon: diagram-3
+  logo: images/flow.svg
   href: https://meridianlabs-ai.github.io/inspect_flow/
   secondary-links:
     - text: PyPI

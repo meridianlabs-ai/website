@@ -333,6 +333,9 @@ body {
   color: $heading-slate;
   margin-bottom: 0.75rem;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 
   a {
     color: $heading-slate;
@@ -343,6 +346,12 @@ body {
       color: $accent-cyan;
     }
   }
+}
+
+.featured-project-logo {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .featured-project-tagline {
@@ -477,6 +486,12 @@ h3.projects-page-name {
       margin-left: 0;
     }
   }
+}
+
+.projects-page-logo {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .projects-page-tagline {
