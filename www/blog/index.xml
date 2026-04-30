@@ -9,8 +9,8 @@
 <link>https://meridianlabs.ai/blog/</link>
 <atom:link href="https://meridianlabs.ai/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Open source tools for AI research and evaluation</description>
-<generator>quarto-1.9.36</generator>
-<lastBuildDate>Thu, 30 Apr 2026 04:00:00 GMT</lastBuildDate>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Wed, 29 Apr 2026 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Cloud Sandboxes for Inspect</title>
   <dc:creator>Alexandra Abbas</dc:creator>
@@ -21,18 +21,13 @@
 
 
 
-<p>We’re excited to announce <a href="https://meridianlabs-ai.github.io/inspect_sandboxes/">Inspect Sandboxes</a>, a new package that adds managed cloud sandbox providers (<a href="https://www.daytona.io/">Daytona</a> and <a href="https://modal.com">Modal</a>) to <a href="https://inspect.aisi.org.uk/">Inspect AI</a>. Each sample runs in a fresh remote sandbox while the Inspect process runs locally; you don’t need a Docker daemon on your machine or a cluster of your own.</p>
-<p>Inspect already has <a href="https://inspect.aisi.org.uk/sandboxing.html">sandbox</a> providers for <a href="https://k8s-sandbox.aisi.org.uk/">Kubernetes</a>, <a href="https://github.com/UKGovernmentBEIS/inspect_ec2_sandbox">EC2</a>, and <a href="https://github.com/UKGovernmentBEIS/inspect_proxmox_sandbox">Proxmox</a>, but each requires you to provision and maintain your own infrastructure: a cluster, an AWS account, or a hypervisor host.</p>
-<p>Over the last year, a wave of dedicated sandbox-provider companies has emerged to run AI-generated code at scale. Their workloads span code interpreters, coding agents, computer use, AI evaluations, and reinforcement learning training: anywhere a model needs a secure, ephemeral environment to execute code.</p>
-<p><code>inspect-sandboxes</code> brings that infrastructure to Inspect:</p>
-<ul>
-<li><a href="https://meridianlabs-ai.github.io/inspect_sandboxes/daytona.html"><code>daytona</code></a> runs each sample on a managed Daytona sandbox. Supports single-container and multi-service compose files.</li>
-<li><a href="https://meridianlabs-ai.github.io/inspect_sandboxes/modal.html"><code>modal</code></a> runs each sample on a serverless Modal sandbox. Single-container only.</li>
-</ul>
+<p>Over the last year, a wave of cloud sandbox providers has emerged to run autonomous coding agents, evaluations, and RL training at scale. Today we are excited to announce that we are bringing two of these sandboxes (<a href="https://www.daytona.io/">Daytona</a> and <a href="https://modal.com">Modal</a>) to Inspect with the <a href="https://meridianlabs-ai.github.io/inspect_sandboxes/">Inspect Sandboxes</a> package.</p>
+<p>Inspect already has sandbox providers for <a href="https://inspect.aisi.org.uk/sandboxing.html#sec-docker-configuration">Docker</a>, <a href="https://k8s-sandbox.aisi.org.uk/">Kubernetes</a>, <a href="https://github.com/UKGovernmentBEIS/inspect_ec2_sandbox">EC2</a>, and <a href="https://github.com/UKGovernmentBEIS/inspect_proxmox_sandbox">Proxmox</a>, but Docker relies on local computing resources and the others require you to provision and maintain your own infrastructure. With these new sandboxes, you don’t need a Docker daemon on your machine or a cluster of your own.</p>
+<p>Install the Inspect Sandboxes package from PyPI with:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">pip</span> install inspect-sandboxes</span></code></pre></div></div>
-<p>Pick one and point a task at it:</p>
+<p>Use the <code>"daytona"</code> or <code>"modal"</code> sandbox as you would any other:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> inspect_ai <span class="im" style="color: #00769E;
@@ -66,36 +61,38 @@ font-style: inherit;">=</span>[bash(), python()]),</span>
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"daytona"</span>,  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># or modal</span></span>
+font-style: inherit;">"daytona"</span></span>
 <span id="cb2-9">)</span>
 <span id="cb2-10"></span>
 <span id="cb2-11"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">eval</span>(task)</span></code></pre></div></div>
-<p>A <code>Dockerfile</code> or <code>compose.yaml</code> next to your task is auto-detected, or you can pass one explicitly: <code>sandbox=("daytona", "path/to/compose.yaml")</code>.</p>
-<p>See the <a href="https://meridianlabs-ai.github.io/inspect_sandboxes/">docs</a> for full configuration, including GPU selection, resource limits, network policies, and credentials.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Multi-service compose">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Multi-service compose
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Some agent benchmarks need more than a single container: a database, a victim service to attack, a verifier endpoint, or a tool runtime alongside the agent. A compose file with two or more services runs in Docker-in-Docker on Daytona, and each service is exposed as a separate <code>SandboxEnvironment</code>. Multi-service compose is not yet supported on Modal.</p>
-</div>
-</div>
+<p>Note that if your samples already define a <code>Dockerfile</code> or <code>compose.yaml</code>, it will be automatically used by the cloud sandbox provider. You can also substitute a cloud sandbox for <code>"docker"</code> at the CLI:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">inspect</span> eval inspect_harbor/terminal_bench_2_0 <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--sandbox</span> daytona</span></code></pre></div></div>
+<section id="multiple-containers" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-containers">Multiple Containers</h3>
+<p>Some agent benchmarks need more than a single container: a database, a victim service to attack, a verifier endpoint, or a tool runtime alongside the agent. On Daytona, a compose file with two or more services runs in Docker-in-Docker, with each service exposed as a separate <code>SandboxEnvironment</code>. However, multi-service compose is <em>not yet supported</em> on Modal (we plan on enabling this as soon as it is supported natively by Modal).</p>
+</section>
+<section id="learning-more" class="level3">
+<h3 class="anchored" data-anchor-id="learning-more">Learning More</h3>
+<p>Consult the following provider-specific documentation to learn more about providing credentials, network policies, resource limits, GPUs, etc.:</p>
+<ul>
+<li><p><a href="https://meridianlabs-ai.github.io/inspect_sandboxes/daytona.html">Daytona</a></p></li>
+<li><p><a href="https://meridianlabs-ai.github.io/inspect_sandboxes/modal.html">Modal</a></p></li>
+</ul>
+<p>Cloud sandboxes are a great fit for a wide variety of agentic evaluations but their applicability will vary based on your specific needs. To learn about and compare all of the available sandboxes see the <a href="https://inspect.aisi.org.uk/extensions/">Sandbox Extensions</a> listing on the Inspect website.</p>
 
 
+</section>
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-sandboxes/</guid>
-  <pubDate>Thu, 30 Apr 2026 04:00:00 GMT</pubDate>
-  <media:content url="https://meridianlabs.ai/blog/posts/inspect-sandboxes/cover.png" medium="image" type="image/png" height="57" width="144"/>
+  <pubDate>Wed, 29 Apr 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://meridianlabs.ai/blog/posts/inspect-sandboxes/cover.png" medium="image" type="image/png" height="63" width="144"/>
 </item>
 <item>
   <title>Long-Horizon Agents</title>
@@ -344,7 +341,7 @@ font-style: inherit;">3</span>)</span>
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/long-horizon-agents/</guid>
-  <pubDate>Sun, 26 Apr 2026 04:00:00 GMT</pubDate>
+  <pubDate>Sat, 25 Apr 2026 23:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs.ai/blog/posts/long-horizon-agents/timelines.png" medium="image" type="image/png" height="80" width="144"/>
 </item>
 <item>
@@ -473,7 +470,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-flow/</guid>
-  <pubDate>Wed, 04 Mar 2026 05:00:00 GMT</pubDate>
+  <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs-ai.github.io/inspect_flow/images/config_progress_terminal.png" medium="image" type="image/png"/>
 </item>
 <item>
@@ -505,7 +502,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-scout/</guid>
-  <pubDate>Wed, 25 Feb 2026 05:00:00 GMT</pubDate>
+  <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs-ai.github.io/inspect_scout/images/validation-panel-transcripts.png" medium="image" type="image/png"/>
 </item>
 <item>
@@ -526,7 +523,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-harbor/</guid>
-  <pubDate>Thu, 12 Feb 2026 05:00:00 GMT</pubDate>
+  <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs.ai/blog/posts/inspect-harbor/cover.png" medium="image" type="image/png" height="47" width="144"/>
 </item>
 <item>
@@ -555,7 +552,7 @@ font-style: inherit;">#   2 tasks × 2 models × 3 reasoning levels</span></span
 
  ]]></description>
   <guid>https://meridianlabs.ai/blog/posts/inspect-viz/</guid>
-  <pubDate>Sun, 07 Sep 2025 04:00:00 GMT</pubDate>
+  <pubDate>Sat, 06 Sep 2025 23:00:00 GMT</pubDate>
   <media:content url="https://meridianlabs-ai.github.io/inspect_viz/view-scores-by-task_files/placeholder/7194617527e820cb.png" medium="image" type="image/png"/>
 </item>
 </channel>
